@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SwatchView: View {
     let swatch: Swatch
+    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         ZStack {
@@ -16,25 +17,36 @@ struct SwatchView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Text(swatch.descriptiveName)
-                    .font(.largeTitle.bold())
-                    .padding(.bottom)
-                SwatchViewRow(key: "Material", value: swatch.material?.name ?? "")
-                SwatchViewRow(key: "Brand", value: swatch.brand)
-                if let productLine = swatch.productLine {
-                    SwatchViewRow(key: "Product Line", value: productLine)
+                VStack {
+                    Text(swatch.descriptiveName)
+                        .font(.largeTitle.bold())
+                        .padding(.bottom)
+                    SwatchViewRow(key: "Material", value: swatch.material)
+                    SwatchViewRow(key: "Brand", value: swatch.brand)
+                    if let productLine = swatch.productLine {
+                        SwatchViewRow(key: "Product Line", value: productLine)
+                    }
+                    SwatchViewRow(key: "Color", value: swatch.colorName)
+                    if let extruderTemp = swatch.extruderTemp {
+                        SwatchViewRow(key: "Extruder Temp", value: "\(extruderTemp) °C")
+                    }
+                    if let bedTemp = swatch.bedTemp {
+                        SwatchViewRow(key: "Bed Temp", value: "\(bedTemp) °C")
+                    }
                 }
-                SwatchViewRow(key: "Color", value: swatch.colorName)
-                if let extruderTemp = swatch.extruderTemp {
-                    SwatchViewRow(key: "Extruder Temp", value: "\(extruderTemp) °C")
-                }
-                if let bedTemp = swatch.bedTemp {
-                    SwatchViewRow(key: "Bed Temp", value: "\(bedTemp) °C")
+                .padding()
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+                .padding()
+                
+                // MARK: Add to Library Button
+                if !userData.swatches.contains { $0.id == swatch.id } {
+                    Button("Add to Library") {
+                        userData.swatches.append(swatch)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.indigo)
                 }
             }
-            .padding()
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
-            .padding()
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct SampleData {
     static let swatch = Swatch(
-        material: .init(name: "PLA"),
+        material: "PLA",
         brand: "Polymaker",
         productLine: "PolyLite",
         colorName: "Teal",
@@ -22,10 +22,10 @@ struct SampleData {
         let data = UserData()
         data.swatches = [Self.swatch]
         data.materials = [
-            .init(name: "PLA"),
-            .init(name: "ABS"),
-            .init(name: "ABS+"),
-            .init(name: "PETG"),
+            "PLA",
+            "ABS",
+            "ABS+",
+            "PETG",
         ]
         data.swatchHistory = [Self.swatch]
         return data

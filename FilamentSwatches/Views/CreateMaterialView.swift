@@ -8,24 +8,53 @@
 import SwiftUI
 
 struct CreateMaterialView: View {
-    @State private var material: FilamentMaterial = .init(name: "")
+    @State private var material: String = ""
+    @State private var editingIndex = -1
+    @State private var isEditing = false
+    
     @EnvironmentObject private var userData: UserData
     @Environment(\.dismiss) private var dismiss
+    
+    var isValid: Bool {
+        guard !material.isEmpty else {
+            return false
+        }
+        // If the material already exists, it is only valid, if we are editing an item and did not rename it yet
+        if userData.materials.contains(material) {
+            return isEditing && userData.materials[editingIndex] == material
+        }
+        return true
+    }
+    
+    /// Create a new material
+    init() {}
+    
+    /// Edit an existing material
+    init(editing material: String, at index: Int) {
+        self.init()
+        self.isEditing = true
+        self.editingIndex = index
+        self.material = material
+    }
     
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $material.name)
+                TextField("Name", text: $material)
             }
-            .navigationTitle("Create Material")
+            .navigationTitle(isEditing ? Text("Edit Material") : Text("Create Material"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        userData.materials.append(material)
+                        if isEditing {
+                            userData.materials[editingIndex] = self.material
+                        } else {
+                            userData.materials.append(material)
+                        }
                         userData.save()
                         dismiss()
                     }
-                    .disabled(material.name.isEmpty)
+                    .disabled(!isValid)
                 }
             }
         }

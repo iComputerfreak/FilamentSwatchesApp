@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct FilamentMaterialRow: View {
-    let material: FilamentMaterial
+    let material: String
     
     var body: some View {
-        Text(material.name)
+        Text(material)
     }
 }
 
 struct FilamentMaterialRow_Previews: PreviewProvider {
     static var previews: some View {
-        FilamentMaterialRow(material: .init(name: "PLA"))
+        FilamentMaterialRow(material: "PLA")
     }
 }

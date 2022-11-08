@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB56ADE2291A59A4005B1CE7 /* ReaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* ReaderDelegate.swift */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA42919253600327425 /* ReadNFCButton.swift */; };
 		AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA6291929C100327425 /* SubtitleView.swift */; };
 		AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA829192ACF00327425 /* Swatch.swift */; };
-		AB9ABDAC29192B1B00327425 /* FilamentMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAB29192B1B00327425 /* FilamentMaterial.swift */; };
 		AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAD29192B9100327425 /* FilamentColor.swift */; };
 		AB9ABDB0291930F600327425 /* SwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAF291930F600327425 /* SwatchRow.swift */; };
 		AB9ABDB22919349300327425 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB12919349300327425 /* SampleData.swift */; };
@@ -30,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
+		AB56ADE1291A59A4005B1CE7 /* ReaderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderDelegate.swift; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,7 +44,6 @@
 		AB9ABDA42919253600327425 /* ReadNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNFCButton.swift; sourceTree = "<group>"; };
 		AB9ABDA6291929C100327425 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		AB9ABDA829192ACF00327425 /* Swatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swatch.swift; sourceTree = "<group>"; };
-		AB9ABDAB29192B1B00327425 /* FilamentMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterial.swift; sourceTree = "<group>"; };
 		AB9ABDAD29192B9100327425 /* FilamentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentColor.swift; sourceTree = "<group>"; };
 		AB9ABDAF291930F600327425 /* SwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchRow.swift; sourceTree = "<group>"; };
 		AB9ABDB12919349300327425 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		AB9ABD8B2919217600327425 /* FilamentSwatches */ = {
 			isa = PBXGroup;
 			children = (
+				AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
 				AB9ABDB12919349300327425 /* SampleData.swift */,
 				AB9ABD9A2919219500327425 /* Views */,
@@ -132,9 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				AB9ABDA829192ACF00327425 /* Swatch.swift */,
-				AB9ABDAB29192B1B00327425 /* FilamentMaterial.swift */,
 				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
 				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				AB56ADE1291A59A4005B1CE7 /* ReaderDelegate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +218,7 @@
 				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
 				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
-				AB9ABDAC29192B1B00327425 /* FilamentMaterial.swift in Sources */,
+				AB56ADE2291A59A4005B1CE7 /* ReaderDelegate.swift in Sources */,
 				AB9ABDA22919242100327425 /* SwatchView.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
 				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,
@@ -352,12 +354,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/FilamentSwatches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,12 +386,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/FilamentSwatches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

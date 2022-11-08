@@ -19,7 +19,7 @@ class UserData: ObservableObject {
     private static let decoder = PropertyListDecoder()
     
     @Published var swatches: [Swatch]
-    @Published var materials: [FilamentMaterial]
+    @Published var materials: [String]
     @Published var swatchHistory: [Swatch]
     
     init() {
@@ -31,7 +31,7 @@ class UserData: ObservableObject {
             }
             
             if let materialsData = Self.userDefaults.object(forKey: Self.materialsKey) as? Data, !materialsData.isEmpty {
-                self.materials = try Self.decoder.decode([FilamentMaterial].self, from: materialsData)
+                self.materials = try Self.decoder.decode([String].self, from: materialsData)
             } else {
                 self.materials = []
             }

@@ -16,14 +16,15 @@ struct LibraryView: View {
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedSwatchID) {
-                ForEach(userData.materials) { material in
+                ForEach(userData.materials, id: \.self) { material in
                     let swatches = userData.swatches.filter { $0.material == material }
                     if !swatches.isEmpty {
-                        Section(header: Text(material.name)) {
+                        Section(header: Text(material)) {
                             ForEach(swatches) { swatch in
                                 SwatchRow(swatch: swatch)
                                     .tag(swatch.id)
                             }
+                            .onDelete { self.deleteSwatches(at: $0, from: swatches) }
                         }
                     }
                 }
@@ -50,6 +51,14 @@ struct LibraryView: View {
         .sheet(isPresented: $addSheetShowing) {
             CreateSwatchView()
         }
+    }
+    
+    func deleteSwatches(at indexSet: IndexSet, from swatches: [Swatch]) {
+        for index in indexSet {
+            let swatch = swatches[index]
+            userData.swatches.removeAll { $0.id == swatch.id }
+        }
+        userData.save()
     }
 }
 

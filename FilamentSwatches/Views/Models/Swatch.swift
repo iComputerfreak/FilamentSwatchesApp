@@ -10,7 +10,7 @@ import Foundation
 struct Swatch: Identifiable, Codable {
     var id = UUID()
     
-    var material: FilamentMaterial?
+    var material: String
     var brand: String
     var productLine: String
     var colorName: String
@@ -19,17 +19,17 @@ struct Swatch: Identifiable, Codable {
     var bedTemp: Int = 0
     
     var descriptiveName: String {
-        "\(productLine.isEmpty ? brand : productLine) \(colorName) \(material?.name ?? "")"
+        "\(productLine.isEmpty ? brand : productLine) \(colorName) \(material)"
             .trimmingCharacters(in: .whitespaces)
     }
     
     var isValid: Bool {
-        material != nil &&
+        !material.isEmpty &&
         !brand.isEmpty &&
         !colorName.isEmpty
     }
     
-    init(material: FilamentMaterial?, brand: String, productLine: String = "", colorName: String, color: FilamentColor? = nil, extruderTemp: Int = 0, bedTemp: Int = 0) {
+    init(material: String, brand: String, productLine: String = "", colorName: String, color: FilamentColor? = nil, extruderTemp: Int = 0, bedTemp: Int = 0) {
         self.material = material
         self.brand = brand
         self.productLine = productLine

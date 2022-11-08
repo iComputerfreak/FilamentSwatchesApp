@@ -9,22 +9,32 @@ import SwiftUI
 
 struct MaterialsView: View {
     @EnvironmentObject private var userData: UserData
+    @Environment(\.editMode) private var editMode
     
     @State private var addSheetShowing = false
     
     var body: some View {
-        // TODO: EditButton to change names
         NavigationStack {
             List {
-                ForEach(userData.materials) { material in
-                    // TODO: Make Editable
-                    Text(material.name)
+                ForEach(userData.materials, id: \.self) { material in
+                    if editMode?.wrappedValue.isEditing ?? false {
+                        NavigationLink {
+                            let index = userData.materials.firstIndex(of: material)!
+                            CreateMaterialView(editing: material, at: index)
+                        } label: {
+                            Text(material)
+                        }
+                    } else {
+                        Text(material)
+                    }
                 }
+                .onDelete(perform: deleteMaterials)
             }
             .navigationTitle("Materials")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
+                        .environment(\.editMode, self.editMode)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -38,6 +48,14 @@ struct MaterialsView: View {
         .sheet(isPresented: $addSheetShowing) {
             CreateMaterialView()
         }
+    }
+    
+    func deleteMaterials(at indexSet: IndexSet) {
+        for index in indexSet {
+            let material = userData.materials[index]
+            userData.materials.removeAll { $0 == material }
+        }
+        userData.save()
     }
 }
 

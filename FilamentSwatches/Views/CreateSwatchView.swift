@@ -12,12 +12,17 @@ struct CreateSwatchView: View {
     @EnvironmentObject private var userData: UserData
     @Environment(\.dismiss) private var dismiss
     
+    // TODO: Make Editable
+    
     var body: some View {
         NavigationStack {
             Form {
                 Picker("Material", selection: $swatch.material) {
-                    ForEach(userData.materials) { material in
-                        FilamentMaterialRow(material: material)
+                    Text("Select...")
+                        .disabled(true)
+                        .tag("")
+                    ForEach(userData.materials, id: \.self) { material in
+                        Text(material)
                     }
                 }
                 TextField("Brand", text: $swatch.brand)
@@ -72,7 +77,7 @@ struct CreateSwatchView: View {
     
     static func createNewSwatch() -> Swatch {
         return Swatch(
-            material: nil,
+            material: "",
             brand: "",
             productLine: "",
             colorName: "",
