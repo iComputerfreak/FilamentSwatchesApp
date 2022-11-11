@@ -29,6 +29,7 @@ struct MaterialsView: View {
                     }
                 }
                 .onDelete(perform: deleteMaterials)
+                .onMove(perform: moveMaterials)
             }
             .navigationTitle("Materials")
             .toolbar {
@@ -51,10 +52,12 @@ struct MaterialsView: View {
     }
     
     func deleteMaterials(at indexSet: IndexSet) {
-        for index in indexSet {
-            let material = userData.materials[index]
-            userData.materials.removeAll { $0 == material }
-        }
+        userData.materials.remove(atOffsets: indexSet)
+        userData.save()
+    }
+    
+    func moveMaterials(at indices: IndexSet, by offset: Int) {
+        userData.materials.move(fromOffsets: indices, toOffset: offset)
         userData.save()
     }
 }

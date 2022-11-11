@@ -28,7 +28,7 @@ struct WriteNFCButton: View {
             }
         } label: {
             Text("Write Tag")
-                .bigProminentButtonStyle()
+                .prominentButtonStyle()
         }
         .padding()
         .alert("Scanning Not Supported", isPresented: $showingNFCNotAvailableAlert) {

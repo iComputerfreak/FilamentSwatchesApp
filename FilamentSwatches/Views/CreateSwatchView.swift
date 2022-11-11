@@ -9,10 +9,19 @@ import SwiftUI
 
 struct CreateSwatchView: View {
     @State private var swatch: Swatch = Self.createNewSwatch()
+    @State private var isEditing = false
     @EnvironmentObject private var userData: UserData
     @Environment(\.dismiss) private var dismiss
     
-    // TODO: Make Editable
+    /// Create new swatch
+    init() {}
+    
+    /// Edit existing swatch
+    init(editing swatch: Swatch) {
+        self.init()
+        self.swatch = swatch
+        self.isEditing = true
+    }
     
     var body: some View {
         NavigationStack {
@@ -61,11 +70,20 @@ struct CreateSwatchView: View {
                     }
                 }
             }
-            .navigationTitle("Create Swatch")
+            .navigationTitle(isEditing ? Text("Edit Swatch") : Text("Create Swatch"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        userData.swatches.append(swatch)
+                        if isEditing {
+                            guard let index = userData.swatches.firstIndex(where: { $0.id == swatch.id }) else {
+                                print("Error: editing a swatch that does not exist.")
+                                return
+                            }
+                            // Replace with the edited swatch
+                            userData.swatches[index] = swatch
+                        } else {
+                            userData.swatches.append(swatch)
+                        }
                         userData.save()
                         dismiss()
                     }

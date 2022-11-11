@@ -42,7 +42,7 @@ struct ReadNFCButton: View {
             }
         } label: {
             Text("Read Tag")
-                .bigProminentButtonStyle()
+                .prominentButtonStyle()
         }
         .padding()
         .alert("Scanning Not Supported", isPresented: $showingNFCNotAvailableAlert) {

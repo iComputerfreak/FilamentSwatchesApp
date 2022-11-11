@@ -9,20 +9,32 @@ import SwiftUI
 
 struct LibraryView: View {
     @State private var selectedSwatch: Swatch?
+    @State private var editingSwatch: Swatch?
     @EnvironmentObject private var userData: UserData
     
     @State private var addSheetShowing = false
     
     var body: some View {
         NavigationStack {
-            List(selection: $selectedSwatch) {
+            List {
                 ForEach(userData.materials, id: \.self) { material in
                     let swatches = userData.swatches.filter { $0.material == material }
                     if !swatches.isEmpty {
                         Section(header: Text(material)) {
                             ForEach(swatches) { swatch in
-                                SwatchRow(swatch: swatch)
-                                    .tag(swatch)
+                                Button {
+                                    self.selectedSwatch = swatch
+                                } label: {
+                                    SwatchRow(swatch: swatch)
+                                }
+                                .tint(.primary)
+                                .contextMenu {
+                                    Button {
+                                        self.editingSwatch = swatch
+                                    } label: {
+                                        Label("Edit", systemImage: "pencil")
+                                    }
+                                }
                             }
                             .onDelete { self.deleteSwatches(at: $0, from: swatches) }
                         }
@@ -31,12 +43,10 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.addSheetShowing = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
+                Button {
+                    self.addSheetShowing = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
         }
@@ -46,6 +56,11 @@ struct LibraryView: View {
         .sheet(item: $selectedSwatch) { swatch in
             if let swatch {
                 SwatchView(swatch: swatch)
+            }
+        }
+        .sheet(item: $editingSwatch) { swatch in
+            if let swatch {
+                CreateSwatchView(editing: swatch)
             }
         }
     }
