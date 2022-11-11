@@ -9,34 +9,30 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var presentedSwatch: Swatch?
-    @State private var selectedSwatchID: Swatch.ID?
+    @State private var selectedSwatch: Swatch?
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             VStack {
                 ReadNFCButton(presentedSwatch: $presentedSwatch)
                 SubtitleView("Recent Scans")
-                // TODO: Make links to show swatches
-                List(selection: $selectedSwatchID) {
+                List(selection: $selectedSwatch) {
                     ForEach(userData.swatchHistory) { swatch in
                         SwatchRow(swatch: swatch)
-                            .tag(swatch.id)
+                            .tag(swatch)
                     }
                     .onDelete(perform: deleteHistoryItems)
                 }
             }
-            .sheet(item: $presentedSwatch) { swatch in
-                SwatchView(swatch: swatch)
-            }
             .navigationTitle(Text("Home"))
-        } detail: {
-            if let swatch = userData.swatchHistory.first(where: { $0.id == selectedSwatchID }) {
+        }
+        .sheet(item: $presentedSwatch) { swatch in
+            SwatchView(swatch: swatch)
+        }
+        .sheet(item: $selectedSwatch) { swatch in
+            if let swatch {
                 SwatchView(swatch: swatch)
-                    .navigationTitle(swatch.descriptiveName)
-            } else {
-                Text("Select a swatch.")
-                    .navigationTitle("Swatch Info")
             }
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct FilamentColor: Codable {
+struct FilamentColor: Codable, Hashable {
     var red: UInt8
     var green: UInt8
     var blue: UInt8

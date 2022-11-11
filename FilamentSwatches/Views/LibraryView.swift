@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @State private var selectedSwatchID: Swatch.ID?
+    @State private var selectedSwatch: Swatch?
     @EnvironmentObject private var userData: UserData
     
     @State private var addSheetShowing = false
     
     var body: some View {
-        NavigationSplitView {
-            List(selection: $selectedSwatchID) {
+        NavigationStack {
+            List(selection: $selectedSwatch) {
                 ForEach(userData.materials, id: \.self) { material in
                     let swatches = userData.swatches.filter { $0.material == material }
                     if !swatches.isEmpty {
                         Section(header: Text(material)) {
                             ForEach(swatches) { swatch in
                                 SwatchRow(swatch: swatch)
-                                    .tag(swatch.id)
+                                    .tag(swatch)
                             }
                             .onDelete { self.deleteSwatches(at: $0, from: swatches) }
                         }
@@ -39,17 +39,14 @@ struct LibraryView: View {
                     }
                 }
             }
-        } detail: {
-            if let swatch = userData.swatches.first(where: { $0.id == selectedSwatchID }) {
-                SwatchView(swatch: swatch)
-                    .navigationTitle(swatch.descriptiveName)
-            } else {
-                Text("Select a swatch.")
-                    .navigationTitle("Swatch Info")
-            }
         }
         .sheet(isPresented: $addSheetShowing) {
             CreateSwatchView()
+        }
+        .sheet(item: $selectedSwatch) { swatch in
+            if let swatch {
+                SwatchView(swatch: swatch)
+            }
         }
     }
     

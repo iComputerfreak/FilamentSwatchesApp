@@ -17,26 +17,30 @@ struct SwatchView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                // MARK: Card
                 VStack {
                     Text(swatch.descriptiveName)
                         .font(.largeTitle.bold())
                         .padding(.bottom)
                     SwatchViewRow(key: "Material", value: swatch.material)
                     SwatchViewRow(key: "Brand", value: swatch.brand)
-                    if let productLine = swatch.productLine {
-                        SwatchViewRow(key: "Product Line", value: productLine)
+                    if !swatch.productLine.isEmpty {
+                        SwatchViewRow(key: "Product Line", value: swatch.productLine)
                     }
                     SwatchViewRow(key: "Color", value: swatch.colorName)
-                    if let extruderTemp = swatch.extruderTemp {
-                        SwatchViewRow(key: "Extruder Temp", value: "\(extruderTemp) °C")
+                    if swatch.extruderTemp > 0 {
+                        SwatchViewRow(key: "Extruder Temp", value: "\(swatch.extruderTemp) °C")
                     }
-                    if let bedTemp = swatch.bedTemp {
-                        SwatchViewRow(key: "Bed Temp", value: "\(bedTemp) °C")
+                    if swatch.bedTemp > 0 {
+                        SwatchViewRow(key: "Bed Temp", value: "\(swatch.bedTemp) °C")
                     }
                 }
                 .padding()
                 .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
                 .padding()
+                
+                // MARK: Write Button
+                WriteNFCButton(swatch: swatch)
                 
                 // MARK: Add to Library Button
                 if !userData.swatches.contains { $0.id == swatch.id } {
@@ -71,6 +75,7 @@ struct SwatchView_Previews: PreviewProvider {
         Text("")
             .sheet(isPresented: .constant(true)) {
                 SwatchView(swatch: SampleData.swatch)
+                    .environmentObject(SampleData.userData)
             }
     }
 }

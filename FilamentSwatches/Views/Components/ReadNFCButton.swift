@@ -42,18 +42,7 @@ struct ReadNFCButton: View {
             }
         } label: {
             Text("Read Tag")
-                .foregroundColor(.white)
-                .font(.title)
-                .padding(.vertical, 20)
-                .padding(.horizontal, 40)
-                .background(
-                    LinearGradient(
-                        colors: [.blue, .indigo],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                )
+                .bigProminentButtonStyle()
         }
         .padding()
         .alert("Scanning Not Supported", isPresented: $showingNFCNotAvailableAlert) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Swatch: Identifiable, Codable {
+struct Swatch: Identifiable, Codable, Hashable {
     var id = UUID()
     
     var material: String
