@@ -17,26 +17,21 @@ struct MaterialsView: View {
         NavigationStack {
             List {
                 ForEach(userData.materials, id: \.self) { material in
-                    if editMode?.wrappedValue.isEditing ?? false {
-                        NavigationLink {
-                            let index = userData.materials.firstIndex(of: material)!
-                            CreateMaterialView(editing: material, at: index)
-                        } label: {
-                            Text(material)
+                    Text(material)
+                        .contextMenu {
+                            NavigationLink {
+                                let index = userData.materials.firstIndex(of: material)!
+                                CreateMaterialView(editing: material, at: index)
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
                         }
-                    } else {
-                        Text(material)
-                    }
                 }
                 .onDelete(perform: deleteMaterials)
                 .onMove(perform: moveMaterials)
             }
             .navigationTitle("Materials")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                        .environment(\.editMode, self.editMode)
-                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         self.addSheetShowing = true

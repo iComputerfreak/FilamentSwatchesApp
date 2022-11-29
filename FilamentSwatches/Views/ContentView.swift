@@ -29,6 +29,12 @@ struct ContentView: View {
                     Image(systemName: "cylinder.split.1x2")
                     Text("Materials")
                 }
+            
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
         .environmentObject(userData)
     }

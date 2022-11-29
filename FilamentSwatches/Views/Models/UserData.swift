@@ -13,6 +13,7 @@ class UserData: ObservableObject {
     private static let swatchesKey = "swatches"
     private static let materialsKey = "materials"
     private static let swatchHistoryKey = "swatchHistory"
+    private static let baseURLKey = "baseURL"
     
     private static let userDefaults = UserDefaults.standard
     private static let encoder = PropertyListEncoder()
@@ -21,6 +22,7 @@ class UserData: ObservableObject {
     @Published var swatches: [Swatch]
     @Published var materials: [String]
     @Published var swatchHistory: [Swatch]
+    @Published var baseURL: String
     
     init() {
         do {
@@ -41,6 +43,8 @@ class UserData: ObservableObject {
             } else {
                 self.swatchHistory = []
             }
+            
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? ""
         } catch {
             fatalError("\(error)")
         }
@@ -55,6 +59,7 @@ class UserData: ObservableObject {
             Self.userDefaults.set(swatchesData, forKey: Self.swatchesKey)
             Self.userDefaults.set(materialsData, forKey: Self.materialsKey)
             Self.userDefaults.set(swatchHistoryData, forKey: Self.swatchHistoryKey)
+            Self.userDefaults.set(baseURL, forKey: Self.baseURLKey)
         } catch {
             print(error)
         }

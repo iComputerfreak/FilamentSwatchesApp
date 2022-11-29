@@ -10,14 +10,15 @@ import CoreNFC
 
 struct WriteNFCButton: View {
     let swatch: Swatch
-    let writer = NFCWriter()
     
     @State private var showingNFCNotAvailableAlert = false
+    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         Button {
             Task {
                 do {
+                    let writer = NFCWriter(baseURL: userData.baseURL)
                     let result = try await writer.writeSwatch(swatch)
                     if result != true {
                         print("Reader did not correctly read swatch!")

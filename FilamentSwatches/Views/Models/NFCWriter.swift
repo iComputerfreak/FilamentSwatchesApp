@@ -31,6 +31,11 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
     private var session: NFCNDEFReaderSession?
     private var continuation: CheckedContinuation<Bool, Error>?
     private var message: NFCNDEFMessage?
+    var baseURL: String
+    
+    init(baseURL: String) {
+        self.baseURL = baseURL
+    }
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
         print("Reader session active")
@@ -63,9 +68,6 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
         }
                 
         // Construct the URL
-        // TODO: Move into settings
-        let baseURL: String = "https://static.jonasfrey.de/projects/FilamentInfo/index.php"
-                
         guard var components = URLComponents(string: baseURL) else {
             throw NFCWriterError.invalidBaseURL
         }
@@ -114,7 +116,9 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
         print("Detected \(tags.count) tags")
         // If we have no data to write, we can abort the whole writer
         guard let message = message else {
-            session.invalidate(errorMessage: NFCWriterError.noMessage.localizedDescription)
+            continuation?.resume(throwing: NFCWriterError.noMessage)
+            continuation = nil
+            session.invalidate()
             return
         }
         
@@ -134,6 +138,8 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
         session.connect(to: tag, completionHandler: { (error: Error?) in
             if error != nil {
                 session.alertMessage = "Unable to connect to tag."
+                self.continuation?.resume(returning: false)
+                self.continuation = nil
                 session.invalidate()
                 return
             }
@@ -141,6 +147,8 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
             tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
                 guard error == nil else {
                     session.alertMessage = "Unable to query the NDEF status of tag."
+                    self.continuation?.resume(returning: false)
+                    self.continuation = nil
                     session.invalidate()
                     return
                 }
@@ -148,23 +156,28 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
                 switch ndefStatus {
                 case .notSupported:
                     session.alertMessage = "Tag is not NDEF compliant."
-                    session.invalidate()
                 case .readOnly:
                     session.alertMessage = "Tag is read only."
-                    session.invalidate()
                 case .readWrite:
                     tag.writeNDEF(message, completionHandler: { (error: Error?) in
-                        if nil != error {
+                        if error != nil {
                             session.alertMessage = "Write NDEF message fail: \(error!)"
                         } else {
                             session.alertMessage = "Write successful!"
+                            self.continuation?.resume(returning: true)
+                            self.continuation = nil
+                            session.invalidate()
+                            return
                         }
-                        session.invalidate()
                     })
                 @unknown default:
                     session.alertMessage = "Unknown NDEF tag status."
-                    session.invalidate()
                 }
+                
+                // Do not return the error, as it is already displayed on the scanning sheet
+                self.continuation?.resume(returning: false)
+                self.continuation = nil
+                session.invalidate()
             })
         })
     }

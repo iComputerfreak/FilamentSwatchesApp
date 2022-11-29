@@ -30,6 +30,8 @@
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
 		ABABF9DB291D065100364F64 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DA291D065100364F64 /* Modifiers.swift */; };
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
+		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
+		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,7 @@
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
 		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
+		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +122,7 @@
 				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
 				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
 				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
+				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
 				AB9ABDAA29192B1400327425 /* Models */,
 			);
 			path = Views;
@@ -166,6 +171,9 @@
 			dependencies = (
 			);
 			name = FilamentSwatches;
+			packageProductDependencies = (
+				ABC368D92922C09500E79D58 /* JFUtils */,
+			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +202,9 @@
 				Base,
 			);
 			mainGroup = AB9ABD802919217600327425;
+			packageReferences = (
+				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
+			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,6 +252,7 @@
 				ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */,
 				AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */,
 				AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */,
+				ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +459,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iComputerfreak/JFUtils";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABC368D92922C09500E79D58 /* JFUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */;
+			productName = JFUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AB9ABD812919217600327425 /* Project object */;
 }
