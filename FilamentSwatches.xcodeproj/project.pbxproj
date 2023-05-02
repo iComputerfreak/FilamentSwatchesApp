@@ -61,6 +61,7 @@
 		AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMaterialView.swift; sourceTree = "<group>"; };
 		ABA8E7A02A0159510059E4BF /* URLKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLKeys.swift; sourceTree = "<group>"; };
 		ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCSessionDelegate.swift; sourceTree = "<group>"; };
+		ABA8E7A42A016F2D0059E4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
 		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		AB9ABD8B2919217600327425 /* FilamentSwatches */ = {
 			isa = PBXGroup;
 			children = (
+				ABA8E7A42A016F2D0059E4BF /* Info.plist */,
 				AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
 				AB9ABDB12919349300327425 /* SampleData.swift */,
@@ -393,6 +395,7 @@
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilamentSwatches/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -425,6 +428,7 @@
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilamentSwatches/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
