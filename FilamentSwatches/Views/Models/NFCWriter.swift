@@ -103,7 +103,15 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print("Reader session invalidated")
-        continuation?.resume(throwing: error)
+        if
+            let nfcError = error as? CoreNFC.NFCReaderError,
+            // Code 200 == "Session invalidated by user"
+            nfcError.errorCode == 200
+        {
+            continuation?.resume(returning: false)
+        } else {
+            continuation?.resume(throwing: error)
+        }
         continuation = nil
         // Invalidate session, if we did not already start a new one
         if self.session == session {
