@@ -15,6 +15,8 @@ class UserData: ObservableObject {
     private static let swatchHistoryKey = "swatchHistory"
     private static let baseURLKey = "baseURL"
     
+    static let maxHistoryItems = 10
+    
     private static let userDefaults = UserDefaults.standard
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()

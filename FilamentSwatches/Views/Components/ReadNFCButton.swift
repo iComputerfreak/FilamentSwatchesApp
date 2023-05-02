@@ -25,11 +25,16 @@ struct ReadNFCButton: View {
                     }
                     
                     await MainActor.run {
-                        // Add Swatch to history
-                        userData.swatchHistory.insert(swatch, at: 0)
+                        if let index = userData.swatchHistory.firstIndex(where: { $0.id == swatch.id }) {
+                            // Move swatch up in history
+                            userData.swatchHistory.move(fromOffsets: [index], toOffset: 0)
+                        } else {
+                            // Add Swatch to history
+                            userData.swatchHistory.insert(swatch, at: 0)
+                        }
                         // Keep only the last 10 scan results
-                        while userData.swatchHistory.count > 10 {
-                            userData.swatchHistory.removeLast()
+                        if userData.swatchHistory.count > UserData.maxHistoryItems {
+                            userData.swatchHistory = Array(userData.swatchHistory.prefix(UserData.maxHistoryItems))
                         }
                         userData.save()
                         

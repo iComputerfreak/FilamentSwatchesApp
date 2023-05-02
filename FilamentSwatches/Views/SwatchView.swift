@@ -43,7 +43,7 @@ struct SwatchView: View {
                 WriteNFCButton(swatch: swatch)
                 
                 // MARK: Add to Library Button
-                if !userData.swatches.contains { $0.id == swatch.id } {
+                if !userData.swatches.contains(where: { $0.id == swatch.id }) {
                     Button("Add to Library") {
                         userData.swatches.append(swatch)
                     }

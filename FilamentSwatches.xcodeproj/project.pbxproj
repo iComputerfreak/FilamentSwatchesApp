@@ -124,6 +124,7 @@
 				AB9ABD9B291922CB00327425 /* HomeView.swift */,
 				AB9ABD9D2919241500327425 /* LibraryView.swift */,
 				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
+				AB9ABDA12919242100327425 /* SwatchView.swift */,
 				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
 				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
 				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
@@ -141,7 +142,6 @@
 				AB9ABDA6291929C100327425 /* SubtitleView.swift */,
 				AB9ABDAF291930F600327425 /* SwatchRow.swift */,
 				AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */,
-				AB9ABDA12919242100327425 /* SwatchView.swift */,
 				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
 			);
 			path = Components;
