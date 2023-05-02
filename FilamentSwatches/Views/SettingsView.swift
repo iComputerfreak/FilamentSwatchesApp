@@ -17,6 +17,9 @@ struct SettingsView: View {
             TextField("Base URL", text: $userData.baseURL)
                 .keyboardType(.URL)
                 .autocorrectionDisabled()
+                .onChange(of: userData.baseURL) { _ in
+                    userData.save()
+                }
         }
     }
 }
