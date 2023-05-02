@@ -31,9 +31,7 @@ struct HomeView: View {
             SwatchView(swatch: swatch)
         }
         .sheet(item: $selectedSwatch) { swatch in
-            if let swatch {
-                SwatchView(swatch: swatch)
-            }
+            SwatchView(swatch: swatch)
         }
     }
     

@@ -16,20 +16,8 @@ enum NFCWriterError: Error {
     case newSessionWhileOldOpen
 }
 
-enum URLKeys {
-    static let material = "material"
-    static let brand = "brand"
-    static let colorName = "color"
-    static let extruderTemp = "extruder_temp"
-    static let bedTemp = "bed_temp"
-    static let productLine = "product_line"
-    static let colorCode = "color_code"
-}
-
-
-class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
-    private var session: NFCNDEFReaderSession?
-    private var continuation: CheckedContinuation<Bool, Error>?
+/// Handles writing NFC data
+class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
     private var message: NFCNDEFMessage?
     var baseURL: String
     
@@ -37,26 +25,9 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
         self.baseURL = baseURL
     }
     
-    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        print("Reader session active")
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print("Reader session invalidated")
-        continuation?.resume(throwing: error)
-        continuation = nil
-        
-        if self.session == session {
-            self.session = nil
-        }
-    }
-    
-    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        print("Detected \(messages.count) messages")
-    }
-    
+    // Start of the lifecycle. Request to write a swatch to an NFC tag
     func writeSwatch(_ swatch: Swatch) async throws -> Bool {
-        print("Writing Swatch...")
+        print("Writing Swatch \(swatch)")
         guard NFCNDEFReaderSession.readingAvailable else {
             throw NFCWriterError.writingUnavailable
         }
@@ -66,8 +37,33 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
             print("Session already in progress")
             throw NFCWriterError.newSessionWhileOldOpen
         }
-                
+        
+        try self.updateMessage(for: swatch)
+        
+        return try await withCheckedThrowingContinuation { continuation in
+            self.continuation = continuation
+            session?.begin()
+        }
+    }
+    
+    private func updateMessage(for swatch: Swatch) throws {
         // Construct the URL
+        let url = try url(for: swatch)
+        
+        guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(url: url) else {
+            throw NFCWriterError.invalidURL
+        }
+        
+        // Create NDEF message and NFC session
+        self.message = NFCNDEFMessage(records: [payload])
+        self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
+    }
+    
+    /// Builds an URL that displays the data of the given `Swatch`
+    /// - Parameter swatch: The `Swatch` to generate the URL for
+    /// - Returns: The generated URL
+    /// - Throws: Errors during URL generation
+    private func url(for swatch: Swatch) throws -> URL {
         guard var components = URLComponents(string: baseURL) else {
             throw NFCWriterError.invalidBaseURL
         }
@@ -98,18 +94,25 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
             throw NFCWriterError.invalidURL
         }
         
-        guard let payload = NFCNDEFPayload.wellKnownTypeURIPayload(url: url) else {
-            throw NFCWriterError.invalidURL
+        return url
+    }
+    
+    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
+        print("Reader session active")
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+        print("Reader session invalidated")
+        continuation?.resume(throwing: error)
+        continuation = nil
+        // Invalidate session, if we did not already start a new one
+        if self.session == session {
+            self.session = nil
         }
-        
-        // Create NDEF message and NFC session
-        self.message = NFCNDEFMessage(records: [payload])
-        self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
-        
-        return try await withCheckedThrowingContinuation { continuation in
-            self.continuation = continuation
-            session?.begin()
-        }
+    }
+    
+    func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        print("Detected \(messages.count) messages")
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
@@ -133,25 +136,14 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
             return
         }
         
-        // Connect to the found tag and write an NDEF message to it.
+        // MARK: Process the tag
         let tag = tags.first!
-        session.connect(to: tag, completionHandler: { (error: Error?) in
-            if error != nil {
-                session.alertMessage = "Unable to connect to tag."
-                self.continuation?.resume(returning: false)
-                self.continuation = nil
-                session.invalidate()
-                return
-            }
-            
-            tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
-                guard error == nil else {
-                    session.alertMessage = "Unable to query the NDEF status of tag."
-                    self.continuation?.resume(returning: false)
-                    self.continuation = nil
-                    session.invalidate()
-                    return
-                }
+        
+        Task(priority: .userInitiated) {
+            // Connect to the found tag and write an NDEF message to it.
+            do {
+                try await session.connect(to: tag)
+                let (ndefStatus, _) = try await tag.queryNDEFStatus()
                 
                 switch ndefStatus {
                 case .notSupported:
@@ -159,26 +151,19 @@ class NFCWriter: NSObject, NFCNDEFReaderSessionDelegate {
                 case .readOnly:
                     session.alertMessage = "Tag is read only."
                 case .readWrite:
-                    tag.writeNDEF(message, completionHandler: { (error: Error?) in
-                        if error != nil {
-                            session.alertMessage = "Write NDEF message fail: \(error!)"
-                        } else {
-                            session.alertMessage = "Write successful!"
-                            self.continuation?.resume(returning: true)
-                            self.continuation = nil
-                            session.invalidate()
-                            return
-                        }
-                    })
+                    try await tag.writeNDEF(message)
+                    self.finish(session, with: .success(true), message: "Write successful!")
+                    return
                 @unknown default:
                     session.alertMessage = "Unknown NDEF tag status."
                 }
                 
-                // Do not return the error, as it is already displayed on the scanning sheet
-                self.continuation?.resume(returning: false)
-                self.continuation = nil
-                session.invalidate()
-            })
-        })
+                // Do not update the message, as we already did that
+                self.finish(session, with: .success(false), message: nil)
+            } catch {
+                // TODO: Restart polling instead?
+                self.finish(session, with: .failure(error), message: nil)
+            }
+        }
     }
 }

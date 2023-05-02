@@ -27,6 +27,8 @@
 		AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */; };
 		AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */; };
 		AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */; };
+		ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A02A0159510059E4BF /* URLKeys.swift */; };
+		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
 		ABABF9DB291D065100364F64 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DA291D065100364F64 /* Modifiers.swift */; };
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
@@ -57,6 +59,8 @@
 		AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterialRow.swift; sourceTree = "<group>"; };
 		AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTextField.swift; sourceTree = "<group>"; };
 		AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMaterialView.swift; sourceTree = "<group>"; };
+		ABA8E7A02A0159510059E4BF /* URLKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLKeys.swift; sourceTree = "<group>"; };
+		ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCSessionDelegate.swift; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
 		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
@@ -149,8 +153,10 @@
 				AB9ABDA829192ACF00327425 /* Swatch.swift */,
 				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
 				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */,
 				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
 				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
+				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 				AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */,
 				AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */,
 				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
+				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
 				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
 				AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */,
+				ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */,
 				AB9ABDA22919242100327425 /* SwatchView.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
 				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,

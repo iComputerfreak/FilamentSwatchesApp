@@ -54,14 +54,10 @@ struct LibraryView: View {
             CreateSwatchView()
         }
         .sheet(item: $selectedSwatch) { swatch in
-            if let swatch {
-                SwatchView(swatch: swatch)
-            }
+            SwatchView(swatch: swatch)
         }
         .sheet(item: $editingSwatch) { swatch in
-            if let swatch {
-                CreateSwatchView(editing: swatch)
-            }
+            CreateSwatchView(editing: swatch)
         }
     }
     

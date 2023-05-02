@@ -15,10 +15,7 @@ enum NFCReaderError: Error {
     case newSessionWhileOldOpen
 }
 
-class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
-    private var continuation: CheckedContinuation<Swatch?, Error>?
-    private var session: NFCNDEFReaderSession?
-    
+class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
     func scanForSwatch() async throws -> Swatch? {
         print("Scanning for swatch")
         guard NFCNDEFReaderSession.readingAvailable else {
@@ -113,64 +110,42 @@ class NFCReader: NSObject, NFCNDEFReaderSessionDelegate {
         
         // Connect to the found tag and perform NDEF message reading
         let tag = tags.first!
-        session.connect(to: tag, completionHandler: { (error: Error?) in
-            if nil != error {
-                session.alertMessage = "Unable to connect to tag."
-                session.invalidate()
-                return
-            }
-            
-            tag.queryNDEFStatus(completionHandler: { (ndefStatus: NFCNDEFStatus, capacity: Int, error: Error?) in
+        
+        // MARK: Process the tag
+        Task(priority: .userInitiated) {
+            do {
+                try await session.connect(to: tag)
+                let (ndefStatus, _) = try await tag.queryNDEFStatus()
                 if .notSupported == ndefStatus {
-                    session.alertMessage = "Tag is not NDEF compliant"
-                    session.invalidate()
-                    return
-                } else if nil != error {
-                    session.alertMessage = "Unable to query NDEF status of tag"
-                    session.invalidate()
+                    self.finish(session, with: .success(nil), message: "Tag is not NDEF compliant.")
                     return
                 }
-                
-                tag.readNDEF(completionHandler: { (message: NFCNDEFMessage?, error: Error?) in
-                    var statusMessage: String
-                    if nil != error || nil == message {
-                        statusMessage = "Fail to read NDEF from tag"
-                    } else {
-                        statusMessage = ""
-                        // Process detected NFCNDEFMessage objects.
-                        self.processMessage(message!)
-                    }
-                    
-                    session.alertMessage = statusMessage
-                    session.invalidate()
-                })
-            })
-        })
+                let message = try await tag.readNDEF()
+                // Process detected NFCNDEFMessage objects.
+                self.processMessage(message)
+            } catch {
+                self.finish(session, with: .failure(error))
+            }
+        }
     }
     
     func processMessage(_ message: NFCNDEFMessage) {
-        // Check for an URL
-        for record in message.records {
-            if record.typeNameFormat == .nfcWellKnown {
-                if let url = record.wellKnownTypeURIPayload() {
-                    do {
-                        // Decode the URL parameters
-                        let swatch = try decodeSwatch(from: url)
-                        continuation?.resume(returning: swatch)
-                        continuation = nil
-                        session?.invalidate()
-                        return
-                    } catch NFCReaderError.noQueryItemsRead {
-                        continue // Continue with next record
-                    } catch {
-                        continuation?.resume(throwing: error)
-                        continuation = nil
-                        session?.invalidate()
-                        return
-                    }
-                }
-            }
-            print(record)
+        let urls = message.records
+            .filter { $0.typeNameFormat == .nfcWellKnown }
+            .compactMap { $0.wellKnownTypeURIPayload() }
+        
+        guard !urls.isEmpty else {
+            // The message does not contain any URLs
+            return
+        }
+        
+        let url = urls.first!
+        do {
+            // Decode the URL parameters
+            let swatch = try decodeSwatch(from: url)
+            self.finish(session, with: .success(swatch))
+        } catch {
+            self.finish(session, with: .failure(error))
         }
     }
 }
