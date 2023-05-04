@@ -41,6 +41,8 @@ struct ReadNFCButton: View {
                         // Show Swatch in SwatchView
                         self.presentedSwatch = swatch
                     }
+                } catch NFCReaderError.readingUnavailable {
+                    self.showingNFCNotAvailableAlert = true
                 } catch {
                     print(error)
                 }

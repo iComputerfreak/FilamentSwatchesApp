@@ -23,6 +23,8 @@ struct WriteNFCButton: View {
                     if result != true {
                         print("Reader did not correctly read swatch!")
                     }
+                } catch NFCReaderError.readingUnavailable {
+                    self.showingNFCNotAvailableAlert = true
                 } catch {
                     print(error)
                 }

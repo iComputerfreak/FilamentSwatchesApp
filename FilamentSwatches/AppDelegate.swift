@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    static var testingScreenshots = false
-    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -18,7 +16,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // MARK: Prepare for UI testing or screenshots
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("--screenshots") {
-            Self.testingScreenshots = true
+            SampleData.populateScreenshotData()
         }
         #endif
         

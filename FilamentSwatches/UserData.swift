@@ -48,7 +48,7 @@ class UserData: ObservableObject {
                 self.swatchHistory = []
             }
             
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? ""
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? "https://filamentswatch.info/index.php"
         } catch {
             fatalError("\(error)")
         }

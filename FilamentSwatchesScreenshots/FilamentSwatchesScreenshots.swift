@@ -8,34 +8,73 @@
 import XCTest
 
 final class FilamentSwatchesScreenshots: XCTestCase {
-
+    
+    private var app: XCUIApplication!
+    private var screenshotCounter: Int!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        try super.setUpWithError()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launchArguments.append("--screenshots")
+        setupSnapshot(app)
+        screenshotCounter = 1
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func testTakeAppStoreScreenshots() throws {
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        snapshot("Home")
+        
+        app.tabBars.buttons["Library"].tap()
+        snapshot("Library")
+        
+        app.navigationBars.buttons["Add"].tap()
+        snapshot("CreateSwatch")
+        app.swipeDown(velocity: .fast)
+        
+        // First list row
+        app.buttons.element(boundBy: 5).tap()
+        snapshot("SwatchView")
+        app.swipeDown(velocity: .fast)
+        
+        app.tabBars.buttons["Materials"].tap()
+        snapshot("Materials")
+        
+        app.tabBars.buttons["Settings"].tap()
+        snapshot("Settings")
+        
+        
+//        // Create the sample data
+//        app.tabBars.buttons["settings-tab"].tap()
+//        app.buttons["Generate Screenshot Data"].tap()
+//        app.tabBars.buttons["sheet-tab"].tap()
+//
+//        // Take the screenshots
+//        snapshot("Sheet")
+//
+//        app.navigationBars.buttons["add"].forceTap()
+//        app.buttons["time-based"].tap()
+//        snapshot("Create_Entry_Time")
+//        app.navigationBars.buttons.firstMatch.tap()
+//
+//        app.navigationBars.buttons["payout-button"].tap()
+//        snapshot("Create_Payout")
+//        app.swipeDown(velocity: .fast)
+//
+//        app.tabBars.buttons["payouts-tab"].tap()
+//        snapshot("Payouts")
+//
+//        app.tabBars.buttons["history-tab"].tap()
+//        snapshot("History")
+//
+//        app.tabBars.buttons["settings-tab"].tap()
+//        snapshot("Settings")
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    // Take a snapshot with a global increasing counter as a prefix
+    private func snapshot(_ name: String) {
+        Snapshot.snapshot("\(String(format: "%02d", screenshotCounter))_\(name)")
+        screenshotCounter += 1
     }
 }
