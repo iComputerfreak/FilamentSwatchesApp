@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
+		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
+		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
+		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
+		AB9ABD942919217700327425 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD932919217700327425 /* Preview Assets.xcassets */; };
+		AB9ABD9C291922CB00327425 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD9B291922CB00327425 /* HomeView.swift */; };
+		AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD9D2919241500327425 /* LibraryView.swift */; };
+		AB9ABDA02919241B00327425 /* CreateSwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */; };
+		AB9ABDA22919242100327425 /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA12919242100327425 /* SwatchView.swift */; };
+		AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA42919253600327425 /* ReadNFCButton.swift */; };
+		AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA6291929C100327425 /* SubtitleView.swift */; };
+		AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA829192ACF00327425 /* Swatch.swift */; };
+		AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAD29192B9100327425 /* FilamentColor.swift */; };
+		AB9ABDB0291930F600327425 /* SwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAF291930F600327425 /* SwatchRow.swift */; };
+		AB9ABDB22919349300327425 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB12919349300327425 /* SampleData.swift */; };
+		AB9ABDB42919361A00327425 /* MaterialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB32919361A00327425 /* MaterialsView.swift */; };
+		AB9ABDB6291993FB00327425 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB5291993FB00327425 /* UserData.swift */; };
+		AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */; };
+		AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */; };
+		AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */; };
+		ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A02A0159510059E4BF /* URLKeys.swift */; };
+		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
+		ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */; };
+		ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */; };
+		ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */; };
+		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
+		ABABF9DB291D065100364F64 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DA291D065100364F64 /* Modifiers.swift */; };
+		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
+		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
+		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABA8E7CB2A03F8C60059E4BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB9ABD812919217600327425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB9ABD882919217600327425;
+			remoteInfo = FilamentSwatches;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
+		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
+		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB9ABD902919217700327425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB9ABD932919217700327425 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB9ABD9B291922CB00327425 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AB9ABD9D2919241500327425 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSwatchView.swift; sourceTree = "<group>"; };
+		AB9ABDA12919242100327425 /* SwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
+		AB9ABDA42919253600327425 /* ReadNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNFCButton.swift; sourceTree = "<group>"; };
+		AB9ABDA6291929C100327425 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
+		AB9ABDA829192ACF00327425 /* Swatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swatch.swift; sourceTree = "<group>"; };
+		AB9ABDAD29192B9100327425 /* FilamentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentColor.swift; sourceTree = "<group>"; };
+		AB9ABDAF291930F600327425 /* SwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchRow.swift; sourceTree = "<group>"; };
+		AB9ABDB12919349300327425 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		AB9ABDB32919361A00327425 /* MaterialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialsView.swift; sourceTree = "<group>"; };
+		AB9ABDB5291993FB00327425 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterialRow.swift; sourceTree = "<group>"; };
+		AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTextField.swift; sourceTree = "<group>"; };
+		AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMaterialView.swift; sourceTree = "<group>"; };
+		ABA8E7A02A0159510059E4BF /* URLKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLKeys.swift; sourceTree = "<group>"; };
+		ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCSessionDelegate.swift; sourceTree = "<group>"; };
+		ABA8E7A42A016F2D0059E4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilamentSwatchesScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesScreenshots.swift; sourceTree = "<group>"; };
+		ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
+		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
+		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB9ABD862919217600327425 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA8E7C22A03F8C60059E4BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB9ABD802919217600327425 = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD8B2919217600327425 /* FilamentSwatches */,
+				ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
+				AB9ABD8A2919217600327425 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB9ABD8A2919217600327425 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD892919217600327425 /* FilamentSwatches.app */,
+				ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB9ABD8B2919217600327425 /* FilamentSwatches */ = {
+			isa = PBXGroup;
+			children = (
+				ABA8E7A42A016F2D0059E4BF /* Info.plist */,
+				AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */,
+				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
+				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
+				AB9ABDB12919349300327425 /* SampleData.swift */,
+				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				AB9ABDAA29192B1400327425 /* Models */,
+				AB9ABD9A2919219500327425 /* Views */,
+				AB9ABD902919217700327425 /* Assets.xcassets */,
+				AB9ABD922919217700327425 /* Preview Content */,
+			);
+			path = FilamentSwatches;
+			sourceTree = "<group>";
+		};
+		AB9ABD922919217700327425 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD932919217700327425 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AB9ABD9A2919219500327425 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDA32919252C00327425 /* Components */,
+				AB9ABD8E2919217600327425 /* ContentView.swift */,
+				AB9ABD9B291922CB00327425 /* HomeView.swift */,
+				AB9ABD9D2919241500327425 /* LibraryView.swift */,
+				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
+				AB9ABDA12919242100327425 /* SwatchView.swift */,
+				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
+				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
+				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB9ABDA32919252C00327425 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDA42919253600327425 /* ReadNFCButton.swift */,
+				ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */,
+				ABABF9DA291D065100364F64 /* Modifiers.swift */,
+				AB9ABDA6291929C100327425 /* SubtitleView.swift */,
+				AB9ABDAF291930F600327425 /* SwatchRow.swift */,
+				AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */,
+				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AB9ABDAA29192B1400327425 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDA829192ACF00327425 /* Swatch.swift */,
+				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
+				ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */,
+				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
+				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
+				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */,
+				ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */,
+			);
+			path = FilamentSwatchesScreenshots;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB9ABD882919217600327425 /* FilamentSwatches */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB9ABD972919217700327425 /* Build configuration list for PBXNativeTarget "FilamentSwatches" */;
+			buildPhases = (
+				AB9ABD852919217600327425 /* Sources */,
+				AB9ABD862919217600327425 /* Frameworks */,
+				AB9ABD872919217600327425 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilamentSwatches;
+			packageProductDependencies = (
+				ABC368D92922C09500E79D58 /* JFUtils */,
+			);
+			productName = FilamentSwatches;
+			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABA8E7C42A03F8C60059E4BF /* FilamentSwatchesScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABA8E7CF2A03F8C60059E4BF /* Build configuration list for PBXNativeTarget "FilamentSwatchesScreenshots" */;
+			buildPhases = (
+				ABA8E7C12A03F8C60059E4BF /* Sources */,
+				ABA8E7C22A03F8C60059E4BF /* Frameworks */,
+				ABA8E7C32A03F8C60059E4BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABA8E7CC2A03F8C60059E4BF /* PBXTargetDependency */,
+			);
+			name = FilamentSwatchesScreenshots;
+			productName = FilamentSwatchesScreenshots;
+			productReference = ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB9ABD812919217600327425 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					AB9ABD882919217600327425 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					ABA8E7C42A03F8C60059E4BF = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AB9ABD882919217600327425;
+					};
+				};
+			};
+			buildConfigurationList = AB9ABD842919217600327425 /* Build configuration list for PBXProject "FilamentSwatches" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB9ABD802919217600327425;
+			packageReferences = (
+				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
+			);
+			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB9ABD882919217600327425 /* FilamentSwatches */,
+				ABA8E7C42A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB9ABD872919217600327425 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9ABD942919217700327425 /* Preview Assets.xcassets in Resources */,
+				AB9ABD912919217700327425 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA8E7C32A03F8C60059E4BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB9ABD852919217600327425 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9ABDB0291930F600327425 /* SwatchRow.swift in Sources */,
+				AB9ABDA02919241B00327425 /* CreateSwatchView.swift in Sources */,
+				AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */,
+				AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */,
+				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
+				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
+				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
+				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
+				AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */,
+				ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */,
+				AB9ABDA22919242100327425 /* SwatchView.swift in Sources */,
+				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
+				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,
+				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
+				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
+				AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */,
+				AB9ABD9C291922CB00327425 /* HomeView.swift in Sources */,
+				AB9ABDB42919361A00327425 /* MaterialsView.swift in Sources */,
+				ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */,
+				ABABF9DB291D065100364F64 /* Modifiers.swift in Sources */,
+				AB9ABD8F2919217600327425 /* ContentView.swift in Sources */,
+				ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */,
+				AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */,
+				AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */,
+				ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA8E7C12A03F8C60059E4BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */,
+				ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABA8E7CC2A03F8C60059E4BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB9ABD882919217600327425 /* FilamentSwatches */;
+			targetProxy = ABA8E7CB2A03F8C60059E4BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AB9ABD952919217700327425 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB9ABD962919217700327425 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB9ABD982919217700327425 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/FilamentSwatches.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilamentSwatches/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatches;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		AB9ABD992919217700327425 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/FilamentSwatches.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FilamentSwatches/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Read NFC tags that store filament swatch data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatches;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		ABA8E7CD2A03F8C60059E4BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FilamentSwatches;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		ABA8E7CE2A03F8C60059E4BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FilamentSwatches;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB9ABD842919217600327425 /* Build configuration list for PBXProject "FilamentSwatches" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB9ABD952919217700327425 /* Debug */,
+				AB9ABD962919217700327425 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB9ABD972919217700327425 /* Build configuration list for PBXNativeTarget "FilamentSwatches" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB9ABD982919217700327425 /* Debug */,
+				AB9ABD992919217700327425 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABA8E7CF2A03F8C60059E4BF /* Build configuration list for PBXNativeTarget "FilamentSwatchesScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABA8E7CD2A03F8C60059E4BF /* Debug */,
+				ABA8E7CE2A03F8C60059E4BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iComputerfreak/JFUtils";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ABC368D92922C09500E79D58 /* JFUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */;
+			productName = JFUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AB9ABD812919217600327425 /* Project object */;
+}
