@@ -43,33 +43,6 @@ final class FilamentSwatchesScreenshots: XCTestCase {
         
         app.tabBars.buttons["Settings"].tap()
         snapshot("Settings")
-        
-        
-//        // Create the sample data
-//        app.tabBars.buttons["settings-tab"].tap()
-//        app.buttons["Generate Screenshot Data"].tap()
-//        app.tabBars.buttons["sheet-tab"].tap()
-//
-//        // Take the screenshots
-//        snapshot("Sheet")
-//
-//        app.navigationBars.buttons["add"].forceTap()
-//        app.buttons["time-based"].tap()
-//        snapshot("Create_Entry_Time")
-//        app.navigationBars.buttons.firstMatch.tap()
-//
-//        app.navigationBars.buttons["payout-button"].tap()
-//        snapshot("Create_Payout")
-//        app.swipeDown(velocity: .fast)
-//
-//        app.tabBars.buttons["payouts-tab"].tap()
-//        snapshot("Payouts")
-//
-//        app.tabBars.buttons["history-tab"].tap()
-//        snapshot("History")
-//
-//        app.tabBars.buttons["settings-tab"].tap()
-//        snapshot("Settings")
     }
     
     // Take a snapshot with a global increasing counter as a prefix
