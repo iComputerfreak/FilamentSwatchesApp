@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+extension View {
+    @ViewBuilder
+    func leadingLabel(_ label: LocalizedStringKey) -> some View {
+        HStack {
+            Text(label)
+            Spacer()
+            self
+                .multilineTextAlignment(.trailing)
+        }
+    }
+}
+
 struct CreateSwatchView: View {
     @State private var swatch: Swatch = Self.createNewSwatch()
     @State private var isEditing = false
@@ -34,11 +46,15 @@ struct CreateSwatchView: View {
                         Text(material)
                     }
                 }
-                TextField("Brand", text: $swatch.brand)
-                TextField("Product Line (optional)", text: $swatch.productLine)
-                TextField("Color Name", text: $swatch.colorName)
+                TextField("(required)", text: $swatch.brand)
+                    .leadingLabel("Brand")
+                TextField("(optional)", text: $swatch.productLine)
+                    .leadingLabel("Product Line")
+                TextField("(required)", text: $swatch.colorName)
+                    .leadingLabel("Color Name")
                 TemperatureTextField("Extruder Temp", value: $swatch.extruderTemp)
                 TemperatureTextField("Bed Temp", value: $swatch.bedTemp)
+                
                 Section(header: Text("Color")) {
                     Toggle("Use Color?", isOn: Binding(get: {
                         swatch.color != nil
@@ -109,6 +125,6 @@ struct CreateSwatchView: View {
 struct CreateSwatchView_Previews: PreviewProvider {
     static var previews: some View {
         CreateSwatchView()
-            .environmentObject(SampleData.userData)
+            .environmentObject(SampleData.previewUserData)
     }
 }

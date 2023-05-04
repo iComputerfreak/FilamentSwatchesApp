@@ -75,7 +75,7 @@ struct SwatchView_Previews: PreviewProvider {
         Text("")
             .sheet(isPresented: .constant(true)) {
                 SwatchView(swatch: SampleData.swatch)
-                    .environmentObject(SampleData.userData)
+                    .environmentObject(SampleData.previewUserData)
             }
     }
 }

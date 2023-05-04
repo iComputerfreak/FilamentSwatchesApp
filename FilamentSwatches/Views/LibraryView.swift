@@ -28,7 +28,14 @@ struct LibraryView: View {
                                     SwatchRow(swatch: swatch)
                                 }
                                 .tint(.primary)
-                                .contextMenu {
+                                .swipeActions(allowsFullSwipe: true) {
+                                    Button {
+                                        userData.swatches.removeAll(where: { $0.id == swatch.id })
+                                        userData.save()
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                    .tint(.red)
                                     Button {
                                         self.editingSwatch = swatch
                                     } label: {
@@ -36,7 +43,6 @@ struct LibraryView: View {
                                     }
                                 }
                             }
-                            .onDelete { self.deleteSwatches(at: $0, from: swatches) }
                         }
                     }
                 }
@@ -60,19 +66,11 @@ struct LibraryView: View {
             CreateSwatchView(editing: swatch)
         }
     }
-    
-    func deleteSwatches(at indexSet: IndexSet, from swatches: [Swatch]) {
-        for index in indexSet {
-            let swatch = swatches[index]
-            userData.swatches.removeAll { $0.id == swatch.id }
-        }
-        userData.save()
-    }
 }
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
         LibraryView()
-            .environmentObject(SampleData.userData)
+            .environmentObject(SampleData.previewUserData)
     }
 }

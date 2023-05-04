@@ -29,12 +29,26 @@
 		AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */; };
 		ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A02A0159510059E4BF /* URLKeys.swift */; };
 		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
+		ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */; };
+		ABA8E7CA2A03F8C60059E4BF /* FilamentSwatchesScreenshotsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C92A03F8C60059E4BF /* FilamentSwatchesScreenshotsLaunchTests.swift */; };
+		ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */; };
+		ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */; };
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
 		ABABF9DB291D065100364F64 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DA291D065100364F64 /* Modifiers.swift */; };
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
 		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
 		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABA8E7CB2A03F8C60059E4BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB9ABD812919217600327425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB9ABD882919217600327425;
+			remoteInfo = FilamentSwatches;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
@@ -62,6 +76,11 @@
 		ABA8E7A02A0159510059E4BF /* URLKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLKeys.swift; sourceTree = "<group>"; };
 		ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCSessionDelegate.swift; sourceTree = "<group>"; };
 		ABA8E7A42A016F2D0059E4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilamentSwatchesScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesScreenshots.swift; sourceTree = "<group>"; };
+		ABA8E7C92A03F8C60059E4BF /* FilamentSwatchesScreenshotsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesScreenshotsLaunchTests.swift; sourceTree = "<group>"; };
+		ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
 		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
@@ -77,6 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABA8E7C22A03F8C60059E4BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9ABD8B2919217600327425 /* FilamentSwatches */,
+				ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
 				AB9ABD8A2919217600327425 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9ABD892919217600327425 /* FilamentSwatches.app */,
+				ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +130,10 @@
 				ABA8E7A42A016F2D0059E4BF /* Info.plist */,
 				AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
+				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
 				AB9ABDB12919349300327425 /* SampleData.swift */,
+				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				AB9ABDAA29192B1400327425 /* Models */,
 				AB9ABD9A2919219500327425 /* Views */,
 				AB9ABD902919217700327425 /* Assets.xcassets */,
 				AB9ABD922919217700327425 /* Preview Content */,
@@ -130,7 +161,6 @@
 				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
 				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
 				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
-				AB9ABDAA29192B1400327425 /* Models */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,13 +184,22 @@
 			children = (
 				AB9ABDA829192ACF00327425 /* Swatch.swift */,
 				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
-				AB9ABDB5291993FB00327425 /* UserData.swift */,
 				ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */,
 				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
 				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
 				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */,
+				ABA8E7C92A03F8C60059E4BF /* FilamentSwatchesScreenshotsLaunchTests.swift */,
+				ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */,
+			);
+			path = FilamentSwatchesScreenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +225,24 @@
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABA8E7C42A03F8C60059E4BF /* FilamentSwatchesScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABA8E7CF2A03F8C60059E4BF /* Build configuration list for PBXNativeTarget "FilamentSwatchesScreenshots" */;
+			buildPhases = (
+				ABA8E7C12A03F8C60059E4BF /* Sources */,
+				ABA8E7C22A03F8C60059E4BF /* Frameworks */,
+				ABA8E7C32A03F8C60059E4BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABA8E7CC2A03F8C60059E4BF /* PBXTargetDependency */,
+			);
+			name = FilamentSwatchesScreenshots;
+			productName = FilamentSwatchesScreenshots;
+			productReference = ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,11 +250,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					AB9ABD882919217600327425 = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					ABA8E7C42A03F8C60059E4BF = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AB9ABD882919217600327425;
 					};
 				};
 			};
@@ -218,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				AB9ABD882919217600327425 /* FilamentSwatches */,
+				ABA8E7C42A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +291,13 @@
 			files = (
 				AB9ABD942919217700327425 /* Preview Assets.xcassets in Resources */,
 				AB9ABD912919217700327425 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA8E7C32A03F8C60059E4BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +321,7 @@
 				AB9ABDA22919242100327425 /* SwatchView.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
 				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,
+				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
 				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
 				AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */,
 				AB9ABD9C291922CB00327425 /* HomeView.swift in Sources */,
@@ -266,7 +336,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABA8E7C12A03F8C60059E4BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA8E7CA2A03F8C60059E4BF /* FilamentSwatchesScreenshotsLaunchTests.swift in Sources */,
+				ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */,
+				ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABA8E7CC2A03F8C60059E4BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB9ABD882919217600327425 /* FilamentSwatches */;
+			targetProxy = ABA8E7CB2A03F8C60059E4BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AB9ABD952919217700327425 /* Debug */ = {
@@ -449,6 +537,42 @@
 			};
 			name = Release;
 		};
+		ABA8E7CD2A03F8C60059E4BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FilamentSwatches;
+			};
+			name = Debug;
+		};
+		ABA8E7CE2A03F8C60059E4BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46C9Y785NA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FilamentSwatches;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -466,6 +590,15 @@
 			buildConfigurations = (
 				AB9ABD982919217700327425 /* Debug */,
 				AB9ABD992919217700327425 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABA8E7CF2A03F8C60059E4BF /* Build configuration list for PBXNativeTarget "FilamentSwatchesScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABA8E7CD2A03F8C60059E4BF /* Debug */,
+				ABA8E7CE2A03F8C60059E4BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

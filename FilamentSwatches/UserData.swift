@@ -21,6 +21,8 @@ class UserData: ObservableObject {
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     
+    static let shared: UserData = .init()
+    
     @Published var swatches: [Swatch]
     @Published var materials: [String]
     @Published var swatchHistory: [Swatch]
