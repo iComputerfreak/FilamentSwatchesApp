@@ -1,6 +1,0 @@
-/* Bundle display name */
-"CFBundleDisplayName" = "Swatches";
-/* Bundle name */
-"CFBundleName" = "FilamentSwatches";
-/* Privacy - NFC Scan Usage Description */
-"NFCReaderUsageDescription" = "Read NFC tags that store filament swatch data";
