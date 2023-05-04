@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="FilamentSwatches/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="de">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3" build-num="14E222b"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+        <source>Swatches</source>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>FilamentSwatches</source>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NFCReaderUsageDescription" xml:space="preserve">
+        <source>Read NFC tags that store filament swatch data</source>
+        <target>NFC Tags lesen und schreiben, um Filament-Informationen zu speichern.</target>
+        <note>Privacy - NFC Scan Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FilamentSwatches/en.lproj/Localizable.strings" source-language="en" target-language="de" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="14.3" build-num="14E222b"/>
+    </header>
+    <body>
+      <trans-unit id="(optional)" xml:space="preserve">
+        <source>(optional)</source>
+        <target>(optional)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="(required)" xml:space="preserve">
+        <source>(required)</source>
+        <target>(benötigt)</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add to Library" xml:space="preserve">
+        <source>Add to Library</source>
+        <target>Zur Bibliothek hinzufügen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Base URL" xml:space="preserve">
+        <source>Base URL</source>
+        <target>Basis-URL</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Bed Temp" xml:space="preserve">
+        <source>Bed Temp</source>
+        <target>Bett Temp.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Brand" xml:space="preserve">
+        <source>Brand</source>
+        <target>Marke</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Color" xml:space="preserve">
+        <source>Color</source>
+        <target>Farbe</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Color Name" xml:space="preserve">
+        <source>Color Name</source>
+        <target>Farbname</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create Material" xml:space="preserve">
+        <source>Create Material</source>
+        <target>Material Erstellen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Create Swatch" xml:space="preserve">
+        <source>Create Swatch</source>
+        <target>Muster Erstellen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Delete" xml:space="preserve">
+        <source>Delete</source>
+        <target>Löschen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Edit" xml:space="preserve">
+        <source>Edit</source>
+        <target>Bearbeiten</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Edit Material" xml:space="preserve">
+        <source>Edit Material</source>
+        <target>Material Bearbeiten</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Edit Swatch" xml:space="preserve">
+        <source>Edit Swatch</source>
+        <target>Muster Bearbeiten</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Extruder Temp" xml:space="preserve">
+        <source>Extruder Temp</source>
+        <target>Extruder Temp.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Home" xml:space="preserve">
+        <source>Home</source>
+        <target>Home</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Library" xml:space="preserve">
+        <source>Library</source>
+        <target>Bibliothek</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Material" xml:space="preserve">
+        <source>Material</source>
+        <target>Material</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Materials" xml:space="preserve">
+        <source>Materials</source>
+        <target>Materialien</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Name" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ok" xml:space="preserve">
+        <source>Ok</source>
+        <target>Ok</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Product Line" xml:space="preserve">
+        <source>Product Line</source>
+        <target>Produktlinie</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Read Tag" xml:space="preserve">
+        <source>Read Tag</source>
+        <target>Tag Lesen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Recent Scans" xml:space="preserve">
+        <source>Recent Scans</source>
+        <target>Zuletzt Gescannt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Save" xml:space="preserve">
+        <source>Save</source>
+        <target>Speichern</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Scanning Not Supported" xml:space="preserve">
+        <source>Scanning Not Supported</source>
+        <target>Scannen nicht unterstützt</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Select..." xml:space="preserve">
+        <source>Select...</source>
+        <target>Auswählen...</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Settings" xml:space="preserve">
+        <source>Settings</source>
+        <target>Einstellungen</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Temp" xml:space="preserve">
+        <source>Temp</source>
+        <target>Temp.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo." xml:space="preserve">
+        <source>The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo.</source>
+        <target>Die Basis-URL wird dafür benutzt, um Muster-Informationen in die NFC-Tags zu kodieren, damit auch andere Geräte die Informationen ansehen können, ohne die App installiert haben zu müssen. Wenn Sie gerne ihre eigene Muster-Informations-Seite hosten würden, können sie die benötigten Informationen dazu hier finden: https://github.com/iComputerfreak/FilamentInfo.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="This device doesn't support tag scanning." xml:space="preserve">
+        <source>This device doesn't support tag scanning.</source>
+        <target>Dieses Gerät unterstützt kein NFC-Tag Scannen.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Use Color?" xml:space="preserve">
+        <source>Use Color?</source>
+        <target>Farbe benutzen?</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Write Tag" xml:space="preserve">
+        <source>Write Tag</source>
+        <target>Tag Schreiben</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="°C" xml:space="preserve">
+        <source>°C</source>
+        <target>ºC</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

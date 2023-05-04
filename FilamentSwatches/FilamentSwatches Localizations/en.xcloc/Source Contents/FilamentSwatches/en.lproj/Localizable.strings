@@ -1,0 +1,105 @@
+/* No comment provided by engineer. */
+"" = "";
+
+/* No comment provided by engineer. */
+"(optional)" = "(optional)";
+
+/* No comment provided by engineer. */
+"(required)" = "(required)";
+
+/* No comment provided by engineer. */
+"°C" = "°C";
+
+/* No comment provided by engineer. */
+"Add to Library" = "Add to Library";
+
+/* No comment provided by engineer. */
+"Base URL" = "Base URL";
+
+/* No comment provided by engineer. */
+"Bed Temp" = "Bed Temp";
+
+/* No comment provided by engineer. */
+"Brand" = "Brand";
+
+/* No comment provided by engineer. */
+"Color" = "Color";
+
+/* No comment provided by engineer. */
+"Color Name" = "Color Name";
+
+/* No comment provided by engineer. */
+"Create Material" = "Create Material";
+
+/* No comment provided by engineer. */
+"Create Swatch" = "Create Swatch";
+
+/* No comment provided by engineer. */
+"Delete" = "Delete";
+
+/* No comment provided by engineer. */
+"Edit" = "Edit";
+
+/* No comment provided by engineer. */
+"Edit Material" = "Edit Material";
+
+/* No comment provided by engineer. */
+"Edit Swatch" = "Edit Swatch";
+
+/* No comment provided by engineer. */
+"Extruder Temp" = "Extruder Temp";
+
+/* No comment provided by engineer. */
+"Home" = "Home";
+
+/* No comment provided by engineer. */
+"Library" = "Library";
+
+/* No comment provided by engineer. */
+"Material" = "Material";
+
+/* No comment provided by engineer. */
+"Materials" = "Materials";
+
+/* No comment provided by engineer. */
+"Name" = "Name";
+
+/* No comment provided by engineer. */
+"Ok" = "Ok";
+
+/* No comment provided by engineer. */
+"Product Line" = "Product Line";
+
+/* No comment provided by engineer. */
+"Read Tag" = "Read Tag";
+
+/* No comment provided by engineer. */
+"Recent Scans" = "Recent Scans";
+
+/* No comment provided by engineer. */
+"Save" = "Save";
+
+/* No comment provided by engineer. */
+"Scanning Not Supported" = "Scanning Not Supported";
+
+/* No comment provided by engineer. */
+"Select..." = "Select...";
+
+/* No comment provided by engineer. */
+"Settings" = "Settings";
+
+/* No comment provided by engineer. */
+"Temp" = "Temp";
+
+/* No comment provided by engineer. */
+"The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo." = "The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo.";
+
+/* No comment provided by engineer. */
+"This device doesn't support tag scanning." = "This device doesn't support tag scanning.";
+
+/* No comment provided by engineer. */
+"Use Color?" = "Use Color?";
+
+/* No comment provided by engineer. */
+"Write Tag" = "Write Tag";
+
