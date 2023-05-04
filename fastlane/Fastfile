@@ -13,7 +13,7 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-github_repo = "iComputerfreak/FilamentSwatches"
+github_repo = "iComputerfreak/FilamentSwatchesApp"
 
 default_platform(:ios)
 
