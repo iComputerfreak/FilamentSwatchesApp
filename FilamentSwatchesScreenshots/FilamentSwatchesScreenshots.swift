@@ -24,12 +24,12 @@ final class FilamentSwatchesScreenshots: XCTestCase {
     func testTakeAppStoreScreenshots() throws {
         app.launch()
         
-        snapshot("Home")
+        snapshot("home-tab")
         
-        app.tabBars.buttons["Library"].tap()
+        app.tabBars.buttons["library-tab"].tap()
         snapshot("Library")
         
-        app.navigationBars.buttons["Add"].tap()
+        app.navigationBars.buttons["add-swatch"].tap()
         snapshot("CreateSwatch")
         app.swipeDown(velocity: .fast)
         
@@ -38,10 +38,10 @@ final class FilamentSwatchesScreenshots: XCTestCase {
         snapshot("SwatchView")
         app.swipeDown(velocity: .fast)
         
-        app.tabBars.buttons["Materials"].tap()
+        app.tabBars.buttons["materials-tab"].tap()
         snapshot("Materials")
         
-        app.tabBars.buttons["Settings"].tap()
+        app.tabBars.buttons["settings-tab"].tap()
         snapshot("Settings")
     }
     

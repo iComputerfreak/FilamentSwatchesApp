@@ -14,17 +14,20 @@ struct SettingsView: View {
     @State private var setupInfoShowing = false
     
     var body: some View {
-        Form {
-            Section {
-                TextField("Base URL", text: $userData.baseURL)
-                    .keyboardType(.URL)
-                    .autocorrectionDisabled()
-                    .onChange(of: userData.baseURL) { _ in
-                        userData.save()
-                    }
-            } footer: {
-                Text("The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo.")
-            }
+        NavigationStack {
+			Form {
+				Section {
+					TextField("Base URL", text: $userData.baseURL)
+						.keyboardType(.URL)
+						.autocorrectionDisabled()
+						.onChange(of: userData.baseURL) { _ in
+							userData.save()
+						}
+				} footer: {
+					Text("The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed can display the information aswell. If you would like to host your own swatch information website (e.g. to customize the looks), take a look at https://github.com/iComputerfreak/FilamentInfo.")
+				}
+			}
+			.navigationTitle("Settings")
         }
     }
 }

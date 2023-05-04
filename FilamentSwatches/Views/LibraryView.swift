@@ -54,6 +54,7 @@ struct LibraryView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+                .accessibilityLabel("add-swatch")
             }
         }
         .sheet(isPresented: $addSheetShowing) {

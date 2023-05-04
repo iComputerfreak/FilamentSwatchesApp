@@ -14,24 +14,28 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
+                        .accessibilityIdentifier("home-tab")
                 }
             
             LibraryView()
                 .tabItem {
                     Image(systemName: "swatchpalette")
                     Text("Library")
+                        .accessibilityIdentifier("library-tab")
                 }
             
             MaterialsView()
                 .tabItem {
                     Image(systemName: "cylinder.split.1x2")
                     Text("Materials")
+                        .accessibilityIdentifier("materials-tab")
                 }
             
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
+                        .accessibilityIdentifier("settings-tab")
                 }
         }
     }
