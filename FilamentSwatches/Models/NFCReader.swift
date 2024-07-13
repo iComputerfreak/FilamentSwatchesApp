@@ -47,7 +47,7 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
             let nfcError = error as? CoreNFC.NFCReaderError,
             // Code 200 == "Session invalidated by user"
             nfcError.errorCode == 200
-        {
+        { // swiftlint:disable:this opening_brace
             continuation?.resume(returning: nil)
         } else {
             continuation?.resume(throwing: error)
@@ -87,9 +87,9 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         
         let productLine = query(URLKeys.productLine)
         // We nil-coalesce the double Optionals to a single optional containing nil
-        let color = query(URLKeys.colorCode).map(FilamentColor.init(hexCode:)) ?? nil
-        let extruderTemp = query(URLKeys.extruderTemp).map(Int.init) ?? nil
-        let bedTemp = query(URLKeys.bedTemp).map(Int.init) ?? nil
+        let color = query(URLKeys.colorCode).map(FilamentColor.init(hexCode:))?.flatMap { $0 }
+        let extruderTemp = query(URLKeys.extruderTemp).map(Int.init)?.flatMap { $0 }
+        let bedTemp = query(URLKeys.bedTemp).map(Int.init)?.flatMap { $0 }
         
         return Swatch(
             material: material,
@@ -160,11 +160,6 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
 
 extension Collection where Element: Equatable {
     func containsAll(_ elements: [Element]) -> Bool {
-        for element in elements {
-            if !self.contains(element) {
-                return false
-            }
-        }
-        return true
+        elements.allSatisfy(self.contains)
     }
 }

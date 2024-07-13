@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class UserData: ObservableObject {
-    
     private static let swatchesKey = "swatches"
     private static let materialsKey = "materials"
     private static let swatchHistoryKey = "swatchHistory"
@@ -68,5 +67,4 @@ class UserData: ObservableObject {
             print(error)
         }
     }
-    
 }
