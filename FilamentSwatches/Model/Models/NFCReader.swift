@@ -35,10 +35,10 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         // Read NFC Data
         self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         
-        return try await withCheckedThrowingContinuation({ continuation in
+        return try await withCheckedThrowingContinuation { continuation in
             self.continuation = continuation
             session?.begin()
-        })
+        }
     }
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
@@ -78,7 +78,9 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         }
         
         func query(_ key: String) -> String? {
-            queryItems.first(where: { $0.name == key })?.value
+            queryItems
+                .first { $0.name == key }?
+                .value
         }
         
         guard
@@ -115,9 +117,9 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
             let retryInterval = DispatchTimeInterval.milliseconds(500)
             // TODO: Localize!
             session.alertMessage = "More than 1 tag is detected. Please remove all tags and try again."
-            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval) {
                 session.restartPolling()
-            })
+            }
             return
         }
         

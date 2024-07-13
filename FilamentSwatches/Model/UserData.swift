@@ -11,14 +11,14 @@ import Logging
 import SwiftUI
 
 class UserData: ObservableObject {
-    private static let swatchesKey = "swatches"
-    private static let materialsKey = "materials"
-    private static let swatchHistoryKey = "swatchHistory"
-    private static let baseURLKey = "baseURL"
+    private static let swatchesKey: String = "swatches"
+    private static let materialsKey: String = "materials"
+    private static let swatchHistoryKey: String = "swatchHistory"
+    private static let baseURLKey: String = "baseURL"
     
-    static let maxHistoryItems = 10
+    static let maxHistoryItems: Int = 10
     
-    private static let userDefaults = UserDefaults.standard
+    private static let userDefaults: UserDefaults = .standard
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     

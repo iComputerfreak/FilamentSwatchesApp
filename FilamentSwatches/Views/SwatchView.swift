@@ -24,7 +24,8 @@ private struct SwatchViewRow: View {
 
 struct SwatchView: View {
     let swatch: Swatch
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss)
+    private var dismiss: DismissAction
     @EnvironmentObject private var userData: UserData
     
     var body: some View {

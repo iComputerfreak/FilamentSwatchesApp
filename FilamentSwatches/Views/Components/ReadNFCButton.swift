@@ -17,7 +17,7 @@ struct ReadNFCButton: View {
     
     @Injected private var logger: Logger
     
-    @State private var showingNFCNotAvailableAlert = false
+    @State private var showingNFCNotAvailableAlert: Bool = false
     
     var body: some View {
         Button {

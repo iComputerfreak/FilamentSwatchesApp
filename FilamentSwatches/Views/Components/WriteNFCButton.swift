@@ -15,7 +15,7 @@ struct WriteNFCButton: View {
     
     @Injected private var logger: Logger
     
-    @State private var showingNFCNotAvailableAlert = false
+    @State private var showingNFCNotAvailableAlert: Bool = false
     @EnvironmentObject private var userData: UserData
     
     var body: some View {

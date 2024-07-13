@@ -29,7 +29,15 @@ struct Swatch: Identifiable, Codable, Hashable {
         !colorName.isEmpty
     }
     
-    init(material: String, brand: String, productLine: String = "", colorName: String, color: FilamentColor? = nil, extruderTemp: Int = 0, bedTemp: Int = 0) {
+    init(
+        material: String,
+        brand: String,
+        productLine: String = "",
+        colorName: String,
+        color: FilamentColor? = nil,
+        extruderTemp: Int = 0,
+        bedTemp: Int = 0
+    ) {
         self.material = material
         self.brand = brand
         self.productLine = productLine

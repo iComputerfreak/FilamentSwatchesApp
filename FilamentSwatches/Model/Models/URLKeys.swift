@@ -6,11 +6,11 @@
 //
 
 enum URLKeys {
-    static let material = "material"
-    static let brand = "brand"
-    static let colorName = "color"
-    static let extruderTemp = "extruder_temp"
-    static let bedTemp = "bed_temp"
-    static let productLine = "product_line"
-    static let colorCode = "color_code"
+    static let material: String = "material"
+    static let brand: String = "brand"
+    static let colorName: String = "color"
+    static let extruderTemp: String = "extruder_temp"
+    static let bedTemp: String = "bed_temp"
+    static let productLine: String = "product_line"
+    static let colorCode: String = "color_code"
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct SubtitleView: View {
     let text: LocalizedStringKey
     
+    // swiftlint:disable:next type_contents_order
     init(_ text: LocalizedStringKey) {
         self.text = text
     }

@@ -11,6 +11,7 @@ struct TemperatureTextField: View {
     let label: LocalizedStringKey
     @Binding var value: Int
     
+    // swiftlint:disable:next type_contents_order
     init(_ label: LocalizedStringKey, value: Binding<Int>) {
         self.label = label
         self._value = value

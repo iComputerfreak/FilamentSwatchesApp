@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MaterialsView: View {
     @EnvironmentObject private var userData: UserData
-    @Environment(\.editMode) private var editMode
+    @Environment(\.editMode)
+    private var editMode: Binding<EditMode>?
     
-    @State private var addSheetShowing = false
+    @State private var addSheetShowing: Bool = false
     
     var body: some View {
         NavigationStack {

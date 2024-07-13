@@ -9,32 +9,21 @@ import DependencyInjection
 import Logging
 import SwiftUI
 
-// TODO: Move out
-extension View {
-    @ViewBuilder
-    func leadingLabel(_ label: LocalizedStringKey) -> some View {
-        HStack {
-            Text(label)
-            Spacer()
-            self
-                .multilineTextAlignment(.trailing)
-        }
-    }
-}
-
 struct CreateSwatchView: View {
     @State private var swatch: Swatch = Self.createNewSwatch()
-    @State private var isEditing = false
+    @State private var isEditing: Bool = false
     @EnvironmentObject private var userData: UserData
-    @Environment(\.dismiss) private var dismiss
+    
+    @Environment(\.dismiss)
+    private var dismiss: DismissAction
     
     @Injected private var logger: Logger
     
     /// Create new swatch
-    init() {}
+    init() {} // swiftlint:disable:this type_contents_order
     
     /// Edit existing swatch
-    init(editing swatch: Swatch) {
+    init(editing swatch: Swatch) { // swiftlint:disable:this type_contents_order
         self.init()
         self.swatch = swatch
         self.isEditing = true

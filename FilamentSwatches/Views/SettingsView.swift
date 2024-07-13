@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var userData: UserData
-    @State private var setupInfoShowing = false
+    @State private var setupInfoShowing: Bool = false
     
     var body: some View {
         NavigationStack {

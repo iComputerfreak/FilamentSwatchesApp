@@ -7,6 +7,6 @@
 
 enum GlobalConstants {
     enum DefaultValues {
-        static let baseURL = "https://filamentswatch.info"
+        static let baseURL: String = "https://filamentswatch.info"
     }
 }

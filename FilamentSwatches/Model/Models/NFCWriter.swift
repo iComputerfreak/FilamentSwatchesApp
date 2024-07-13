@@ -142,9 +142,9 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
             // Restart polling in 500 milliseconds.
             let retryInterval = DispatchTimeInterval.milliseconds(500)
             session.alertMessage = "More than 1 tag is detected. Please remove all tags and try again."
-            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval) {
                 session.restartPolling()
-            })
+            }
             return
         }
         
