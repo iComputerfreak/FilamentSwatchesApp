@@ -6,7 +6,7 @@ enum AppTarget {
     case debug
     case release
     
-    static var current: AppTarget {
+    static var current: Self {
         #if DEBUG
         return .debug
         #else

@@ -5,13 +5,17 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
-import SwiftUI
 import CoreNFC
+import DependencyInjection
+import Logging
+import SwiftUI
 
 struct ReadNFCButton: View {
     @Binding var presentedSwatch: Swatch?
     @EnvironmentObject private var userData: UserData
     let reader = NFCReader()
+    
+    @Injected private var logger: Logger
     
     @State private var showingNFCNotAvailableAlert = false
     
@@ -20,7 +24,7 @@ struct ReadNFCButton: View {
             Task {
                 do {
                     guard let swatch = try await reader.scanForSwatch() else {
-                        print("Reader did not read a valid swatch!")
+                        logger.error("Reader did not read a valid swatch!", category: .nfc)
                         return
                     }
                     
@@ -44,7 +48,7 @@ struct ReadNFCButton: View {
                 } catch NFCReaderError.readingUnavailable {
                     self.showingNFCNotAvailableAlert = true
                 } catch {
-                    print(error)
+                    logger.error("Error reading swatch data: \(error)", category: .nfc)
                 }
             }
         } label: {

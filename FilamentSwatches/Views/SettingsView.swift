@@ -5,8 +5,8 @@
 //  Created by Jonas Frey on 14.11.22.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var userData: UserData

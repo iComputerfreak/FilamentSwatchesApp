@@ -5,7 +5,9 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
 import Foundation
+import Logging
 import SwiftUI
 
 class UserData: ObservableObject {
@@ -26,6 +28,8 @@ class UserData: ObservableObject {
     @Published var materials: [String]
     @Published var swatchHistory: [Swatch]
     @Published var baseURL: String
+    
+    @Injected private var logger: Logger
     
     init() {
         do {
@@ -64,7 +68,7 @@ class UserData: ObservableObject {
             Self.userDefaults.set(swatchHistoryData, forKey: Self.swatchHistoryKey)
             Self.userDefaults.set(baseURL, forKey: Self.baseURLKey)
         } catch {
-            print(error)
+            logger.error("Error saving user data: \(error)", category: .persistence)
         }
     }
 }

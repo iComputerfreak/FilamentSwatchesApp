@@ -5,11 +5,15 @@
 //  Created by Jonas Frey on 10.11.22.
 //
 
-import SwiftUI
 import CoreNFC
+import DependencyInjection
+import Logging
+import SwiftUI
 
 struct WriteNFCButton: View {
     let swatch: Swatch
+    
+    @Injected private var logger: Logger
     
     @State private var showingNFCNotAvailableAlert = false
     @EnvironmentObject private var userData: UserData
@@ -21,12 +25,12 @@ struct WriteNFCButton: View {
                     let writer = NFCWriter(baseURL: userData.baseURL)
                     let result = try await writer.writeSwatch(swatch)
                     if result != true {
-                        print("Reader did not correctly read swatch!")
+                        logger.error("Reader did not correctly read swatch!", category: .nfc)
                     }
                 } catch NFCReaderError.readingUnavailable {
                     self.showingNFCNotAvailableAlert = true
                 } catch {
-                    print(error)
+                    logger.error("Error reading swatch data: \(error)", category: .nfc)
                 }
             }
         } label: {
