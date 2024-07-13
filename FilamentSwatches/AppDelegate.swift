@@ -20,6 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         #endif
         
+        DependencyInitializer().register()
+        
         return true
     }
 }
