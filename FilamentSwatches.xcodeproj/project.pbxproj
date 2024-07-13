@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0214042C42ECED0035EE68 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = AB0214032C42ECED0035EE68 /* Logging */; };
+		AB02140A2C42F7470035EE68 /* AppFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AB0214092C42F7470035EE68 /* AppFoundation */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
 		AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = AB158AC22C42E0200074025F /* DependencyInjection */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
@@ -105,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0214042C42ECED0035EE68 /* Logging in Frameworks */,
+				AB02140A2C42F7470035EE68 /* AppFoundation in Frameworks */,
 				AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */,
 				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
 			);
@@ -257,6 +259,7 @@
 				ABC368D92922C09500E79D58 /* JFUtils */,
 				AB158AC22C42E0200074025F /* DependencyInjection */,
 				AB0214032C42ECED0035EE68 /* Logging */,
+				AB0214092C42F7470035EE68 /* AppFoundation */,
 			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
@@ -314,6 +317,7 @@
 				AB5B09B32C42AB5B003AD0A0 /* XCLocalSwiftPackageReference "Packages/Logging" */,
 				AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
 				AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -677,6 +681,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AppFoundation;
+		};
 		AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/DependencyInjection;
@@ -710,6 +718,10 @@
 		AB0214032C42ECED0035EE68 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logging;
+		};
+		AB0214092C42F7470035EE68 /* AppFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFoundation;
 		};
 		AB158AC22C42E0200074025F /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
