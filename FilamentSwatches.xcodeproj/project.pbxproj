@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0214042C42ECED0035EE68 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = AB0214032C42ECED0035EE68 /* Logging */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
 		AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = AB158AC22C42E0200074025F /* DependencyInjection */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
-		AB5B09B52C42AB5B003AD0A0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = AB5B09B42C42AB5B003AD0A0 /* Logging */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -104,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0214042C42ECED0035EE68 /* Logging in Frameworks */,
 				AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */,
-				AB5B09B52C42AB5B003AD0A0 /* Logging in Frameworks */,
 				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +120,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0214022C42ECED0035EE68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB158ABE2C42DF630074025F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +142,7 @@
 				AB9ABD8B2919217600327425 /* FilamentSwatches */,
 				ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
 				AB9ABD8A2919217600327425 /* Products */,
+				AB0214022C42ECED0035EE68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,8 +255,8 @@
 			name = FilamentSwatches;
 			packageProductDependencies = (
 				ABC368D92922C09500E79D58 /* JFUtils */,
-				AB5B09B42C42AB5B003AD0A0 /* Logging */,
 				AB158AC22C42E0200074025F /* DependencyInjection */,
+				AB0214032C42ECED0035EE68 /* Logging */,
 			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
@@ -699,13 +707,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB0214032C42ECED0035EE68 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
 		AB158AC22C42E0200074025F /* DependencyInjection */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DependencyInjection;
-		};
-		AB5B09B42C42AB5B003AD0A0 /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logging;
 		};
 		AB8D44BF2C42E78500434A90 /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
