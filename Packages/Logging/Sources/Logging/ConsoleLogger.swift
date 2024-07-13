@@ -3,7 +3,7 @@
 import Foundation
 import os.log
 
-public class ConsoleLogger: LoggerProtocol {
+public class ConsoleLogger: Logger {
     private let subsystem: String = Bundle.main.bundleIdentifier ?? UUID().uuidString
     
     public init() {}

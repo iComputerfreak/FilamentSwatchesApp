@@ -6,14 +6,13 @@
 
 import OSLog
 
-public protocol LoggerProtocol {
+public protocol Logger {
     /// Logs a message to the underlying logging system
     /// - Parameters:
     ///   - message: The message to log
     ///   - level: The log level / severity of the message
     ///   - category: The category of the message
     func log(_ message: String, level: LogLevel, category: LoggingCategory)
-    
     
     /// Logs a message of serverity `trace` to the underlying logging system
     /// - Parameters:
@@ -89,7 +88,7 @@ public protocol LoggerProtocol {
 }
 
 // MARK: - Default Implementation of Convenience Functions
-public extension LoggerProtocol {
+public extension Logger {
     func trace(_ message: String, category: LoggingCategory = .general) {
         log(message, level: .trace, category: category)
     }

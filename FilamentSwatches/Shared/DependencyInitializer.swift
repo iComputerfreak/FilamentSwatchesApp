@@ -7,7 +7,7 @@ final class DependencyInitializer {
     init() {}
     
     func register() {
-        DependencyContext.default.register(LoggerProtocol.self) {
+        DependencyContext.default.register(Logger.self) {
             ConsoleLogger()
         }
     }

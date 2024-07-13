@@ -28,7 +28,7 @@ struct CreateSwatchView: View {
     @EnvironmentObject private var userData: UserData
     @Environment(\.dismiss) private var dismiss
     
-    @Injected private var logger: LoggerProtocol
+    @Injected private var logger: Logger
     
     /// Create new swatch
     init() {}
