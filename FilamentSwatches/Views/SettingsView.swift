@@ -16,7 +16,7 @@ struct SettingsView: View {
         NavigationStack {
 			Form {
 				Section {
-					TextField(Constants.DefaultValues.baseURL, text: $userData.baseURL)
+					TextField(GlobalConstants.DefaultValues.baseURL, text: $userData.baseURL)
 						.keyboardType(.URL)
 						.autocorrectionDisabled()
 						.onChange(of: userData.baseURL) { _ in

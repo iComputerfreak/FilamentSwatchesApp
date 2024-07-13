@@ -47,7 +47,7 @@ class UserData: ObservableObject {
                 self.swatchHistory = []
             }
             
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? Constants.DefaultValues.baseURL
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? GlobalConstants.DefaultValues.baseURL
         } catch {
             fatalError("\(error)")
         }
