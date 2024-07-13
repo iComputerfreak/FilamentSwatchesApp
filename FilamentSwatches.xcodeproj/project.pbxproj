@@ -39,6 +39,7 @@
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
 		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
 		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
+		ABE344622BC307EF005F4E88 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE344612BC307EF005F4E88 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		ABABF9DA291D065100364F64 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
 		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ABE344612BC307EF005F4E88 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
 				AB9ABDB12919349300327425 /* SampleData.swift */,
 				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				ABE344612BC307EF005F4E88 /* Constants.swift */,
 				AB9ABDAA29192B1400327425 /* Models */,
 				AB9ABD9A2919219500327425 /* Views */,
 				AB9ABD902919217700327425 /* Assets.xcassets */,
@@ -321,6 +324,7 @@
 				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
 				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
+				ABE344622BC307EF005F4E88 /* Constants.swift in Sources */,
 				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
 				AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */,
 				ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */,
