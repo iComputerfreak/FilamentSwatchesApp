@@ -75,19 +75,27 @@ struct CreateSwatchView: View {
                         }
                     }))
                     if swatch.color != nil {
-                        ColorPicker("Color", selection: Binding(get: {
-                            swatch.color?.color ?? .clear
-                        }, set: { newColor in
-                            // If the new color is transparent, remove the color from the swatch
-                            if newColor.cgColor?.alpha == 0 {
-                                
-                            }
-                            if let components = newColor.cgColor?.components, components.count >= 3 {
-                                swatch.color?.red = UInt8(round(components[0] * 255))
-                                swatch.color?.green = UInt8(round(components[1] * 255))
-                                swatch.color?.blue = UInt8(round(components[2] * 255))
-                            }
-                        }), supportsOpacity: false)
+                        ColorPicker(
+                            "Color",
+                            selection: Binding(
+                                get: {
+                                    swatch.color?.color ?? .clear
+                                },
+                                set: { newColor in
+                                    // If the new color is transparent, remove the color from the swatch
+                                    if newColor.cgColor?.alpha == 0 {
+                                        swatch.color = nil
+                                    }
+                                    if let components = newColor.cgColor?.components,
+                                       components.count >= 3 {
+                                        swatch.color?.red = UInt8(round(components[0] * 255))
+                                        swatch.color?.green = UInt8(round(components[1] * 255))
+                                        swatch.color?.blue = UInt8(round(components[2] * 255))
+                                    }
+                                }
+                            ),
+                            supportsOpacity: false
+                        )
                     }
                 }
             }
