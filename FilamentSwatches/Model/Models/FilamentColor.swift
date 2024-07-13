@@ -32,10 +32,8 @@ struct FilamentColor: Codable, Hashable {
     }
     
     init?(hexCode: String) {
-        guard hexCode.count == 6 else {
-            return nil
-        }
         guard
+            hexCode.count == 6,
             let red = UInt64(hexCode.prefix(2), radix: 16),
             let green = UInt64(hexCode.dropFirst(2).prefix(2), radix: 16),
             let blue = UInt64(hexCode.suffix(2), radix: 16)

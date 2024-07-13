@@ -16,9 +16,8 @@ struct CreateMaterialView: View {
     @Environment(\.dismiss) private var dismiss
     
     var isValid: Bool {
-        guard !material.isEmpty else {
-            return false
-        }
+        guard !material.isEmpty else { return false }
+        
         // If the material already exists, it is only valid, if we are editing an item and did not rename it yet
         if userData.materials.contains(material) {
             return isEditing && userData.materials[editingIndex] == material
