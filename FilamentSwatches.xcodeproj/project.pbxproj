@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
+		AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = AB158AC22C42E0200074025F /* DependencyInjection */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
 		AB5B09B52C42AB5B003AD0A0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = AB5B09B42C42AB5B003AD0A0 /* Logging */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
@@ -54,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB158ABF2C42DF720074025F /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
 		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */,
 				AB5B09B52C42AB5B003AD0A0 /* Logging in Frameworks */,
 				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
 			);
@@ -116,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB158ABE2C42DF630074025F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AB158ABF2C42DF720074025F /* DependencyInitializer.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		AB9ABD802919217600327425 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +150,7 @@
 		AB9ABD8B2919217600327425 /* FilamentSwatches */ = {
 			isa = PBXGroup;
 			children = (
+				AB158ABE2C42DF630074025F /* Shared */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
 				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
 				AB9ABDB12919349300327425 /* SampleData.swift */,
@@ -234,6 +247,7 @@
 			packageProductDependencies = (
 				ABC368D92922C09500E79D58 /* JFUtils */,
 				AB5B09B42C42AB5B003AD0A0 /* Logging */,
+				AB158AC22C42E0200074025F /* DependencyInjection */,
 			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
@@ -289,6 +303,7 @@
 			packageReferences = (
 				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
 				AB5B09B32C42AB5B003AD0A0 /* XCLocalSwiftPackageReference "Packages/Logging" */,
+				AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -331,6 +346,7 @@
 				AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */,
 				AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */,
 				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
+				AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */,
 				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
 				ABE344622BC307EF005F4E88 /* Constants.swift in Sources */,
@@ -647,6 +663,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DependencyInjection;
+		};
 		AB5B09B32C42AB5B003AD0A0 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logging;
@@ -665,6 +685,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB158AC22C42E0200074025F /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DependencyInjection;
+		};
 		AB5B09B42C42AB5B003AD0A0 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logging;

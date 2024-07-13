@@ -5,8 +5,11 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
+import Logging
 import SwiftUI
 
+// TODO: Move out
 extension View {
     @ViewBuilder
     func leadingLabel(_ label: LocalizedStringKey) -> some View {
@@ -24,6 +27,8 @@ struct CreateSwatchView: View {
     @State private var isEditing = false
     @EnvironmentObject private var userData: UserData
     @Environment(\.dismiss) private var dismiss
+    
+    @Injected private var logger: LoggerProtocol
     
     /// Create new swatch
     init() {}
@@ -92,7 +97,7 @@ struct CreateSwatchView: View {
                     Button("Save") {
                         if isEditing {
                             guard let index = userData.swatches.firstIndex(where: { $0.id == swatch.id }) else {
-                                print("Error: editing a swatch that does not exist.")
+                                logger.error("Trying to edit swatch \(swatch) that does not exist.")
                                 return
                             }
                             // Replace with the edited swatch
