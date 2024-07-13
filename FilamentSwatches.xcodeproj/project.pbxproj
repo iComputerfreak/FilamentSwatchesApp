@@ -148,6 +148,19 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		AB02141E2C43003F0035EE68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDA829192ACF00327425 /* Swatch.swift */,
+				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
+				ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */,
+				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
+				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
+				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		AB158ABE2C42DF630074025F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,11 +197,9 @@
 				AB02140C2C42F9ED0035EE68 /* Resources */,
 				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
-				AB9ABDAA29192B1400327425 /* Models */,
+				AB9ABDAA29192B1400327425 /* Model */,
 				AB9ABD922919217700327425 /* Preview Content */,
-				AB9ABDB12919349300327425 /* SampleData.swift */,
 				AB158ABE2C42DF630074025F /* Shared */,
-				AB9ABDB5291993FB00327425 /* UserData.swift */,
 				AB9ABD9A2919219500327425 /* Views */,
 			);
 			path = FilamentSwatches;
@@ -232,17 +243,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AB9ABDAA29192B1400327425 /* Models */ = {
+		AB9ABDAA29192B1400327425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB9ABDA829192ACF00327425 /* Swatch.swift */,
-				AB9ABDAD29192B9100327425 /* FilamentColor.swift */,
-				ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */,
-				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
-				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
-				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
+				AB02141E2C43003F0035EE68 /* Models */,
+				AB9ABDB5291993FB00327425 /* UserData.swift */,
+				AB9ABDB12919349300327425 /* SampleData.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */ = {
