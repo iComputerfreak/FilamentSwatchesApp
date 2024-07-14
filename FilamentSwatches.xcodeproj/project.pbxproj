@@ -3,15 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB0214042C42ECED0035EE68 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = AB0214032C42ECED0035EE68 /* Logging */; };
-		AB02140A2C42F7470035EE68 /* AppFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = AB0214092C42F7470035EE68 /* AppFoundation */; };
 		AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02141F2C43005B0035EE68 /* AppTarget.swift */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
-		AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = AB158AC22C42E0200074025F /* DependencyInjection */; };
 		AB3846A12C43155A007850EE /* View+LeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3846A02C43155A007850EE /* View+LeadingLabel.swift */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
@@ -45,6 +42,11 @@
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
 		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
 		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
+		ABDE1B1B2C43D0FD005AEAF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B1A2C43D0FD005AEAF7 /* Logging */; };
+		ABDE1B1D2C43D102005AEAF7 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B1C2C43D102005AEAF7 /* DependencyInjection */; };
+		ABDE1B1F2C43D10B005AEAF7 /* AppFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B1E2C43D10B005AEAF7 /* AppFoundation */; };
+		ABDE1B222C43D166005AEAF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B212C43D166005AEAF7 /* Logging */; };
+		ABDE1B252C43D174005AEAF7 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B242C43D174005AEAF7 /* DependencyInjection */; };
 		ABE344622BC307EF005F4E88 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE344612BC307EF005F4E88 /* GlobalConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,22 +99,23 @@
 		ABABF9DA291D065100364F64 /* ProminentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentButtonStyle.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
 		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ABDE1B172C43D028005AEAF7 /* AppFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFoundation; sourceTree = "<group>"; };
+		ABDE1B182C43D037005AEAF7 /* Logging */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Logging; sourceTree = "<group>"; };
+		ABDE1B192C43D05F005AEAF7 /* DependencyInjection */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DependencyInjection; sourceTree = "<group>"; };
 		ABE344612BC307EF005F4E88 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		AB5B09B12C42A661003AD0A0 /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB9ABD862919217600327425 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0214042C42ECED0035EE68 /* Logging in Frameworks */,
-				AB02140A2C42F7470035EE68 /* AppFoundation in Frameworks */,
-				AB158AC32C42E0200074025F /* DependencyInjection in Frameworks */,
+				ABDE1B1D2C43D102005AEAF7 /* DependencyInjection in Frameworks */,
+				ABDE1B1F2C43D10B005AEAF7 /* AppFoundation in Frameworks */,
+				ABDE1B1B2C43D0FD005AEAF7 /* Logging in Frameworks */,
+				ABDE1B252C43D174005AEAF7 /* DependencyInjection in Frameworks */,
 				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
+				ABDE1B222C43D166005AEAF7 /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +182,7 @@
 		AB9ABD802919217600327425 = {
 			isa = PBXGroup;
 			children = (
-				AB5B09B12C42A661003AD0A0 /* Packages */,
+				ABDE1B0F2C43CF78005AEAF7 /* Packages */,
 				AB9ABD8B2919217600327425 /* FilamentSwatches */,
 				ABA8E7C62A03F8C60059E4BF /* FilamentSwatchesScreenshots */,
 				AB9ABD8A2919217600327425 /* Products */,
@@ -268,6 +271,16 @@
 			path = FilamentSwatchesScreenshots;
 			sourceTree = "<group>";
 		};
+		ABDE1B0F2C43CF78005AEAF7 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				ABDE1B192C43D05F005AEAF7 /* DependencyInjection */,
+				ABDE1B182C43D037005AEAF7 /* Logging */,
+				ABDE1B172C43D028005AEAF7 /* AppFoundation */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,9 +300,11 @@
 			name = FilamentSwatches;
 			packageProductDependencies = (
 				ABC368D92922C09500E79D58 /* JFUtils */,
-				AB158AC22C42E0200074025F /* DependencyInjection */,
-				AB0214032C42ECED0035EE68 /* Logging */,
-				AB0214092C42F7470035EE68 /* AppFoundation */,
+				ABDE1B1A2C43D0FD005AEAF7 /* Logging */,
+				ABDE1B1C2C43D102005AEAF7 /* DependencyInjection */,
+				ABDE1B1E2C43D10B005AEAF7 /* AppFoundation */,
+				ABDE1B212C43D166005AEAF7 /* Logging */,
+				ABDE1B242C43D174005AEAF7 /* DependencyInjection */,
 			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
@@ -344,10 +359,10 @@
 			mainGroup = AB9ABD802919217600327425;
 			packageReferences = (
 				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
-				AB5B09B32C42AB5B003AD0A0 /* XCLocalSwiftPackageReference "Packages/Logging" */,
-				AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
 				AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
+				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */,
+				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -721,13 +736,13 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppFoundation;
 		};
-		AB158AC12C42E0200074025F /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DependencyInjection;
-		};
-		AB5B09B32C42AB5B003AD0A0 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
+		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logging;
+		};
+		ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DependencyInjection;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -751,18 +766,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AB0214032C42ECED0035EE68 /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Logging;
-		};
-		AB0214092C42F7470035EE68 /* AppFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AppFoundation;
-		};
-		AB158AC22C42E0200074025F /* DependencyInjection */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DependencyInjection;
-		};
 		AB8D44BF2C42E78500434A90 /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
@@ -772,6 +775,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */;
 			productName = JFUtils;
+		};
+		ABDE1B1A2C43D0FD005AEAF7 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
+		ABDE1B1C2C43D102005AEAF7 /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DependencyInjection;
+		};
+		ABDE1B1E2C43D10B005AEAF7 /* AppFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFoundation;
+		};
+		ABDE1B212C43D166005AEAF7 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Logging;
+		};
+		ABDE1B242C43D174005AEAF7 /* DependencyInjection */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DependencyInjection;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
