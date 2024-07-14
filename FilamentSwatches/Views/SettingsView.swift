@@ -19,7 +19,7 @@ struct SettingsView: View {
 					TextField(GlobalConstants.DefaultValues.baseURL, text: $userData.baseURL)
 						.keyboardType(.URL)
 						.autocorrectionDisabled()
-						.onChange(of: userData.baseURL) { _ in
+						.onChange(of: userData.baseURL) {
 							userData.save()
 						}
 				} footer: {
