@@ -179,6 +179,15 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		AB801A402C43D8CE0027A6CE /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
+				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
 		AB9ABD802919217600327425 = {
 			isa = PBXGroup;
 			children = (
@@ -224,14 +233,13 @@
 		AB9ABD9A2919219500327425 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB801A402C43D8CE0027A6CE /* Materials */,
 				AB9ABDA32919252C00327425 /* Components */,
 				AB9ABD8E2919217600327425 /* ContentView.swift */,
 				AB9ABD9B291922CB00327425 /* HomeView.swift */,
 				AB9ABD9D2919241500327425 /* LibraryView.swift */,
 				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
 				AB9ABDA12919242100327425 /* SwatchView.swift */,
-				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
-				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
 				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
 			);
 			path = Views;
