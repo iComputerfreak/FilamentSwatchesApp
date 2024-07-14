@@ -24,7 +24,9 @@ public final class DependencyContext {
     }
     
     public func register<Value>(_ type: Value.Type, builder: @escaping () -> Value) {
-        container.register(Value.self, factory: { _ in builder() })
+        container.register(Value.self) { _ in
+            builder()
+        }
     }
     
     public func register<Value>(
@@ -32,6 +34,8 @@ public final class DependencyContext {
         key: String?,
         builder: @escaping () -> Value
     ) {
-        container.register(Value.self, name: key, factory: {  _ in builder() })
+        container.register(Value.self) { _ in
+            builder()
+        }
     }
 }

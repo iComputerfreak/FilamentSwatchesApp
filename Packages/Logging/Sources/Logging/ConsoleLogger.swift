@@ -20,10 +20,13 @@ public class ConsoleLogger: Logger {
         switch logLevel {
         case .trace, .debug:
             return .debug
+            
         case .info, .warning:
             return .info
+            
         case .error:
             return .error
+            
         case .fatal:
             return .fault
         }

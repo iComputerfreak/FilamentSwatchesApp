@@ -8,7 +8,6 @@
 import XCTest
 
 final class FilamentSwatchesScreenshots: XCTestCase {
-    
     private var app: XCUIApplication!
     private var screenshotCounter: Int!
     
@@ -19,6 +18,10 @@ final class FilamentSwatchesScreenshots: XCTestCase {
         app.launchArguments.append("--screenshots")
         setupSnapshot(app)
         screenshotCounter = 1
+    }
+    
+    override func tearDownWithError() throws {
+        // Tear down...
     }
     
     func testTakeAppStoreScreenshots() throws {

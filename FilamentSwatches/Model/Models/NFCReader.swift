@@ -51,7 +51,7 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
             let nfcError = error as? CoreNFC.NFCReaderError,
             // Code 200 == "Session invalidated by user"
             nfcError.errorCode == 200
-        { // swiftlint:disable:this opening_brace
+        {
             continuation?.resume(returning: nil)
         } else {
             continuation?.resume(throwing: error)

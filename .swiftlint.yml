@@ -2,6 +2,9 @@
 
 reporter: "xcode"
 
+excluded:
+  - FilamentSwatchesScreenshots
+
 ###########################
 ###    Opt-In Rules     ###
 ###########################
@@ -71,7 +74,6 @@ opt_in_rules:
 - quick_discouraged_pending_test
 - reduce_into
 - redundant_nil_coalescing
-- redundant_type_annotation
 - required_enum_case
 - single_test_class
 - sorted_first_last

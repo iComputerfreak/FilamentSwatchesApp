@@ -54,24 +54,23 @@ enum SnapshotError: Error, CustomDebugStringConvertible {
 @objcMembers
 open class Snapshot: NSObject {
     static var app: XCUIApplication?
-    static var waitForAnimations = true
+    static var waitForAnimations: Bool = true
     static var cacheDirectory: URL?
     static var screenshotsDirectory: URL? {
         return cacheDirectory?.appendingPathComponent("screenshots", isDirectory: true)
     }
 
     open class func setupSnapshot(_ app: XCUIApplication, waitForAnimations: Bool = true) {
-
-        Snapshot.app = app
-        Snapshot.waitForAnimations = waitForAnimations
+        Self.app = app
+        Self.waitForAnimations = waitForAnimations
 
         do {
             let cacheDir = try getCacheDirectory()
-            Snapshot.cacheDirectory = cacheDir
+            Self.cacheDirectory = cacheDir
             setLanguage(app)
             setLocale(app)
             setLaunchArguments(app)
-        } catch let error {
+        } catch {
             NSLog(error.localizedDescription)
         }
     }
