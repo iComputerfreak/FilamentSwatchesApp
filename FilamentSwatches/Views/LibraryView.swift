@@ -18,7 +18,14 @@ struct LibraryView: View {
         NavigationStack {
             List {
                 ForEach(userData.materials, id: \.self) { material in
-                    let swatches = userData.swatches.filter { $0.material == material }
+                    let swatches = userData.swatches
+                        .filter { $0.material == material }
+                        .sorted { swatch1, swatch2 in
+                            if swatch1.brand == swatch2.brand {
+                                return swatch1.colorName < swatch2.colorName
+                            }
+                            return swatch1.brand < swatch2.brand
+                        }
                     if !swatches.isEmpty {
                         Section(header: Text(material)) {
                             ForEach(swatches) { swatch in

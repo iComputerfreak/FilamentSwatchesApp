@@ -24,7 +24,7 @@ final class FilamentSwatchesScreenshots: XCTestCase {
     func testTakeAppStoreScreenshots() throws {
         app.launch()
         
-        snapshot("home-tab")
+        snapshot("Home")
         
         app.tabBars.buttons["library-tab"].tap()
         snapshot("Library")
