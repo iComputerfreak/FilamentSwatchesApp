@@ -11,6 +11,8 @@
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
 		AB3846A12C43155A007850EE /* View+LeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3846A02C43155A007850EE /* View+LeadingLabel.swift */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
+		AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */; };
+		AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A432C43D9920027A6CE /* FilamentMaterial.swift */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -29,7 +31,7 @@
 		AB9ABDB6291993FB00327425 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB5291993FB00327425 /* UserData.swift */; };
 		AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */; };
 		AB9ABDBA29199E1E00327425 /* TemperatureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */; };
-		AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */; };
+		AB9ABDBC2919A81400327425 /* EditMaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDBB2919A81400327425 /* EditMaterialView.swift */; };
 		ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A02A0159510059E4BF /* URLKeys.swift */; };
 		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
 		ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */; };
@@ -66,6 +68,8 @@
 		AB3846A02C43155A007850EE /* View+LeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LeadingLabel.swift"; sourceTree = "<group>"; };
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
 		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditMaterialView+Model.swift"; sourceTree = "<group>"; };
+		AB801A432C43D9920027A6CE /* FilamentMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterial.swift; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		AB9ABDB5291993FB00327425 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterialRow.swift; sourceTree = "<group>"; };
 		AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTextField.swift; sourceTree = "<group>"; };
-		AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMaterialView.swift; sourceTree = "<group>"; };
+		AB9ABDBB2919A81400327425 /* EditMaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMaterialView.swift; sourceTree = "<group>"; };
 		ABA8E7A02A0159510059E4BF /* URLKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLKeys.swift; sourceTree = "<group>"; };
 		ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCSessionDelegate.swift; sourceTree = "<group>"; };
 		ABA8E7A42A016F2D0059E4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */,
 				ABABF9DC291DAA1900364F64 /* NFCWriter.swift */,
 				ABA8E7A02A0159510059E4BF /* URLKeys.swift */,
+				AB801A432C43D9920027A6CE /* FilamentMaterial.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,7 +187,8 @@
 		AB801A402C43D8CE0027A6CE /* Materials */ = {
 			isa = PBXGroup;
 			children = (
-				AB9ABDBB2919A81400327425 /* CreateMaterialView.swift */,
+				AB9ABDBB2919A81400327425 /* EditMaterialView.swift */,
+				AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */,
 				AB9ABDB32919361A00327425 /* MaterialsView.swift */,
 			);
 			path = Materials;
@@ -455,8 +461,10 @@
 				AB9ABD8F2919217600327425 /* ContentView.swift in Sources */,
 				ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */,
 				AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */,
-				AB9ABDBC2919A81400327425 /* CreateMaterialView.swift in Sources */,
+				AB9ABDBC2919A81400327425 /* EditMaterialView.swift in Sources */,
 				ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */,
+				AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */,
+				AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ class UserData: ObservableObject {
     static let shared: UserData = .init()
     
     @Published var swatches: [Swatch]
-    @Published var materials: [String]
+    @Published var materials: [FilamentMaterial]
     @Published var swatchHistory: [Swatch]
     @Published var baseURL: String
     
@@ -40,7 +40,12 @@ class UserData: ObservableObject {
             }
             
             if let materialsData = Self.userDefaults.object(forKey: Self.materialsKey) as? Data, !materialsData.isEmpty {
-                self.materials = try Self.decoder.decode([String].self, from: materialsData)
+                // TODO: Remove migration after deployed
+                if let legacyMaterials = try? Self.decoder.decode([String].self, from: materialsData) {
+                    self.materials = legacyMaterials.map { FilamentMaterial(name: $0) }
+                } else {
+                    self.materials = try Self.decoder.decode([FilamentMaterial].self, from: materialsData)
+                }
             } else {
                 self.materials = []
             }

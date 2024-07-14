@@ -17,9 +17,9 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(userData.materials, id: \.self) { material in
+                ForEach(userData.materials) { (material: FilamentMaterial) in
                     let swatches = userData.swatches
-                        .filter { $0.material == material }
+                        .filter { (swatch: Swatch) in swatch.material == material.name }
                         .sorted { swatch1, swatch2 in
                             if swatch1.brand == swatch2.brand {
                                 return swatch1.colorName < swatch2.colorName
@@ -27,7 +27,7 @@ struct LibraryView: View {
                             return swatch1.brand < swatch2.brand
                         }
                     if !swatches.isEmpty {
-                        Section(header: Text(material)) {
+                        Section(header: Text(material.name)) {
                             ForEach(swatches) { swatch in
                                 Button {
                                     self.selectedSwatch = swatch

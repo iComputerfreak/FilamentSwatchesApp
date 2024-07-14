@@ -36,8 +36,8 @@ struct CreateSwatchView: View {
                     Text("Select...")
                         .disabled(true)
                         .tag("")
-                    ForEach(userData.materials, id: \.self) { material in
-                        Text(material)
+                    ForEach(userData.materials) { material in
+                        Text(material.name)
                     }
                 }
                 TextField("(required)", text: $swatch.brand)

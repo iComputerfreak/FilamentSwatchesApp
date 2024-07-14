@@ -198,6 +198,11 @@ type_contents_order:
     - other_method
     - subscript
 
+attributes:
+  always_on_line_above:
+    - "@ObservationIgnored"
+    - "@ObservationTracked"
+
 
 ###########################
 ###    Custom Rules     ###

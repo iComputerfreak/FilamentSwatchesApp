@@ -5,6 +5,7 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import JFUtils
 import SwiftUI
 
 struct MaterialsView: View {
@@ -12,17 +13,17 @@ struct MaterialsView: View {
     @Environment(\.editMode)
     private var editMode: Binding<EditMode>?
     
-    @State private var addSheetShowing: Bool = false
+    @State private var editingMaterial: FilamentMaterial?
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(userData.materials, id: \.self) { material in
-                    Text(material)
+                ForEach($userData.materials) { $material in
+                    Text(material.name)
+                    // TODO: Add swipe action for editing and context menu action for delete
                         .contextMenu {
                             NavigationLink {
-                                let index = userData.materials.firstIndex(of: material)!
-                                CreateMaterialView(editing: material, at: index)
+                                EditMaterialView(viewModel: .init(material: $material))
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
@@ -35,15 +36,19 @@ struct MaterialsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        self.addSheetShowing = true
+                        let newMaterial = FilamentMaterial(name: "")
+                        userData.materials.append(newMaterial)
+                        self.editingMaterial = newMaterial
                     } label: {
-                        Image(systemName: "plus")
+                        Label("Add", systemImage: "plus")
                     }
                 }
             }
         }
-        .sheet(isPresented: $addSheetShowing) {
-            CreateMaterialView()
+        .sheet(item: $editingMaterial) { material in
+            if let materialIndex = userData.materials.firstIndex(where: \.id, equals: material.id) {
+                EditMaterialView(viewModel: .init(material: $userData.materials[materialIndex]))
+            }
         }
     }
     

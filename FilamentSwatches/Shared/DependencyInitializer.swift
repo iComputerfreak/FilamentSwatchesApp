@@ -10,5 +10,9 @@ final class DependencyInitializer {
         DependencyContext.default.register(Logger.self) {
             ConsoleLogger()
         }
+        
+        DependencyContext.default.register(UserData.self) {
+            UserData()
+        }
     }
 }

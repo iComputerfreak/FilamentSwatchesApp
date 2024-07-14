@@ -22,10 +22,10 @@ enum SampleData {
         let data = UserData()
         data.swatches = [Self.swatch]
         data.materials = [
-            "PLA",
-            "ABS",
-            "ABS+",
-            "PETG",
+            .init(name: "PLA"),
+            .init(name: "ABS"),
+            .init(name: "ABS+"),
+            .init(name: "PETG"),
         ]
         data.swatchHistory = [Self.swatch]
         return data
@@ -33,7 +33,7 @@ enum SampleData {
     
     static func populateScreenshotData() {
         let userData = UserData.shared
-        userData.materials = ["PLA", "PETG", "ABS"]
+        userData.materials = ["PLA", "PETG", "ABS"].map { .init(name: $0) }
         userData.swatches = [
             .init(
                 material: "PLA",
