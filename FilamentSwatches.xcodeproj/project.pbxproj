@@ -289,13 +289,13 @@
 			buildConfigurationList = AB9ABD972919217700327425 /* Build configuration list for PBXNativeTarget "FilamentSwatches" */;
 			buildPhases = (
 				AB9ABD852919217600327425 /* Sources */,
+				ABDE1B282C43D3D0005AEAF7 /* ShellScript */,
 				AB9ABD862919217600327425 /* Frameworks */,
 				AB9ABD872919217600327425 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AB8D44C02C42E78500434A90 /* PBXTargetDependency */,
 			);
 			name = FilamentSwatches;
 			packageProductDependencies = (
@@ -359,7 +359,6 @@
 			mainGroup = AB9ABD802919217600327425;
 			packageReferences = (
 				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
-				AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
 				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
 				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */,
 				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
@@ -394,6 +393,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ABDE1B282C43D3D0005AEAF7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: swiftlint command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB9ABD852919217600327425 /* Sources */ = {
@@ -444,10 +464,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AB8D44C02C42E78500434A90 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = AB8D44BF2C42E78500434A90 /* SwiftLintBuildToolPlugin */;
-		};
 		ABA8E7CC2A03F8C60059E4BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AB9ABD882919217600327425 /* FilamentSwatches */;
@@ -747,14 +763,6 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.55.1;
-			};
-		};
 		ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iComputerfreak/JFUtils";
@@ -766,11 +774,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AB8D44BF2C42E78500434A90 /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AB8D44BE2C42E76A00434A90 /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
 		ABC368D92922C09500E79D58 /* JFUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */;
