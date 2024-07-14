@@ -5,8 +5,10 @@
 //  Created by Jonas Frey on 08.11.22.
 //
 
-import Foundation
 import CoreNFC
+import DependencyInjection
+import Foundation
+import Logging
 
 enum NFCReaderError: Error {
     case readingUnavailable
@@ -16,38 +18,40 @@ enum NFCReaderError: Error {
 }
 
 class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
+    @Injected private var logger: Logger
+    
     func scanForSwatch() async throws -> Swatch? {
-        print("Scanning for swatch")
+        logger.info("Scanning for swatch...", category: .nfc)
         guard NFCNDEFReaderSession.readingAvailable else {
             throw NFCReaderError.readingUnavailable
         }
         
         // There should not be an existing session already in progress
         guard session == nil && continuation == nil else {
-            print("Session already in progress")
+            logger.info("Session already in progress. Aborting.", category: .nfc)
             throw NFCReaderError.newSessionWhileOldOpen
         }
         
         // Read NFC Data
         self.session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
         
-        return try await withCheckedThrowingContinuation({ continuation in
+        return try await withCheckedThrowingContinuation { continuation in
             self.continuation = continuation
             session?.begin()
-        })
+        }
     }
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        print("Reader session active")
+        logger.info("Reader session did become active.", category: .nfc)
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print("Reader session invalidated")
+        logger.info("Reader session was invalidated.", category: .nfc)
         if
             let nfcError = error as? CoreNFC.NFCReaderError,
             // Code 200 == "Session invalidated by user"
             nfcError.errorCode == 200
-        { // swiftlint:disable:this opening_brace
+        {
             continuation?.resume(returning: nil)
         } else {
             continuation?.resume(throwing: error)
@@ -60,11 +64,11 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        print("Detected \(messages.count) messages")
+        logger.info("Detected \(messages.count) messages", category: .nfc)
     }
     
     func decodeSwatch(from url: URL) throws -> Swatch {
-        print("Decoding Swatch from URL...")
+        logger.info("Decoding Swatch from URL...", category: .nfc)
         let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         guard let queryItems = components?.queryItems else {
             throw NFCReaderError.noQueryItemsRead
@@ -74,7 +78,9 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         }
         
         func query(_ key: String) -> String? {
-            queryItems.first(where: { $0.name == key })?.value
+            queryItems
+                .first { $0.name == key }?
+                .value
         }
         
         guard
@@ -103,16 +109,17 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
     }
 
     func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
-        print("Detected \(tags.count) tags")
+        logger.info("Detected \(tags.count) tags", category: .nfc)
         
         // Do not read multiple tags
         guard tags.count <= 1 else {
             // Restart polling in 500 milliseconds.
             let retryInterval = DispatchTimeInterval.milliseconds(500)
+            // TODO: Localize!
             session.alertMessage = "More than 1 tag is detected. Please remove all tags and try again."
-            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval) {
                 session.restartPolling()
-            })
+            }
             return
         }
         

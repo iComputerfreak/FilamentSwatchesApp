@@ -1,10 +1,3 @@
-//
-//  Modifiers.swift
-//  FilamentSwatches
-//
-//  Created by Jonas Frey on 10.11.22.
-//
-
 import Foundation
 import SwiftUI
 

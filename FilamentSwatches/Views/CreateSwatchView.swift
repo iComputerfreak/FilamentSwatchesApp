@@ -5,31 +5,25 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
+import Logging
 import SwiftUI
-
-extension View {
-    @ViewBuilder
-    func leadingLabel(_ label: LocalizedStringKey) -> some View {
-        HStack {
-            Text(label)
-            Spacer()
-            self
-                .multilineTextAlignment(.trailing)
-        }
-    }
-}
 
 struct CreateSwatchView: View {
     @State private var swatch: Swatch = Self.createNewSwatch()
-    @State private var isEditing = false
+    @State private var isEditing: Bool = false
     @EnvironmentObject private var userData: UserData
-    @Environment(\.dismiss) private var dismiss
+    
+    @Environment(\.dismiss)
+    private var dismiss: DismissAction
+    
+    @Injected private var logger: Logger
     
     /// Create new swatch
-    init() {}
+    init() {} // swiftlint:disable:this type_contents_order
     
     /// Edit existing swatch
-    init(editing swatch: Swatch) {
+    init(editing swatch: Swatch) { // swiftlint:disable:this type_contents_order
         self.init()
         self.swatch = swatch
         self.isEditing = true
@@ -100,7 +94,7 @@ struct CreateSwatchView: View {
                     Button("Save") {
                         if isEditing {
                             guard let index = userData.swatches.firstIndex(where: { $0.id == swatch.id }) else {
-                                print("Error: editing a swatch that does not exist.")
+                                logger.error("Trying to edit swatch \(swatch) that does not exist.")
                                 return
                             }
                             // Replace with the edited swatch

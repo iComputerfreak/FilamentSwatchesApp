@@ -5,8 +5,10 @@
 //  Created by Jonas Frey on 10.11.22.
 //
 
-import Foundation
 import CoreNFC
+import DependencyInjection
+import Foundation
+import Logging
 
 enum NFCWriterError: Error {
     case writingUnavailable
@@ -21,20 +23,22 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
     private var message: NFCNDEFMessage?
     var baseURL: String
     
+    @Injected private var logger: Logger
+    
     init(baseURL: String) {
         self.baseURL = baseURL
     }
     
     // Start of the lifecycle. Request to write a swatch to an NFC tag
     func writeSwatch(_ swatch: Swatch) async throws -> Bool {
-        print("Writing Swatch \(swatch)")
+        logger.info("Writing Swatch \(swatch)", category: .nfc)
         guard NFCNDEFReaderSession.readingAvailable else {
             throw NFCWriterError.writingUnavailable
         }
         
         // There should not be an existing session already in progress
         guard session == nil && continuation == nil else {
-            print("Session already in progress")
+            logger.info("Session already in progress", category: .nfc)
             throw NFCWriterError.newSessionWhileOldOpen
         }
         
@@ -98,16 +102,16 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
-        print("Reader session active")
+        logger.info("Reader session active", category: .nfc)
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print("Reader session invalidated")
+        logger.info("Reader session invalidated", category: .nfc)
         if
             let nfcError = error as? CoreNFC.NFCReaderError,
             // Code 200 == "Session invalidated by user"
             nfcError.errorCode == 200
-        { // swiftlint:disable:this opening_brace
+        {
             continuation?.resume(returning: false)
         } else {
             continuation?.resume(throwing: error)
@@ -120,11 +124,11 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
-        print("Detected \(messages.count) messages")
+        logger.info("Detected \(messages.count) messages", category: .nfc)
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [NFCNDEFTag]) {
-        print("Detected \(tags.count) tags")
+        logger.info("Detected \(tags.count) tags", category: .nfc)
         // If we have no data to write, we can abort the whole writer
         guard let message = message else {
             continuation?.resume(throwing: NFCWriterError.noMessage)
@@ -138,9 +142,9 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
             // Restart polling in 500 milliseconds.
             let retryInterval = DispatchTimeInterval.milliseconds(500)
             session.alertMessage = "More than 1 tag is detected. Please remove all tags and try again."
-            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + retryInterval) {
                 session.restartPolling()
-            })
+            }
             return
         }
         

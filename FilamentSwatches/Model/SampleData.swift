@@ -87,8 +87,8 @@ enum SampleData {
                 bedTemp: 95
             ),
         ]
-        userData.swatchHistory = userData.swatches.sorted { s1, s2 in
-            s1.colorName < s2.colorName
+        userData.swatchHistory = userData.swatches.sorted { lhs, rhs in
+            lhs.colorName < rhs.colorName
         }
     }
 }

@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct FilamentSwatchesApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self)
-    var appDelegate
+    var appDelegate: AppDelegate
     
     @ObservedObject var userData: UserData = .shared
-    @Environment(\.scenePhase) private var scenePhase
+   
+    @Environment(\.scenePhase)
+    private var scenePhase: ScenePhase
     
     var body: some Scene {
         WindowGroup {

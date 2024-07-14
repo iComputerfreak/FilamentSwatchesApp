@@ -7,9 +7,25 @@
 
 import SwiftUI
 
+private struct SwatchViewRow: View {
+    let key: LocalizedStringKey
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Text(key)
+                .bold()
+            Spacer()
+            Text(value)
+        }
+        .font(.title2)
+    }
+}
+
 struct SwatchView: View {
     let swatch: Swatch
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss)
+    private var dismiss: DismissAction
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
@@ -67,21 +83,6 @@ struct SwatchView: View {
                 }
             }
         }
-    }
-}
-
-private struct SwatchViewRow: View {
-    let key: LocalizedStringKey
-    let value: String
-    
-    var body: some View {
-        HStack {
-            Text(key)
-                .bold()
-            Spacer()
-            Text(value)
-        }
-        .font(.title2)
     }
 }
 

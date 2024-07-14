@@ -5,8 +5,8 @@
 //  Created by Jonas Frey on 07.04.24.
 //
 
-enum Constants {
+enum GlobalConstants {
     enum DefaultValues {
-        static let baseURL = "https://filamentswatch.info"
+        static let baseURL: String = "https://filamentswatch.info"
     }
 }

@@ -5,18 +5,20 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
 import Foundation
+import Logging
 import SwiftUI
 
 class UserData: ObservableObject {
-    private static let swatchesKey = "swatches"
-    private static let materialsKey = "materials"
-    private static let swatchHistoryKey = "swatchHistory"
-    private static let baseURLKey = "baseURL"
+    private static let swatchesKey: String = "swatches"
+    private static let materialsKey: String = "materials"
+    private static let swatchHistoryKey: String = "swatchHistory"
+    private static let baseURLKey: String = "baseURL"
     
-    static let maxHistoryItems = 10
+    static let maxHistoryItems: Int = 10
     
-    private static let userDefaults = UserDefaults.standard
+    private static let userDefaults: UserDefaults = .standard
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     
@@ -26,6 +28,8 @@ class UserData: ObservableObject {
     @Published var materials: [String]
     @Published var swatchHistory: [Swatch]
     @Published var baseURL: String
+    
+    @Injected private var logger: Logger
     
     init() {
         do {
@@ -47,7 +51,7 @@ class UserData: ObservableObject {
                 self.swatchHistory = []
             }
             
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? Constants.DefaultValues.baseURL
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? GlobalConstants.DefaultValues.baseURL
         } catch {
             fatalError("\(error)")
         }
@@ -64,7 +68,7 @@ class UserData: ObservableObject {
             Self.userDefaults.set(swatchHistoryData, forKey: Self.swatchHistoryKey)
             Self.userDefaults.set(baseURL, forKey: Self.baseURLKey)
         } catch {
-            print(error)
+            logger.error("Error saving user data: \(error)", category: .persistence)
         }
     }
 }

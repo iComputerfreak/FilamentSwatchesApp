@@ -12,7 +12,7 @@ struct LibraryView: View {
     @State private var editingSwatch: Swatch?
     @EnvironmentObject private var userData: UserData
     
-    @State private var addSheetShowing = false
+    @State private var addSheetShowing: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -37,7 +37,7 @@ struct LibraryView: View {
                                 .tint(.primary)
                                 .swipeActions(allowsFullSwipe: true) {
                                     Button {
-                                        userData.swatches.removeAll(where: { $0.id == swatch.id })
+                                        userData.swatches.removeAll { $0.id == swatch.id }
                                         userData.save()
                                     } label: {
                                         Label("Delete", systemImage: "trash")

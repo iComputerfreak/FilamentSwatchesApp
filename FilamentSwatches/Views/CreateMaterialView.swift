@@ -9,16 +9,16 @@ import SwiftUI
 
 struct CreateMaterialView: View {
     @State private var material: String = ""
-    @State private var editingIndex = -1
-    @State private var isEditing = false
+    @State private var editingIndex: Int = -1
+    @State private var isEditing: Bool = false
     
     @EnvironmentObject private var userData: UserData
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss)
+    private var dismiss: DismissAction
     
     var isValid: Bool {
-        guard !material.isEmpty else {
-            return false
-        }
+        guard !material.isEmpty else { return false }
+        
         // If the material already exists, it is only valid, if we are editing an item and did not rename it yet
         if userData.materials.contains(material) {
             return isEditing && userData.materials[editingIndex] == material
@@ -27,10 +27,10 @@ struct CreateMaterialView: View {
     }
     
     /// Create a new material
-    init() {}
+    init() {} // swiftlint:disable:this type_contents_order
     
     /// Edit an existing material
-    init(editing material: String, at index: Int) {
+    init(editing material: String, at index: Int) { // swiftlint:disable:this type_contents_order
         self.init()
         self.isEditing = true
         self.editingIndex = index

@@ -1,22 +1,22 @@
 {
-  "originHash" : "af2fbf05e21ccc1c45b83a9e9de23fe6485c0bc2e552f372a20ab9a361377bbb",
+  "originHash" : "caa2f28a6b6cc7d125690a20f6ef2b75a7d8cf97301368321d1e583140717a50",
   "pins" : [
     {
       "identity" : "jfutils",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/iComputerfreak/JFUtils",
       "state" : {
-        "revision" : "0d7d840ad7444ca9383aae2fb2cac728d82018d1",
-        "version" : "1.8.1"
+        "revision" : "d5caf07bc0f575fc3737be598fa041cf7d11963f",
+        "version" : "1.9.3"
       }
     },
     {
-      "identity" : "swiftlintplugins",
+      "identity" : "swinject",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "location" : "https://github.com/Swinject/Swinject.git",
       "state" : {
-        "revision" : "b8431a26655378581890d56b95a0b59aba9f62da",
-        "version" : "0.55.1"
+        "revision" : "be9dbcc7b86811bc131539a20c6f9c2d3e56919f",
+        "version" : "2.9.1"
       }
     }
   ],
