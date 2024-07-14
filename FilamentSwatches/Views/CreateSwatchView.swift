@@ -93,6 +93,34 @@ struct CreateSwatchView: View {
                         )
                     }
                 }
+                
+                Section(header: Text("Custom Attributes")) {
+                    ForEach(Array(swatch.attributes.keys), id: \.self) { key in
+                        HStack {
+                            TextField("Attribute", text: Binding(
+                                get: {
+                                    key
+                                },
+                                set: { newValue in
+                                    let oldValue = swatch.attributes[key]
+                                    swatch.attributes.removeValue(forKey: key)
+                                    swatch.attributes[newValue] = oldValue ?? ""
+                                }
+                            ))
+                            TextField("Value", text: Binding(
+                                get: {
+                                    swatch.attributes[key] ?? ""
+                                },
+                                set: { newValue in
+                                    swatch.attributes[key] = newValue
+                                }
+                            ))
+                        }
+                    }
+                    Button("Add Attribute") {
+                        swatch.attributes[""] = ""
+                    }
+                }
             }
             .navigationTitle(isEditing ? Text("Edit Swatch") : Text("Create Swatch"))
             .toolbar {
