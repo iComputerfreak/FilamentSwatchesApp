@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SwatchView: View {
     let swatch: Swatch
-    @Environment(\.dismiss) private var dismiss
+    
+    @Environment(\.dismiss)
+    private var dismiss
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
@@ -35,6 +37,10 @@ struct SwatchView: View {
                         }
                         if swatch.bedTemp > 0 {
                             SwatchViewRow(key: "Bed Temp", value: "\(swatch.bedTemp) °C")
+                        }
+                        // TODO: Wrap everything on card in List and move this to a separate section "Custom Attributes"
+                        ForEach(Array(swatch.attributes.keys), id: \.self) { key in
+                            SwatchViewRow(key: key, value: swatch.attributes[key] ?? "")
                         }
                     }
                     .padding()
@@ -71,7 +77,7 @@ struct SwatchView: View {
 }
 
 private struct SwatchViewRow: View {
-    let key: LocalizedStringKey
+    let key: String
     let value: String
     
     var body: some View {
