@@ -33,6 +33,7 @@ struct FilamentMaterialRow: View {
     @ViewBuilder
     private var deleteButton: some View {
         Button(role: .destructive) {
+            // TODO: ViewModel
             userData.materials.removeAll { other in
                 other.id == material.id
             }

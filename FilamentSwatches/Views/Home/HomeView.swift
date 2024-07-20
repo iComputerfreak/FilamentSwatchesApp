@@ -18,7 +18,14 @@ struct HomeView: StatefulView {
                 SubtitleView("Recent Scans")
                 List(selection: $viewModel.presentedSwatch) {
                     ForEach(viewModel.swatchHistory) { swatch in
-                        SwatchRow(swatch: swatch)
+                        SwatchRow(
+                            viewModel: .init(
+                                swatch: swatch,
+                                // TODO: Make editable
+                                editingSwatch: .constant(nil),
+                                selectedSwatch: .constant(nil)
+                            )
+                        )
                             .tag(swatch)
                     }
                     .onDelete(perform: viewModel.deleteHistoryItems)

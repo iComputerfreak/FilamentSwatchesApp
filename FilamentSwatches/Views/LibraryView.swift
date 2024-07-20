@@ -5,80 +5,66 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import AppFoundation
 import SwiftUI
 
-struct LibraryView: View {
-    @State private var selectedSwatch: Swatch?
-    @State private var editingSwatch: Swatch?
-    @EnvironmentObject private var userData: UserData
-    
-    @State private var addSheetShowing: Bool = false
+struct LibraryView: StatefulView {
+    @State var viewModel: ViewModel
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(userData.materials) { (material: FilamentMaterial) in
-                    let swatches = userData.swatches
-                        .filter { (swatch: Swatch) in swatch.material == material.name }
-                        .sorted { swatch1, swatch2 in
-                            if swatch1.brand == swatch2.brand {
-                                return swatch1.colorName < swatch2.colorName
-                            }
-                            return swatch1.brand < swatch2.brand
-                        }
+                ForEach(viewModel.materials) { (material: FilamentMaterial) in
+                    let swatches = viewModel.swatches(for: material)
                     if !swatches.isEmpty {
                         Section(header: Text(material.name)) {
                             ForEach(swatches) { swatch in
-                                Button {
-                                    self.selectedSwatch = swatch
-                                } label: {
-                                    SwatchRow(swatch: swatch)
-                                }
-                                .tint(.primary)
-                                .swipeActions(allowsFullSwipe: true) {
-                                    Button {
-                                        userData.swatches.removeAll { $0.id == swatch.id }
-                                        userData.save()
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                    .tint(.red)
-                                    Button {
-                                        self.editingSwatch = swatch
-                                    } label: {
-                                        Label("Edit", systemImage: "pencil")
-                                    }
-                                }
+                                SwatchRow(
+                                    viewModel: .init(
+                                        swatch: swatch,
+                                        editingSwatch: $viewModel.editingSwatch,
+                                        selectedSwatch: $viewModel.selectedSwatch
+                                    )
+                                )
                             }
                         }
                     }
                 }
             }
             .navigationTitle("Library")
-            .toolbar {
-                Button {
-                    self.addSheetShowing = true
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .accessibilityLabel("add-swatch")
-            }
+            .toolbar { toolbarContent }
         }
-        .sheet(isPresented: $addSheetShowing) {
+        .sheet(isPresented: $viewModel.isShowingAddSwatchSheet) {
             CreateSwatchView()
         }
-        .sheet(item: $selectedSwatch) { swatch in
+        .sheet(item: $viewModel.selectedSwatch) { swatch in
             SwatchView(swatch: swatch)
         }
-        .sheet(item: $editingSwatch) { swatch in
+        .sheet(item: $viewModel.editingSwatch) { swatch in
             CreateSwatchView(editing: swatch)
         }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            addSwatchButton
+        }
+    }
+    
+    private var addSwatchButton: some View {
+        Button {
+            viewModel.isShowingAddSwatchSheet = true
+        } label: {
+            Image(systemName: "plus")
+        }
+        .accessibilityLabel("add-swatch")
     }
 }
 
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+        LibraryView(viewModel: .init())
             .environmentObject(SampleData.previewUserData)
     }
 }

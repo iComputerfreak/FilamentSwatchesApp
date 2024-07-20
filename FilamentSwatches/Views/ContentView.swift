@@ -17,7 +17,7 @@ struct ContentView: View {
                         .accessibilityIdentifier("home-tab")
                 }
             
-            LibraryView()
+            LibraryView(viewModel: .init())
                 .tabItem {
                     Image(systemName: "swatchpalette")
                     Text("Library")
