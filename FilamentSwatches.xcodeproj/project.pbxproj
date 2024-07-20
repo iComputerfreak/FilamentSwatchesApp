@@ -199,6 +199,15 @@
 			path = Materials;
 			sourceTree = "<group>";
 		};
+		AB801A4A2C4C3B840027A6CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD9B291922CB00327425 /* HomeView.swift */,
+				AB801A482C4C34DC0027A6CE /* HomeView+Model.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		AB9ABD802919217600327425 = {
 			isa = PBXGroup;
 			children = (
@@ -244,11 +253,10 @@
 		AB9ABD9A2919219500327425 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB801A4A2C4C3B840027A6CE /* Home */,
 				AB9ABDA32919252C00327425 /* _Components */,
 				AB801A402C43D8CE0027A6CE /* Materials */,
 				AB9ABD8E2919217600327425 /* ContentView.swift */,
-				AB9ABD9B291922CB00327425 /* HomeView.swift */,
-				AB801A482C4C34DC0027A6CE /* HomeView+Model.swift */,
 				AB9ABD9D2919241500327425 /* LibraryView.swift */,
 				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
 				AB9ABDA12919242100327425 /* SwatchView.swift */,
