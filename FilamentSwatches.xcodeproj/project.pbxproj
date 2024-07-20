@@ -243,7 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				AB801A402C43D8CE0027A6CE /* Materials */,
-				AB9ABDA32919252C00327425 /* Components */,
+				AB9ABDA32919252C00327425 /* _Components */,
 				AB9ABD8E2919217600327425 /* ContentView.swift */,
 				AB9ABD9B291922CB00327425 /* HomeView.swift */,
 				AB9ABD9D2919241500327425 /* LibraryView.swift */,
@@ -254,7 +254,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AB9ABDA32919252C00327425 /* Components */ = {
+		AB9ABDA32919252C00327425 /* _Components */ = {
 			isa = PBXGroup;
 			children = (
 				AB9ABDA42919253600327425 /* ReadNFCButton.swift */,
@@ -266,7 +266,7 @@
 				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
 				AB3846A02C43155A007850EE /* View+LeadingLabel.swift */,
 			);
-			path = Components;
+			path = _Components;
 			sourceTree = "<group>";
 		};
 		AB9ABDAA29192B1400327425 /* Model */ = {
