@@ -5,48 +5,35 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import AppFoundation
 import SwiftUI
 
-struct HomeView: View {
-    @State private var presentedSwatch: Swatch?
-    @State private var selectedSwatch: Swatch?
-    @EnvironmentObject private var userData: UserData
+struct HomeView: StatefulView {
+    @State var viewModel: ViewModel
     
     var body: some View {
         NavigationStack {
             VStack {
-                ReadNFCButton(presentedSwatch: $presentedSwatch)
+                ReadNFCButton(presentedSwatch: $viewModel.presentedSwatch)
                 SubtitleView("Recent Scans")
-                List(selection: $selectedSwatch) {
-                    ForEach(userData.swatchHistory) { swatch in
+                List(selection: $viewModel.presentedSwatch) {
+                    ForEach(viewModel.swatchHistory) { swatch in
                         SwatchRow(swatch: swatch)
                             .tag(swatch)
                     }
-                    .onDelete(perform: deleteHistoryItems)
+                    .onDelete(perform: viewModel.deleteHistoryItems)
                 }
             }
             .navigationTitle(Text("Home"))
         }
-        .sheet(item: $presentedSwatch) { swatch in
+        .sheet(item: $viewModel.presentedSwatch) { swatch in
             SwatchView(swatch: swatch)
         }
-        .sheet(item: $selectedSwatch) { swatch in
-            SwatchView(swatch: swatch)
-        }
-    }
-    
-    func deleteHistoryItems(at indexSet: IndexSet) {
-        for index in indexSet {
-            let swatch = userData.swatchHistory[index]
-            userData.swatchHistory.removeAll { $0.id == swatch.id }
-        }
-        userData.save()
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
-            .environmentObject(SampleData.previewUserData)
+        HomeView(viewModel: .init())
     }
 }

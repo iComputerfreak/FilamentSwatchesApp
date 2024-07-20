@@ -14,6 +14,7 @@
 		AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */; };
 		AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A432C43D9920027A6CE /* FilamentMaterial.swift */; };
 		AB801A462C459A800027A6CE /* MaterialsView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A452C459A800027A6CE /* MaterialsView+Model.swift */; };
+		AB801A492C4C34DC0027A6CE /* HomeView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A482C4C34DC0027A6CE /* HomeView+Model.swift */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditMaterialView+Model.swift"; sourceTree = "<group>"; };
 		AB801A432C43D9920027A6CE /* FilamentMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentMaterial.swift; sourceTree = "<group>"; };
 		AB801A452C459A800027A6CE /* MaterialsView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MaterialsView+Model.swift"; sourceTree = "<group>"; };
+		AB801A482C4C34DC0027A6CE /* HomeView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Model.swift"; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -242,10 +244,11 @@
 		AB9ABD9A2919219500327425 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB801A402C43D8CE0027A6CE /* Materials */,
 				AB9ABDA32919252C00327425 /* _Components */,
+				AB801A402C43D8CE0027A6CE /* Materials */,
 				AB9ABD8E2919217600327425 /* ContentView.swift */,
 				AB9ABD9B291922CB00327425 /* HomeView.swift */,
+				AB801A482C4C34DC0027A6CE /* HomeView+Model.swift */,
 				AB9ABD9D2919241500327425 /* LibraryView.swift */,
 				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
 				AB9ABDA12919242100327425 /* SwatchView.swift */,
@@ -455,6 +458,7 @@
 				AB3846A12C43155A007850EE /* View+LeadingLabel.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
 				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,
+				AB801A492C4C34DC0027A6CE /* HomeView+Model.swift in Sources */,
 				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
 				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
 				AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */,
