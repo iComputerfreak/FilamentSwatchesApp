@@ -23,5 +23,10 @@ extension MaterialsView {
             userData.materials.append(newMaterial)
             self.editingMaterial = newMaterial
         }
+        
+        func onCreateMaterialSheetDismiss() {
+            // Delete the material(s) with an empty name that we created in `addMaterial()` again
+            userData.materials.removeAll(where: \.name.isEmpty)
+        }
     }
 }

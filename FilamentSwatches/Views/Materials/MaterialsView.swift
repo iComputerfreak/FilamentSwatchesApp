@@ -32,7 +32,10 @@ struct MaterialsView: View {
                 }
             }
         }
-        .sheet(item: $viewModel.editingMaterial) { material in
+        .sheet(
+            item: $viewModel.editingMaterial,
+            onDismiss: viewModel.onCreateMaterialSheetDismiss
+        ) { material in
             EditMaterialView(viewModel: .init(material: material, title: "Create Material"))
         }
     }

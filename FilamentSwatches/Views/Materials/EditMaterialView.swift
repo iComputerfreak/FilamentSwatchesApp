@@ -25,13 +25,18 @@ struct EditMaterialView: View {
                 TextField("Name", text: $viewModel.name)
             }
             .navigationTitle(viewModel.title)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    saveButton
-                }
-            }
+            .toolbar { toolbarContent }
         }
-        .interactiveDismissDisabled(!viewModel.isFormValid)
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarContent: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            saveButton
+        }
+        ToolbarItem(placement: .topBarLeading) {
+            cancelButton
+        }
     }
     
     private var saveButton: some View {
@@ -40,6 +45,12 @@ struct EditMaterialView: View {
             dismiss()
         }
         .disabled(!viewModel.isFormValid)
+    }
+    
+    private var cancelButton: some View {
+        Button("Cancel") {
+            dismiss()
+        }
     }
 }
 
