@@ -5,14 +5,23 @@ import DependencyInjection
 import SwiftUI
 
 extension MaterialsView {
-    struct ViewModel: ViewModelProtocol {
-        var materials: [FilamentMaterial]
-        
+    @Observable
+    final class ViewModel: ViewModelProtocol {
+        @ObservationIgnored
         @Injected private var userData: UserData
         
-        init() {
-            self.materials = []
-            self.materials = userData.materials
+        var editingMaterial: FilamentMaterial?
+        
+        var materials: [FilamentMaterial] {
+            userData.materials
+        }
+
+        init() {}
+        
+        func addMaterial() {
+            let newMaterial = FilamentMaterial(name: "")
+            userData.materials.append(newMaterial)
+            self.editingMaterial = newMaterial
         }
     }
 }

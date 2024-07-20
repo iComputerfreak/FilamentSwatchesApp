@@ -9,11 +9,7 @@ import JFUtils
 import SwiftUI
 
 struct MaterialsView: View {
-    @EnvironmentObject private var userData: UserData
-    
     @State private var viewModel: ViewModel
-    
-    @State private var editingMaterial: FilamentMaterial?
     
     // swiftlint:disable:next type_contents_order
     init(viewModel: ViewModel) {
@@ -36,18 +32,14 @@ struct MaterialsView: View {
                 }
             }
         }
-        .sheet(item: $editingMaterial) { material in
-            EditMaterialView(viewModel: .init(material: material))
+        .sheet(item: $viewModel.editingMaterial) { material in
             EditMaterialView(viewModel: .init(material: material, title: "Create Material"))
         }
     }
     
     private var addButton: some View {
         Button {
-            let newMaterial = FilamentMaterial(name: "")
-            userData.materials.append(newMaterial)
-            guard let index = userData.materials.firstIndex(of: newMaterial) else { return }
-            self.editingMaterial = userData.materials[index]
+            viewModel.addMaterial()
         } label: {
             Label("Add", systemImage: "plus")
         }
