@@ -23,19 +23,24 @@ public final class DependencyContext {
         return value
     }
     
-    public func register<Value>(_ type: Value.Type, builder: @escaping () -> Value) {
-        container.register(Value.self) { _ in
+    public func register<Value>(
+        _ type: Value.Type,
+        key: String? = nil,
+        builder: @escaping () -> Value
+    ) {
+        container.register(Value.self, name: key) { _ in
             builder()
         }
     }
     
-    public func register<Value>(
+    public func registerSingleton<Value>(
         _ type: Value.Type,
-        key: String?,
+        key: String? = nil,
         builder: @escaping () -> Value
     ) {
-        container.register(Value.self) { _ in
+        container.register(Value.self, name: key) { _ in
             builder()
         }
+        .inObjectScope(.container)
     }
 }

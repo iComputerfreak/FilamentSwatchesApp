@@ -11,8 +11,8 @@ final class DependencyInitializer {
             ConsoleLogger()
         }
         
-        DependencyContext.default.register(UserData.self) {
-            UserData()
+        DependencyContext.default.registerSingleton(UserData.self) {
+            UserData.shared
         }
     }
 }
