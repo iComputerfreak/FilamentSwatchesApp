@@ -11,6 +11,7 @@ excluded:
 opt_in_rules:
 - anonymous_argument_in_multiline_closure
 - array_init
+- attributes
 - balanced_xctest_lifecycle
 - closure_end_indentation
 - closure_spacing
@@ -201,6 +202,8 @@ attributes:
   always_on_line_above:
     - "@ObservationIgnored"
     - "@ObservationTracked"
+    - "@ViewBuilder"
+    - "@ToolbarContentBuilder"
 
 
 ###########################
