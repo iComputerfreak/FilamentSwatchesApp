@@ -10,61 +10,51 @@ import SwiftUI
 
 struct MaterialsView: View {
     @EnvironmentObject private var userData: UserData
-    @Environment(\.editMode)
-    private var editMode: Binding<EditMode>?
+    
+    @State private var viewModel: ViewModel
     
     @State private var editingMaterial: FilamentMaterial?
+    
+    // swiftlint:disable:next type_contents_order
+    init(viewModel: ViewModel) {
+        self._viewModel = State(wrappedValue: viewModel)
+    }
+    
+    // TODO: Adding materials does currently not update the view
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach($userData.materials) { $material in
-                    Text(material.name)
-                    // TODO: Add swipe action for editing and context menu action for delete
-                        .contextMenu {
-                            NavigationLink {
-                                EditMaterialView(viewModel: .init(material: $material))
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
-                            }
-                        }
+                ForEach(viewModel.materials) { material in
+                    FilamentMaterialRow(material: material)
                 }
-                .onDelete(perform: deleteMaterials)
-                .onMove(perform: moveMaterials)
             }
             .navigationTitle("Materials")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        let newMaterial = FilamentMaterial(name: "")
-                        userData.materials.append(newMaterial)
-                        self.editingMaterial = newMaterial
-                    } label: {
-                        Label("Add", systemImage: "plus")
-                    }
+                    addButton
                 }
             }
         }
         .sheet(item: $editingMaterial) { material in
-            if let materialIndex = userData.materials.firstIndex(where: \.id, equals: material.id) {
-                EditMaterialView(viewModel: .init(material: $userData.materials[materialIndex]))
-            }
+            EditMaterialView(viewModel: .init(material: material))
         }
     }
     
-    func deleteMaterials(at indexSet: IndexSet) {
-        userData.materials.remove(atOffsets: indexSet)
-        userData.save()
-    }
-    
-    func moveMaterials(at indices: IndexSet, by offset: Int) {
-        userData.materials.move(fromOffsets: indices, toOffset: offset)
-        userData.save()
+    private var addButton: some View {
+        Button {
+            let newMaterial = FilamentMaterial(name: "")
+            userData.materials.append(newMaterial)
+            guard let index = userData.materials.firstIndex(of: newMaterial) else { return }
+            self.editingMaterial = userData.materials[index]
+        } label: {
+            Label("Add", systemImage: "plus")
+        }
     }
 }
 
 struct MaterialsView_Previews: PreviewProvider {
     static var previews: some View {
-        MaterialsView()
+        MaterialsView(viewModel: .init())
     }
 }
