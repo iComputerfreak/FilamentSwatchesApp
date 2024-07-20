@@ -7,8 +7,7 @@ import SwiftUI
 extension EditMaterialView {
     @Observable
     final class ViewModel: ViewModelProtocol {
-        @ObservationIgnored
-        @Binding var material: FilamentMaterial
+        var material: FilamentMaterial
         
         @ObservationIgnored
         @Injected private var userData: UserData
@@ -27,11 +26,11 @@ extension EditMaterialView {
                 }
         }
 
-        init(material: Binding<FilamentMaterial>) {
-            self._material = material
+        init(material: FilamentMaterial) {
+            self.material = material
             
             // Initialize with default values from the material
-            self.name = material.wrappedValue.name
+            self.name = material.name
         }
         
         func save() {

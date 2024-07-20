@@ -12,11 +12,11 @@ struct EditMaterialView: View {
     @Environment(\.dismiss)
     private var dismiss: DismissAction
     
-    @Bindable private var viewModel: ViewModel
+    @State private var viewModel: ViewModel
     
     // swiftlint:disable:next type_contents_order
     init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = State(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -44,6 +44,6 @@ struct EditMaterialView: View {
 
 struct CreateMaterialView_Previews: PreviewProvider {
     static var previews: some View {
-        EditMaterialView(viewModel: .init(material: .constant(.init(name: "PLA"))))
+        EditMaterialView(viewModel: .init(material: .init(name: "PLA")))
     }
 }
