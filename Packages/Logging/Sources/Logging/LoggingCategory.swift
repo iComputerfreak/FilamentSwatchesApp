@@ -16,15 +16,15 @@ public enum LoggingCategory: String, CaseIterable, Hashable {
     public var label: String {
         switch self {
         case .general:
-            return "General"
+            return "General 📒"
         case .network:
-            return "Network"
+            return "Network 🌐"
         case .viewLifecycle:
-            return "View Lifecycle"
+            return "View Lifecycle 🔄"
         case .nfc:
-            return "NFC"
+            return "NFC 📲"
         case .persistence:
-            return "Persistence"
+            return "Persistence 📦"
         }
     }
 }

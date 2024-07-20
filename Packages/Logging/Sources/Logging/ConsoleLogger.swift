@@ -12,7 +12,7 @@ public class ConsoleLogger: Logger {
         os_log(
             osLogLevel(for: level),
             log: .init(subsystem: subsystem, category: category.label),
-            "[\(category.label)] [\(level.label)] \(message)"
+            "[\(level.label)] [\(category.label)] \(message)"
         )
     }
     
