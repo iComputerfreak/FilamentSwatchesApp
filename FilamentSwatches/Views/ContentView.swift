@@ -24,7 +24,7 @@ struct ContentView: View {
                         .accessibilityIdentifier("library-tab")
                 }
             
-            MaterialsView()
+            MaterialsView(viewModel: .init())
                 .tabItem {
                     Image(systemName: "cylinder.split.1x2")
                     Text("Materials")

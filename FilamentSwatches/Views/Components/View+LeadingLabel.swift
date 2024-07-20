@@ -3,6 +3,7 @@
 import SwiftUI
 
 extension View {
+    // TODO: Should be a proper view
     @ViewBuilder
     func leadingLabel(_ label: LocalizedStringKey) -> some View {
         HStack {
