@@ -38,6 +38,7 @@ struct MaterialsView: View {
         }
         .sheet(item: $editingMaterial) { material in
             EditMaterialView(viewModel: .init(material: material))
+            EditMaterialView(viewModel: .init(material: material, title: "Create Material"))
         }
     }
     

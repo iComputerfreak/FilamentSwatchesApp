@@ -45,7 +45,7 @@ struct FilamentMaterialRow: View {
     @ViewBuilder
     private var editButton: some View {
         NavigationLink {
-            EditMaterialView(viewModel: .init(material: material))
+            EditMaterialView(viewModel: .init(material: material, title: "Edit Material"))
         } label: {
             Label("Edit", systemImage: "pencil")
         }

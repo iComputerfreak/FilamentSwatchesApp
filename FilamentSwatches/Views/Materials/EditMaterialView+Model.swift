@@ -12,9 +12,10 @@ extension EditMaterialView {
         @ObservationIgnored
         @Injected private var userData: UserData
         
+        let title: LocalizedStringKey
         var name: String
         
-        var isValid: Bool {
+        var isFormValid: Bool {
             guard !name.isEmpty else { return false }
             
             return userData.materials
@@ -26,8 +27,9 @@ extension EditMaterialView {
                 }
         }
 
-        init(material: FilamentMaterial) {
+        init(material: FilamentMaterial, title: LocalizedStringKey) {
             self.material = material
+            self.title = title
             
             // Initialize with default values from the material
             self.name = material.name

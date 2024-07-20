@@ -24,13 +24,14 @@ struct EditMaterialView: View {
             Form {
                 TextField("Name", text: $viewModel.name)
             }
-            .navigationTitle(Text("Edit Material"))
+            .navigationTitle(viewModel.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     saveButton
                 }
             }
         }
+        .interactiveDismissDisabled(!viewModel.isFormValid)
     }
     
     private var saveButton: some View {
@@ -38,12 +39,17 @@ struct EditMaterialView: View {
             viewModel.save()
             dismiss()
         }
-        .disabled(!viewModel.isValid)
+        .disabled(!viewModel.isFormValid)
     }
 }
 
 struct CreateMaterialView_Previews: PreviewProvider {
     static var previews: some View {
-        EditMaterialView(viewModel: .init(material: .init(name: "PLA")))
+        EditMaterialView(
+            viewModel: .init(
+                material: .init(name: "PLA"),
+                title: "Edit Material"
+            )
+        )
     }
 }
