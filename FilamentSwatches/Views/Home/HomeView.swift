@@ -35,5 +35,6 @@ struct HomeView: StatefulView {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(viewModel: .init())
+            .environmentObject(SampleData.previewUserData)
     }
 }
