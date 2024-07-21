@@ -6,6 +6,7 @@
 //
 
 import AppFoundation
+import AppUI
 import SwiftUI
 
 struct HomeView: StatefulView {

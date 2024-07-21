@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02141F2C43005B0035EE68 /* AppTarget.swift */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
-		AB3846A12C43155A007850EE /* View+LeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3846A02C43155A007850EE /* View+LeadingLabel.swift */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
 		AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */; };
 		AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A432C43D9920027A6CE /* FilamentMaterial.swift */; };
@@ -18,6 +17,7 @@
 		AB801A4C2C4C3BA40027A6CE /* LibraryView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4B2C4C3BA40027A6CE /* LibraryView+Model.swift */; };
 		AB801A4E2C4C3DD70027A6CE /* SwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */; };
 		AB801A502C4C3DDE0027A6CE /* SwatchRow+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */; };
+		AB801A5B2C4D2F140027A6CE /* AppUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB801A5A2C4D2F140027A6CE /* AppUI */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -27,7 +27,6 @@
 		AB9ABDA02919241B00327425 /* CreateSwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */; };
 		AB9ABDA22919242100327425 /* SwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA12919242100327425 /* SwatchView.swift */; };
 		AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA42919253600327425 /* ReadNFCButton.swift */; };
-		AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA6291929C100327425 /* SubtitleView.swift */; };
 		AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDA829192ACF00327425 /* Swatch.swift */; };
 		AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDAD29192B9100327425 /* FilamentColor.swift */; };
 		AB9ABDB22919349300327425 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABDB12919349300327425 /* SampleData.swift */; };
@@ -44,7 +43,6 @@
 		ABA8E7D82A0427D10059E4BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DA2A0427D10059E4BF /* Localizable.strings */; };
 		ABA8E7DE2A0429650059E4BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DC2A0429650059E4BF /* InfoPlist.strings */; };
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
-		ABABF9DB291D065100364F64 /* ProminentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DA291D065100364F64 /* ProminentButtonStyle.swift */; };
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
 		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
 		ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */ = {isa = PBXBuildFile; productRef = ABC368D92922C09500E79D58 /* JFUtils */; };
@@ -69,7 +67,6 @@
 /* Begin PBXFileReference section */
 		AB02141F2C43005B0035EE68 /* AppTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTarget.swift; sourceTree = "<group>"; };
 		AB158ABF2C42DF720074025F /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
-		AB3846A02C43155A007850EE /* View+LeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+LeadingLabel.swift"; sourceTree = "<group>"; };
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
 		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditMaterialView+Model.swift"; sourceTree = "<group>"; };
@@ -79,6 +76,7 @@
 		AB801A4B2C4C3BA40027A6CE /* LibraryView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LibraryView+Model.swift"; sourceTree = "<group>"; };
 		AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchRow.swift; sourceTree = "<group>"; };
 		AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwatchRow+Model.swift"; sourceTree = "<group>"; };
+		AB801A562C4D2CC20027A6CE /* AppUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppUI; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 		AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSwatchView.swift; sourceTree = "<group>"; };
 		AB9ABDA12919242100327425 /* SwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchView.swift; sourceTree = "<group>"; };
 		AB9ABDA42919253600327425 /* ReadNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNFCButton.swift; sourceTree = "<group>"; };
-		AB9ABDA6291929C100327425 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		AB9ABDA829192ACF00327425 /* Swatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swatch.swift; sourceTree = "<group>"; };
 		AB9ABDAD29192B9100327425 /* FilamentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentColor.swift; sourceTree = "<group>"; };
 		AB9ABDB12919349300327425 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -108,7 +105,6 @@
 		ABA8E7D92A0427D10059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABA8E7DD2A0429650059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
-		ABABF9DA291D065100364F64 /* ProminentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentButtonStyle.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
 		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ABDE1B172C43D028005AEAF7 /* AppFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFoundation; sourceTree = "<group>"; };
@@ -128,6 +124,7 @@
 				ABDE1B252C43D174005AEAF7 /* DependencyInjection in Frameworks */,
 				ABC368DA2922C09500E79D58 /* JFUtils in Frameworks */,
 				ABDE1B222C43D166005AEAF7 /* Logging in Frameworks */,
+				AB801A5B2C4D2F140027A6CE /* AppUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,11 +314,8 @@
 			children = (
 				AB9ABDA42919253600327425 /* ReadNFCButton.swift */,
 				ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */,
-				ABABF9DA291D065100364F64 /* ProminentButtonStyle.swift */,
-				AB9ABDA6291929C100327425 /* SubtitleView.swift */,
 				AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */,
 				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
-				AB3846A02C43155A007850EE /* View+LeadingLabel.swift */,
 			);
 			path = _Components;
 			sourceTree = "<group>";
@@ -348,6 +342,7 @@
 		ABDE1B0F2C43CF78005AEAF7 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				AB801A562C4D2CC20027A6CE /* AppUI */,
 				ABDE1B192C43D05F005AEAF7 /* DependencyInjection */,
 				ABDE1B182C43D037005AEAF7 /* Logging */,
 				ABDE1B172C43D028005AEAF7 /* AppFoundation */,
@@ -379,6 +374,7 @@
 				ABDE1B1E2C43D10B005AEAF7 /* AppFoundation */,
 				ABDE1B212C43D166005AEAF7 /* Logging */,
 				ABDE1B242C43D174005AEAF7 /* DependencyInjection */,
+				AB801A5A2C4D2F140027A6CE /* AppUI */,
 			);
 			productName = FilamentSwatches;
 			productReference = AB9ABD892919217600327425 /* FilamentSwatches.app */;
@@ -436,6 +432,7 @@
 				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
 				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */,
 				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
+				AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -510,10 +507,8 @@
 				ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */,
 				AB801A462C459A800027A6CE /* MaterialsView+Model.swift in Sources */,
 				AB9ABDA22919242100327425 /* SwatchView.swift in Sources */,
-				AB3846A12C43155A007850EE /* View+LeadingLabel.swift in Sources */,
 				AB801A502C4C3DDE0027A6CE /* SwatchRow+Model.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
-				AB9ABDA7291929C100327425 /* SubtitleView.swift in Sources */,
 				AB801A492C4C34DC0027A6CE /* HomeView+Model.swift in Sources */,
 				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
 				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
@@ -521,7 +516,6 @@
 				AB9ABD9C291922CB00327425 /* HomeView.swift in Sources */,
 				AB9ABDB42919361A00327425 /* MaterialsView.swift in Sources */,
 				ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */,
-				ABABF9DB291D065100364F64 /* ProminentButtonStyle.swift in Sources */,
 				AB9ABD8F2919217600327425 /* ContentView.swift in Sources */,
 				ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */,
 				AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */,
@@ -832,6 +826,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppFoundation;
 		};
+		AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AppUI;
+		};
 		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logging;
@@ -854,6 +852,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB801A5A2C4D2F140027A6CE /* AppUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppUI;
+		};
 		ABC368D92922C09500E79D58 /* JFUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */;

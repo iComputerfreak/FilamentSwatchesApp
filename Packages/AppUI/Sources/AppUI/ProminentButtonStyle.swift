@@ -1,8 +1,8 @@
 import Foundation
 import SwiftUI
 
-struct ProminentButtonStyle: ViewModifier {
-    func body(content: Content) -> some View {
+public struct ProminentButtonStyle: ViewModifier {
+    public func body(content: Content) -> some View {
         content
             .foregroundColor(.white)
             .font(.title)
@@ -19,7 +19,7 @@ struct ProminentButtonStyle: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func prominentButtonStyle() -> some View {
         self.modifier(ProminentButtonStyle())
     }
