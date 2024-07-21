@@ -31,7 +31,7 @@ struct ContentView: View {
                         .accessibilityIdentifier("materials-tab")
                 }
             
-            SettingsView()
+            SettingsView(viewModel: .init())
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

@@ -17,6 +17,7 @@
 		AB801A4C2C4C3BA40027A6CE /* LibraryView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4B2C4C3BA40027A6CE /* LibraryView+Model.swift */; };
 		AB801A4E2C4C3DD70027A6CE /* SwatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */; };
 		AB801A502C4C3DDE0027A6CE /* SwatchRow+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */; };
+		AB801A582C4D2DB10027A6CE /* SettingsView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A572C4D2DB10027A6CE /* SettingsView+Model.swift */; };
 		AB801A5B2C4D2F140027A6CE /* AppUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB801A5A2C4D2F140027A6CE /* AppUI */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
@@ -51,7 +52,6 @@
 		ABDE1B1F2C43D10B005AEAF7 /* AppFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B1E2C43D10B005AEAF7 /* AppFoundation */; };
 		ABDE1B222C43D166005AEAF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B212C43D166005AEAF7 /* Logging */; };
 		ABDE1B252C43D174005AEAF7 /* DependencyInjection in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE1B242C43D174005AEAF7 /* DependencyInjection */; };
-		ABE344622BC307EF005F4E88 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE344612BC307EF005F4E88 /* GlobalConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +77,7 @@
 		AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchRow.swift; sourceTree = "<group>"; };
 		AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwatchRow+Model.swift"; sourceTree = "<group>"; };
 		AB801A562C4D2CC20027A6CE /* AppUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppUI; sourceTree = "<group>"; };
+		AB801A572C4D2DB10027A6CE /* SettingsView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView+Model.swift"; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 		ABDE1B172C43D028005AEAF7 /* AppFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppFoundation; sourceTree = "<group>"; };
 		ABDE1B182C43D037005AEAF7 /* Logging */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Logging; sourceTree = "<group>"; };
 		ABDE1B192C43D05F005AEAF7 /* DependencyInjection */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DependencyInjection; sourceTree = "<group>"; };
-		ABE344612BC307EF005F4E88 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,6 @@
 			children = (
 				AB02140B2C42F8F30035EE68 /* Services */,
 				AB158ABF2C42DF720074025F /* DependencyInitializer.swift */,
-				ABE344612BC307EF005F4E88 /* GlobalConstants.swift */,
 				AB02141F2C43005B0035EE68 /* AppTarget.swift */,
 			);
 			path = Shared;
@@ -247,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
+				AB801A572C4D2DB10027A6CE /* SettingsView+Model.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -499,7 +499,6 @@
 				AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */,
 				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
-				ABE344622BC307EF005F4E88 /* GlobalConstants.swift in Sources */,
 				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
 				AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */,
 				AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */,
@@ -510,6 +509,7 @@
 				AB801A502C4C3DDE0027A6CE /* SwatchRow+Model.swift in Sources */,
 				AB9ABDB22919349300327425 /* SampleData.swift in Sources */,
 				AB801A492C4C34DC0027A6CE /* HomeView+Model.swift in Sources */,
+				AB801A582C4D2DB10027A6CE /* SettingsView+Model.swift in Sources */,
 				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
 				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
 				AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */,

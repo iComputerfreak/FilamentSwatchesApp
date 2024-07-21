@@ -61,7 +61,8 @@ class UserData: ObservableObject {
                 self.swatchHistory = []
             }
             
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? GlobalConstants.DefaultValues.baseURL
+            // TODO: Move defaultBaseURL somewhere else or make it optional
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? SettingsView.ViewModel().defaultBaseURL
         } catch {
             fatalError("\(error)")
         }

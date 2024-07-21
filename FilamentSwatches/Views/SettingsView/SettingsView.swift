@@ -5,23 +5,19 @@
 //  Created by Jonas Frey on 14.11.22.
 //
 
-import Foundation
+import AppFoundation
 import SwiftUI
 
-struct SettingsView: View {
-    @EnvironmentObject private var userData: UserData
-    @State private var setupInfoShowing: Bool = false
+struct SettingsView: StatefulView {
+    @State var viewModel: ViewModel
     
     var body: some View {
         NavigationStack {
 			Form {
 				Section {
-					TextField(GlobalConstants.DefaultValues.baseURL, text: $userData.baseURL)
+					TextField(viewModel.baseURL, text: $viewModel.baseURL)
 						.keyboardType(.URL)
 						.autocorrectionDisabled()
-						.onChange(of: userData.baseURL) {
-							userData.save()
-						}
 				} footer: {
                     Text(
                         "The base URL is used for encoding the swatch information onto the NFC tags so that other devices without the app installed " +
@@ -37,7 +33,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
-            .environmentObject(UserData.shared)
+        SettingsView(viewModel: .init())
+            .environmentObject(SampleData.previewUserData)
     }
 }
