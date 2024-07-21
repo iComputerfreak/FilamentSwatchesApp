@@ -9,7 +9,7 @@ import Foundation
 
 enum SampleData {
     static let swatch = Swatch(
-        material: "PLA",
+        material: .init(name: "PLA"),
         brand: "Polymaker",
         productLine: "PolyLite",
         colorName: "Teal",
@@ -36,7 +36,7 @@ enum SampleData {
         userData.materials = ["PLA", "PETG", "ABS"].map { .init(name: $0) }
         userData.swatches = [
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Red",
@@ -45,7 +45,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Yellow",
@@ -54,7 +54,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Eryone",
                 colorName: "Gray",
                 color: .init(hexCode: "ADADAD"),
@@ -62,7 +62,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Prusament",
                 colorName: "Gentleman's Grey",
                 color: .init(hexCode: "455767"),
@@ -70,7 +70,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PETG",
+                material: .init(name: "PETG"),
                 brand: "3DJake",
                 colorName: "Duneklblau",
                 color: .init(hexCode: "2A3F97"),
@@ -78,7 +78,7 @@ enum SampleData {
                 bedTemp: 80
             ),
             .init(
-                material: "ABS",
+                material: .init(name: "ABS"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Teal",

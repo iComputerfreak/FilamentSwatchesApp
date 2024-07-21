@@ -16,6 +16,7 @@ extension EditSwatchView {
         @Injected private var logger: Logger
         
         let title: LocalizedStringKey
+        let noMaterialSelection: FilamentMaterial
         
         let swatchID: UUID
         var material: FilamentMaterial
@@ -45,8 +46,7 @@ extension EditSwatchView {
             self.swatch = swatch
             
             self.swatchID = swatch.id
-            // TODO: This creates a new ID and thus changes the hash, breaking the material Picker
-            self.material = FilamentMaterial(name: swatch.material)
+            self.material = swatch.material
             self.brand = swatch.brand
             self.productLine = swatch.productLine
             self.colorName = swatch.colorName
@@ -54,13 +54,19 @@ extension EditSwatchView {
             self.bedTemp = swatch.bedTemp
             self.isShowingColorPicker = swatch.color != nil
             self.swatchColor = swatch.color?.color ?? .white
+            if swatch.material.name.isEmpty {
+                // Set the "Select..." option to the swatch's material (so the ID matches)
+                self.noMaterialSelection = swatch.material
+            } else {
+                self.noMaterialSelection = .init(name: "")
+            }
         }
         
         func submit() {
             guard isFormValid else { return }
             
             // Update the swatch
-            swatch.material = material.name
+            swatch.material = material
             swatch.brand = brand
             swatch.productLine = productLine
             swatch.colorName = colorName

@@ -28,7 +28,7 @@ extension LibraryView {
         func swatches(for material: FilamentMaterial) -> [Swatch] {
             swatches
                 .filter { swatch in
-                    swatch.material == material.name
+                    swatch.material == material
                 }
                 .sorted { lhs, rhs in
                     if lhs.brand == rhs.brand {
@@ -39,7 +39,7 @@ extension LibraryView {
         }
         
         func addSwatch() {
-            let newSwatch = Swatch(material: "", brand: "", colorName: "")
+            let newSwatch = Swatch(material: .init(name: ""), brand: "", colorName: "")
             userData.swatches.append(newSwatch)
             editSwatchTitle = "Create Swatch"
             editingSwatch = newSwatch

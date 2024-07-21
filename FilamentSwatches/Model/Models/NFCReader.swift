@@ -8,6 +8,7 @@
 import CoreNFC
 import DependencyInjection
 import Foundation
+import JFUtils
 import Logging
 
 enum NFCReaderError: Error {
@@ -19,6 +20,7 @@ enum NFCReaderError: Error {
 
 class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
     @Injected private var logger: Logger
+    @Injected private var userData: UserData
     
     func scanForSwatch() async throws -> Swatch? {
         logger.info("Scanning for swatch...", category: .nfc)
@@ -84,7 +86,7 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         }
         
         guard
-            let material = query(URLKeys.material),
+            let materialName = query(URLKeys.material),
             let brand = query(URLKeys.brand),
             let colorName = query(URLKeys.colorName)
         else {
@@ -96,6 +98,14 @@ class NFCReader: NFCSessionDelegate<Swatch?>, NFCNDEFReaderSessionDelegate {
         let color = query(URLKeys.colorCode).map(FilamentColor.init(hexCode:))?.flatMap { $0 }
         let extruderTemp = query(URLKeys.extruderTemp).map(Int.init)?.flatMap { $0 }
         let bedTemp = query(URLKeys.bedTemp).map(Int.init)?.flatMap { $0 }
+        
+        // Get or create the material
+        let material: FilamentMaterial = {
+            guard let material = userData.materials.first(where: \.name, equals: materialName) else {
+                return FilamentMaterial(name: materialName)
+            }
+            return material
+        }()
         
         return Swatch(
             material: material,

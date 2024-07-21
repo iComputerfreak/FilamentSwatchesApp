@@ -24,7 +24,7 @@ class Swatch: Identifiable, Codable {
     
     var id = UUID()
     
-    var material: String
+    var material: FilamentMaterial
     var brand: String
     var productLine: String
     var colorName: String
@@ -33,18 +33,18 @@ class Swatch: Identifiable, Codable {
     var bedTemp: Int = 0
     
     var descriptiveName: String {
-        "\(productLine.isEmpty ? brand : productLine) \(colorName) \(material)"
+        "\(productLine.isEmpty ? brand : productLine) \(colorName) \(material.name)"
             .trimmingCharacters(in: .whitespaces)
     }
     
     var isValid: Bool {
-        !material.isEmpty &&
+        !material.name.isEmpty &&
         !brand.isEmpty &&
         !colorName.isEmpty
     }
     
     init(
-        material: String,
+        material: FilamentMaterial,
         brand: String,
         productLine: String = "",
         colorName: String,
@@ -64,7 +64,11 @@ class Swatch: Identifiable, Codable {
     required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self._id = try container.decode(UUID.self, forKey: ._id)
-        self._material = try container.decode(String.self, forKey: ._material)
+        if let legacyMaterial = try? container.decodeIfPresent(String.self, forKey: ._material) {
+            self._material = FilamentMaterial(name: legacyMaterial)
+        } else {
+            self._material = try container.decode(FilamentMaterial.self, forKey: ._material)
+        }
         self._brand = try container.decode(String.self, forKey: ._brand)
         self._productLine = try container.decode(String.self, forKey: ._productLine)
         self._colorName = try container.decode(String.self, forKey: ._colorName)

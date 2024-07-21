@@ -59,7 +59,7 @@ struct EditSwatchView: View {
         Picker("Material", selection: $viewModel.material) {
             Text("Select...")
                 .disabled(true)
-                .tag(FilamentMaterial(name: ""))
+                .tag(viewModel.noMaterialSelection)
             ForEach(viewModel.materials) { material in
                 Text(material.name)
                     .tag(material)

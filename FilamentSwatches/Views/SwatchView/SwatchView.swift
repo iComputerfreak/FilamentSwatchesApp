@@ -48,7 +48,7 @@ struct SwatchView: View {
                 .font(.largeTitle.bold())
                 .padding(.bottom)
             
-            SwatchViewRow(key: "Material", value: viewModel.swatch.material)
+            SwatchViewRow(key: "Material", value: viewModel.swatch.material.name)
             SwatchViewRow(key: "Brand", value: viewModel.swatch.brand)
             if !viewModel.swatch.productLine.isEmpty {
                 SwatchViewRow(key: "Product Line", value: viewModel.swatch.productLine)
