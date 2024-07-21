@@ -38,7 +38,7 @@ struct LibraryView: StatefulView {
             CreateSwatchView()
         }
         .sheet(item: $viewModel.selectedSwatch) { swatch in
-            SwatchView(swatch: swatch)
+            SwatchView(viewModel: .init(swatch: swatch))
         }
         .sheet(item: $viewModel.editingSwatch) { swatch in
             CreateSwatchView(editing: swatch)

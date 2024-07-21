@@ -35,7 +35,7 @@ struct HomeView: StatefulView {
             .navigationTitle(Text("Home"))
         }
         .sheet(item: $viewModel.presentedSwatch) { swatch in
-            SwatchView(swatch: swatch)
+            SwatchView(viewModel: .init(swatch: swatch))
         }
     }
 }

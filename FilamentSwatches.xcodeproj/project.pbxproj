@@ -19,6 +19,9 @@
 		AB801A502C4C3DDE0027A6CE /* SwatchRow+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */; };
 		AB801A582C4D2DB10027A6CE /* SettingsView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A572C4D2DB10027A6CE /* SettingsView+Model.swift */; };
 		AB801A5B2C4D2F140027A6CE /* AppUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB801A5A2C4D2F140027A6CE /* AppUI */; };
+		AB801A5D2C4D38750027A6CE /* SwatchViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A5C2C4D38750027A6CE /* SwatchViewRow.swift */; };
+		AB801A612C4D38830027A6CE /* SwatchView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A602C4D38830027A6CE /* SwatchView+Model.swift */; };
+		AB801A632C4D3ADC0027A6CE /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A622C4D3ADC0027A6CE /* DismissButton.swift */; };
 		AB9ABD8D2919217600327425 /* FilamentSwatchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */; };
 		AB9ABD8F2919217600327425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ABD8E2919217600327425 /* ContentView.swift */; };
 		AB9ABD912919217700327425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9ABD902919217700327425 /* Assets.xcassets */; };
@@ -78,6 +81,9 @@
 		AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwatchRow+Model.swift"; sourceTree = "<group>"; };
 		AB801A562C4D2CC20027A6CE /* AppUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppUI; sourceTree = "<group>"; };
 		AB801A572C4D2DB10027A6CE /* SettingsView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView+Model.swift"; sourceTree = "<group>"; };
+		AB801A5C2C4D38750027A6CE /* SwatchViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwatchViewRow.swift; sourceTree = "<group>"; };
+		AB801A602C4D38830027A6CE /* SwatchView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwatchView+Model.swift"; sourceTree = "<group>"; };
+		AB801A622C4D3ADC0027A6CE /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		AB9ABD892919217600327425 /* FilamentSwatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilamentSwatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesApp.swift; sourceTree = "<group>"; };
 		AB9ABD8E2919217600327425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				AB9ABDA12919242100327425 /* SwatchView.swift */,
+				AB801A602C4D38830027A6CE /* SwatchView+Model.swift */,
+				AB801A5C2C4D38750027A6CE /* SwatchViewRow.swift */,
 			);
 			path = SwatchView;
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 				ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */,
 				AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */,
 				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
+				AB801A622C4D3ADC0027A6CE /* DismissButton.swift */,
 			);
 			path = _Components;
 			sourceTree = "<group>";
@@ -497,10 +506,13 @@
 				AB9ABDA929192ACF00327425 /* Swatch.swift in Sources */,
 				AB9ABDB6291993FB00327425 /* UserData.swift in Sources */,
 				AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */,
+				AB801A632C4D3ADC0027A6CE /* DismissButton.swift in Sources */,
+				AB801A5D2C4D38750027A6CE /* SwatchViewRow.swift in Sources */,
 				ABA8E7A12A0159510059E4BF /* URLKeys.swift in Sources */,
 				AB9ABD9E2919241500327425 /* LibraryView.swift in Sources */,
 				AB9ABDA52919253600327425 /* ReadNFCButton.swift in Sources */,
 				AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */,
+				AB801A612C4D38830027A6CE /* SwatchView+Model.swift in Sources */,
 				AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */,
 				AB801A4E2C4C3DD70027A6CE /* SwatchRow.swift in Sources */,
 				ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */,
