@@ -212,6 +212,48 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		AB801A512C4D2C590027A6CE /* SwatchRow */ = {
+			isa = PBXGroup;
+			children = (
+				AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */,
+				AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */,
+			);
+			path = SwatchRow;
+			sourceTree = "<group>";
+		};
+		AB801A522C4D2C5F0027A6CE /* LibraryView */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD9D2919241500327425 /* LibraryView.swift */,
+				AB801A4B2C4C3BA40027A6CE /* LibraryView+Model.swift */,
+			);
+			path = LibraryView;
+			sourceTree = "<group>";
+		};
+		AB801A532C4D2C8A0027A6CE /* EditSwatchView */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
+			);
+			path = EditSwatchView;
+			sourceTree = "<group>";
+		};
+		AB801A542C4D2C950027A6CE /* SwatchView */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ABDA12919242100327425 /* SwatchView.swift */,
+			);
+			path = SwatchView;
+			sourceTree = "<group>";
+		};
+		AB801A552C4D2C9A0027A6CE /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		AB9ABD802919217600327425 = {
 			isa = PBXGroup;
 			children = (
@@ -257,17 +299,15 @@
 		AB9ABD9A2919219500327425 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB801A4A2C4C3B840027A6CE /* Home */,
 				AB9ABDA32919252C00327425 /* _Components */,
-				AB801A402C43D8CE0027A6CE /* Materials */,
 				AB9ABD8E2919217600327425 /* ContentView.swift */,
-				AB9ABD9D2919241500327425 /* LibraryView.swift */,
-				AB801A4B2C4C3BA40027A6CE /* LibraryView+Model.swift */,
-				AB801A4D2C4C3DD70027A6CE /* SwatchRow.swift */,
-				AB801A4F2C4C3DDE0027A6CE /* SwatchRow+Model.swift */,
-				AB9ABD9F2919241B00327425 /* CreateSwatchView.swift */,
-				AB9ABDA12919242100327425 /* SwatchView.swift */,
-				ABC368D62922BC9C00E79D58 /* SettingsView.swift */,
+				AB801A4A2C4C3B840027A6CE /* Home */,
+				AB801A522C4D2C5F0027A6CE /* LibraryView */,
+				AB801A402C43D8CE0027A6CE /* Materials */,
+				AB801A512C4D2C590027A6CE /* SwatchRow */,
+				AB801A532C4D2C8A0027A6CE /* EditSwatchView */,
+				AB801A542C4D2C950027A6CE /* SwatchView */,
+				AB801A552C4D2C9A0027A6CE /* SettingsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
