@@ -26,6 +26,6 @@ public enum LogLevel: String {
     }
     
     public var label: String {
-        "\(rawValue.capitalized) \(emoji)"
+        "[\(rawValue.capitalized) \(emoji)]"
     }
 }
