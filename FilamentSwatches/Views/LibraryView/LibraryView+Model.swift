@@ -13,7 +13,7 @@ extension LibraryView {
         
         var selectedSwatch: Swatch?
         var editingSwatch: Swatch?
-        var isShowingAddSwatchSheet: Bool = false
+        private(set) var editSwatchTitle: LocalizedStringKey = "Edit Swatch"
         
         var materials: [FilamentMaterial] {
             userData.materials
@@ -36,6 +36,18 @@ extension LibraryView {
                     }
                     return lhs.brand < rhs.brand
                 }
+        }
+        
+        func addSwatch() {
+            let newSwatch = Swatch(material: "", brand: "", colorName: "")
+            userData.swatches.append(newSwatch)
+            editSwatchTitle = "Create Swatch"
+            editingSwatch = newSwatch
+        }
+        
+        func editSwatch(_ swatch: Swatch) {
+            editSwatchTitle = "Edit Swatch"
+            editingSwatch = swatch
         }
         
         func deleteMaterials(at indexSet: IndexSet) {

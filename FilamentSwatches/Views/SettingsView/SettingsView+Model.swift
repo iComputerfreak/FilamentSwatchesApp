@@ -16,6 +16,7 @@ extension SettingsView {
         
         let defaultBaseURL: String = Constants.defaultBaseURL
         
+        @ObservationIgnored
         var baseURL: String {
             didSet {
                 userData.baseURL = baseURL

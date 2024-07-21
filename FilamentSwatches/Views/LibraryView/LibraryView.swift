@@ -34,14 +34,11 @@ struct LibraryView: StatefulView {
             .navigationTitle("Library")
             .toolbar { toolbarContent }
         }
-        .sheet(isPresented: $viewModel.isShowingAddSwatchSheet) {
-            CreateSwatchView()
-        }
         .sheet(item: $viewModel.selectedSwatch) { swatch in
             SwatchView(viewModel: .init(swatch: swatch))
         }
         .sheet(item: $viewModel.editingSwatch) { swatch in
-            CreateSwatchView(editing: swatch)
+            EditSwatchView(viewModel: .init(swatch: swatch, title: viewModel.editSwatchTitle))
         }
     }
     
@@ -54,7 +51,7 @@ struct LibraryView: StatefulView {
     
     private var addSwatchButton: some View {
         Button {
-            viewModel.isShowingAddSwatchSheet = true
+            viewModel.addSwatch()
         } label: {
             Image(systemName: "plus")
         }

@@ -46,4 +46,17 @@ struct FilamentColor: Codable, Hashable {
         self.green = UInt8(green)
         self.blue = UInt8(blue)
     }
+    
+    init?(color: Color) {
+        guard
+            let components = color.cgColor?.components,
+            components.count >= 3
+        else { return nil }
+        let colorComponents = components.map { UInt8(round($0 * 255)) }
+        self.init(
+            red: colorComponents[0],
+            green: colorComponents[1],
+            blue: colorComponents[2]
+        )
+    }
 }
