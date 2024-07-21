@@ -61,8 +61,8 @@ class UserData: ObservableObject {
                 self.swatchHistory = []
             }
             
-            // TODO: Move defaultBaseURL somewhere else or make it optional
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? SettingsView.ViewModel().defaultBaseURL
+            // TODO: Move defaultBaseURL somewhere else or make baseURL optional
+            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? "https://filamentswatch.info"
         } catch {
             fatalError("\(error)")
         }
