@@ -107,7 +107,7 @@ extension Swatch: Equatable {
     /// returns whether all properties are equal.
     func arePropertiesEqual(to other: Swatch) -> Bool {
         // Don't compare the ID
-        return material == other.material &&
+        return material.name == other.material.name &&
         brand == other.brand &&
         productLine == other.productLine &&
         colorName == other.colorName &&
