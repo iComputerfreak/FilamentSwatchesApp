@@ -10,7 +10,8 @@ import Foundation
 import Logging
 import SwiftUI
 
-class UserData: ObservableObject {
+@Observable
+final class UserData {
     private enum Constants {
         static let swatchesKey: String = "swatches"
         static let materialsKey: String = "materials"
@@ -22,12 +23,13 @@ class UserData: ObservableObject {
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     
-    @Published var swatches: [Swatch]
-    @Published var materials: [FilamentMaterial]
-    @Published var swatchHistory: [Swatch]
+    var swatches: [Swatch]
+    var materials: [FilamentMaterial]
+    var swatchHistory: [Swatch]
     // TODO: Move to separate Config service
-    @Published var baseURL: String
+    var baseURL: String
     
+    @ObservationIgnored
     @Injected private var logger: Logger
     
     init() {

@@ -5,6 +5,7 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
 import Foundation
 
 enum SampleData {
@@ -32,7 +33,7 @@ enum SampleData {
     }()
     
     static func populateScreenshotData() {
-        let userData = UserData.shared
+        let userData: UserData = DependencyContext.default.resolve()
         userData.materials = ["PLA", "PETG", "ABS"].map { .init(name: $0) }
         userData.swatches = [
             .init(
