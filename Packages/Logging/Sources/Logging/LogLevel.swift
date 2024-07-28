@@ -19,7 +19,7 @@ public enum LogLevel: String {
         case .warning:
             return "⚠️"
         case .error:
-            return "❌"
+            return "🛑"
         case .fatal:
             return "💥"
         }
