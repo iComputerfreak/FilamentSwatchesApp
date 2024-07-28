@@ -7,7 +7,7 @@ public enum LoggingCategory: Hashable {
     case network
     case viewLifecycle
     case nfc
-    case persistence
+    case userData
     case file(_ file: String = #file)
     
     public var identifier: String {
@@ -24,8 +24,8 @@ public enum LoggingCategory: Hashable {
         case .nfc:
             return "nfc"
         
-        case .persistence:
-            return "persistence"
+        case .userData:
+            return "userData"
         
         case .file:
             return "file_\(fileName)"
@@ -46,8 +46,8 @@ public enum LoggingCategory: Hashable {
         case .nfc:
             return "[NFC 📲]"
         
-        case .persistence:
-            return "[Persistence 📦]"
+        case .userData:
+            return "[User Data 📦]"
         
         case .file:
             return "[File 🏷️] [\(fileName)]"

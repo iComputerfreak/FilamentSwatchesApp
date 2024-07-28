@@ -15,6 +15,7 @@ struct FilamentSwatchesApp: App {
     
     @Injected private var userData: UserData
     
+    // swiftlint:disable:next type_contents_order
     init() {
         DependencyInitializer().register()
         

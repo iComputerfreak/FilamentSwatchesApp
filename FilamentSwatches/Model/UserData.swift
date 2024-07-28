@@ -34,14 +34,14 @@ class UserData: ObservableObject {
         do {
             // We cannot use the injected logger here, since it's not available yet
             let logger = ConsoleLogger()
-            logger.debug("Decoding swatches...", category: .persistence)
+            logger.debug("Decoding swatches...", category: .userData)
             if let swatchesData = Self.userDefaults.object(forKey: Constants.swatchesKey) as? Data, !swatchesData.isEmpty {
                 self.swatches = try Self.decoder.decode([Swatch].self, from: swatchesData)
             } else {
                 self.swatches = []
             }
             
-            logger.debug("Decoding materials...", category: .persistence)
+            logger.debug("Decoding materials...", category: .userData)
             if let materialsData = Self.userDefaults.object(forKey: Constants.materialsKey) as? Data, !materialsData.isEmpty {
                 // TODO: Remove migration after deployed
                 if let legacyMaterials = try? Self.decoder.decode([String].self, from: materialsData) {
@@ -53,7 +53,7 @@ class UserData: ObservableObject {
                 self.materials = []
             }
             
-            logger.debug("Decoding swatch history...", category: .persistence)
+            logger.debug("Decoding swatch history...", category: .userData)
             if let swatchHistoryData = Self.userDefaults.object(forKey: Constants.swatchHistoryKey) as? Data, !swatchHistoryData.isEmpty {
                 self.swatchHistory = try Self.decoder.decode([Swatch].self, from: swatchHistoryData)
             } else {
@@ -78,7 +78,7 @@ class UserData: ObservableObject {
             Self.userDefaults.set(swatchHistoryData, forKey: Constants.swatchHistoryKey)
             Self.userDefaults.set(baseURL, forKey: Constants.baseURLKey)
         } catch {
-            logger.error("Error saving user data: \(error)", category: .persistence)
+            logger.error("Error saving user data: \(error)", category: .userData)
         }
     }
 }
