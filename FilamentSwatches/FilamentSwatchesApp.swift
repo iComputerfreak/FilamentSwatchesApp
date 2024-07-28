@@ -20,7 +20,6 @@ struct FilamentSwatchesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(userData)
                 .onChange(of: scenePhase) { _, newValue in
                     if newValue == .background {
                         userData.save()

@@ -62,6 +62,5 @@ struct LibraryView: StatefulView {
 struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
         LibraryView(viewModel: .init())
-            .environmentObject(SampleData.previewUserData)
     }
 }

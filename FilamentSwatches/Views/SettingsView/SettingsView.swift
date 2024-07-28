@@ -34,6 +34,5 @@ struct SettingsView: StatefulView {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(viewModel: .init())
-            .environmentObject(SampleData.previewUserData)
     }
 }
