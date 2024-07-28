@@ -13,6 +13,26 @@ public final class DependencyContext {
     }
     
     public func resolve<Value>(key: String? = nil) -> Value {
+        resolve(key: key, in: container)
+    }
+    
+    public func register<Value>(
+        _ type: Value.Type,
+        key: String? = nil,
+        builder: @escaping () -> Value
+    ) {
+        register(type, key: key, in: container, scope: .weak, builder: builder)
+    }
+    
+    public func registerSingleton<Value>(
+        _ type: Value.Type,
+        key: String? = nil,
+        builder: @escaping () -> Value
+    ) {
+        register(type, key: key, in: container, scope: .container, builder: builder)
+    }
+
+    private func resolve<Value>(key: String? = nil, in container: Container) -> Value {
         guard let value = container.resolve(Value.self, name: key) else {
             let typeDescription = String(describing: Value.self)
             let keyDescription = key.map { " with key \($0)" } ?? ""
@@ -22,20 +42,17 @@ public final class DependencyContext {
         }
         return value
     }
-    
-    public func register<Value>(_ type: Value.Type, builder: @escaping () -> Value) {
-        container.register(Value.self) { _ in
-            builder()
-        }
-    }
-    
-    public func register<Value>(
+
+    private func register<Value>(
         _ type: Value.Type,
-        key: String?,
+        key: String? = nil,
+        in container: Container,
+        scope: ObjectScope,
         builder: @escaping () -> Value
     ) {
-        container.register(Value.self) { _ in
+        container.register(Value.self, name: key) { _ in
             builder()
         }
+        .inObjectScope(scope)
     }
 }

@@ -5,11 +5,12 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
 import Foundation
 
 enum SampleData {
     static let swatch = Swatch(
-        material: "PLA",
+        material: .init(name: "PLA"),
         brand: "Polymaker",
         productLine: "PolyLite",
         colorName: "Teal",
@@ -18,25 +19,35 @@ enum SampleData {
         bedTemp: 60
     )
     
+    static let newSwatch = Swatch(
+        material: .init(name: "PLA"),
+        brand: "Polymaker",
+        productLine: "PolyLite",
+        colorName: "Red",
+        color: .init(hexCode: "CD4F4A"),
+        extruderTemp: 215,
+        bedTemp: 70
+    )
+    
     static let previewUserData: UserData = {
         let data = UserData()
         data.swatches = [Self.swatch]
         data.materials = [
-            "PLA",
-            "ABS",
-            "ABS+",
-            "PETG",
+            .init(name: "PLA"),
+            .init(name: "ABS"),
+            .init(name: "ABS+"),
+            .init(name: "PETG"),
         ]
         data.swatchHistory = [Self.swatch]
         return data
     }()
     
     static func populateScreenshotData() {
-        let userData = UserData.shared
-        userData.materials = ["PLA", "PETG", "ABS"]
+        let userData: UserData = DependencyContext.default.resolve()
+        userData.materials = ["PLA", "PETG", "ABS"].map { .init(name: $0) }
         userData.swatches = [
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Red",
@@ -45,7 +56,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Yellow",
@@ -54,7 +65,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Eryone",
                 colorName: "Gray",
                 color: .init(hexCode: "ADADAD"),
@@ -62,7 +73,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PLA",
+                material: .init(name: "PLA"),
                 brand: "Prusament",
                 colorName: "Gentleman's Grey",
                 color: .init(hexCode: "455767"),
@@ -70,7 +81,7 @@ enum SampleData {
                 bedTemp: 70
             ),
             .init(
-                material: "PETG",
+                material: .init(name: "PETG"),
                 brand: "3DJake",
                 colorName: "Duneklblau",
                 color: .init(hexCode: "2A3F97"),
@@ -78,7 +89,7 @@ enum SampleData {
                 bedTemp: 80
             ),
             .init(
-                material: "ABS",
+                material: .init(name: "ABS"),
                 brand: "Polymaker",
                 productLine: "PolyLite",
                 colorName: "Teal",

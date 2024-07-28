@@ -76,7 +76,7 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
         }
         // Append the url parameters
         components.queryItems?.append(contentsOf: [
-            .init(name: URLKeys.material, value: swatch.material),
+            .init(name: URLKeys.material, value: swatch.material.name),
             .init(name: URLKeys.brand, value: swatch.brand),
             .init(name: URLKeys.colorName, value: swatch.colorName),
         ])

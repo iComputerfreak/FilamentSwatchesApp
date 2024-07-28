@@ -19,13 +19,13 @@ public enum LogLevel: String {
         case .warning:
             return "⚠️"
         case .error:
-            return "❌"
+            return "🛑"
         case .fatal:
             return "💥"
         }
     }
     
     public var label: String {
-        "\(rawValue.capitalized) \(emoji)"
+        "[\(rawValue.capitalized) \(emoji)]"
     }
 }

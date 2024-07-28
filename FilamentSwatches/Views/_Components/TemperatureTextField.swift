@@ -23,6 +23,7 @@ struct TemperatureTextField: View {
             Spacer()
             TextField("Temp", value: $value, format: .number)
                 .multilineTextAlignment(.trailing)
+                .keyboardType(.numberPad)
             Text("°C")
         }
     }

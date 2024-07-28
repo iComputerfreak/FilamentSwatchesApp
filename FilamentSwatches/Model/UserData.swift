@@ -10,48 +10,60 @@ import Foundation
 import Logging
 import SwiftUI
 
-class UserData: ObservableObject {
-    private static let swatchesKey: String = "swatches"
-    private static let materialsKey: String = "materials"
-    private static let swatchHistoryKey: String = "swatchHistory"
-    private static let baseURLKey: String = "baseURL"
-    
-    static let maxHistoryItems: Int = 10
+@Observable
+final class UserData {
+    private enum Constants {
+        static let swatchesKey: String = "swatches"
+        static let materialsKey: String = "materials"
+        static let swatchHistoryKey: String = "swatchHistory"
+        static let baseURLKey: String = "baseURL"
+    }
     
     private static let userDefaults: UserDefaults = .standard
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     
-    static let shared: UserData = .init()
+    var swatches: [Swatch]
+    var materials: [FilamentMaterial]
+    var swatchHistory: [Swatch]
+    // TODO: Move to separate Config service
+    var baseURL: String
     
-    @Published var swatches: [Swatch]
-    @Published var materials: [String]
-    @Published var swatchHistory: [Swatch]
-    @Published var baseURL: String
-    
+    @ObservationIgnored
     @Injected private var logger: Logger
     
     init() {
         do {
-            if let swatchesData = Self.userDefaults.object(forKey: Self.swatchesKey) as? Data, !swatchesData.isEmpty {
+            // We cannot use the injected logger here, since it's not available yet
+            let logger = ConsoleLogger()
+            logger.debug("Decoding swatches...", category: .userData)
+            if let swatchesData = Self.userDefaults.object(forKey: Constants.swatchesKey) as? Data, !swatchesData.isEmpty {
                 self.swatches = try Self.decoder.decode([Swatch].self, from: swatchesData)
             } else {
                 self.swatches = []
             }
             
-            if let materialsData = Self.userDefaults.object(forKey: Self.materialsKey) as? Data, !materialsData.isEmpty {
-                self.materials = try Self.decoder.decode([String].self, from: materialsData)
+            logger.debug("Decoding materials...", category: .userData)
+            if let materialsData = Self.userDefaults.object(forKey: Constants.materialsKey) as? Data, !materialsData.isEmpty {
+                // TODO: Remove migration after deployed
+                if let legacyMaterials = try? Self.decoder.decode([String].self, from: materialsData) {
+                    self.materials = legacyMaterials.map { FilamentMaterial(name: $0) }
+                } else {
+                    self.materials = try Self.decoder.decode([FilamentMaterial].self, from: materialsData)
+                }
             } else {
                 self.materials = []
             }
             
-            if let swatchHistoryData = Self.userDefaults.object(forKey: Self.swatchHistoryKey) as? Data, !swatchHistoryData.isEmpty {
+            logger.debug("Decoding swatch history...", category: .userData)
+            if let swatchHistoryData = Self.userDefaults.object(forKey: Constants.swatchHistoryKey) as? Data, !swatchHistoryData.isEmpty {
                 self.swatchHistory = try Self.decoder.decode([Swatch].self, from: swatchHistoryData)
             } else {
                 self.swatchHistory = []
             }
             
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? GlobalConstants.DefaultValues.baseURL
+            // TODO: Move defaultBaseURL somewhere else or make baseURL optional
+            self.baseURL = Self.userDefaults.string(forKey: Constants.baseURLKey) ?? "https://filamentswatch.info"
         } catch {
             fatalError("\(error)")
         }
@@ -63,12 +75,34 @@ class UserData: ObservableObject {
             let materialsData = try Self.encoder.encode(self.materials)
             let swatchHistoryData = try Self.encoder.encode(self.swatchHistory)
             
-            Self.userDefaults.set(swatchesData, forKey: Self.swatchesKey)
-            Self.userDefaults.set(materialsData, forKey: Self.materialsKey)
-            Self.userDefaults.set(swatchHistoryData, forKey: Self.swatchHistoryKey)
-            Self.userDefaults.set(baseURL, forKey: Self.baseURLKey)
+            Self.userDefaults.set(swatchesData, forKey: Constants.swatchesKey)
+            Self.userDefaults.set(materialsData, forKey: Constants.materialsKey)
+            Self.userDefaults.set(swatchHistoryData, forKey: Constants.swatchHistoryKey)
+            Self.userDefaults.set(baseURL, forKey: Constants.baseURLKey)
         } catch {
-            logger.error("Error saving user data: \(error)", category: .persistence)
+            logger.error("Error saving user data: \(error)", category: .userData)
         }
+    }
+    
+    func importSwatch(_ swatch: Swatch) {
+        guard !swatches.contains(where: { $0.arePropertiesEqual(to: swatch) }) else {
+            logger.warning(
+                "Trying to add a swatch that is already in the library: \(swatch.descriptiveName)",
+                category: .userData
+            )
+            return
+        }
+        
+        // Create a modifyable copy of the swatch
+        let swatchCopy = swatch.copy()
+        
+        // Map the material to an existing one or add the material to the list of available materials
+        if let material = materials.first(where: { $0.name == swatch.material.name }) {
+            swatchCopy.material = material
+        } else {
+            materials.append(swatch.material)
+        }
+        
+        swatches.append(swatchCopy)
     }
 }
