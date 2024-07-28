@@ -5,17 +5,26 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import DependencyInjection
 import SwiftUI
 
 @main
 struct FilamentSwatchesApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self)
-    var appDelegate: AppDelegate
-    
-    @ObservedObject var userData: UserData = .shared
-   
     @Environment(\.scenePhase)
     private var scenePhase: ScenePhase
+    
+    @Injected private var userData: UserData
+    
+    init() {
+        DependencyInitializer().register()
+        
+        // MARK: Prepare for UI testing or screenshots
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--screenshots") {
+            SampleData.populateScreenshotData()
+        }
+        #endif
+    }
     
     var body: some Scene {
         WindowGroup {

@@ -8,6 +8,9 @@ import Logging
 extension ReadNFCButton {
     @Observable
     final class ViewModel: ViewModelProtocol {
+        private enum Constants {
+            static let maxHistoryItems: Int = 10
+        }
         @ObservationIgnored
         @Injected private var userData: UserData
         
@@ -36,7 +39,7 @@ extension ReadNFCButton {
                         userData.swatchHistory.insert(swatch, at: 0)
                     }
                     // Keep only the last 10 scan results
-                    if userData.swatchHistory.count > UserData.maxHistoryItems {
+                    if userData.swatchHistory.count > Constants.maxHistoryItems {
                         userData.swatchHistory = Array(userData.swatchHistory.prefix(UserData.maxHistoryItems))
                     }
                     userData.save()

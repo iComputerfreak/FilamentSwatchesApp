@@ -24,7 +24,7 @@ final class DependencyInitializer {
         }
         
         DependencyContext.default.registerSingleton(UserData.self) {
-            UserData.shared
+            UserData()
         }
     }
     

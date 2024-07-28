@@ -11,22 +11,21 @@ import Logging
 import SwiftUI
 
 class UserData: ObservableObject {
-    private static let swatchesKey: String = "swatches"
-    private static let materialsKey: String = "materials"
-    private static let swatchHistoryKey: String = "swatchHistory"
-    private static let baseURLKey: String = "baseURL"
-    
-    static let maxHistoryItems: Int = 10
+    private enum Constants {
+        static let swatchesKey: String = "swatches"
+        static let materialsKey: String = "materials"
+        static let swatchHistoryKey: String = "swatchHistory"
+        static let baseURLKey: String = "baseURL"
+    }
     
     private static let userDefaults: UserDefaults = .standard
     private static let encoder = PropertyListEncoder()
     private static let decoder = PropertyListDecoder()
     
-    static let shared: UserData = .init()
-    
     @Published var swatches: [Swatch]
     @Published var materials: [FilamentMaterial]
     @Published var swatchHistory: [Swatch]
+    // TODO: Move to separate Config service
     @Published var baseURL: String
     
     @Injected private var logger: Logger
@@ -36,14 +35,14 @@ class UserData: ObservableObject {
             // We cannot use the injected logger here, since it's not available yet
             let logger = ConsoleLogger()
             logger.debug("Decoding swatches...", category: .persistence)
-            if let swatchesData = Self.userDefaults.object(forKey: Self.swatchesKey) as? Data, !swatchesData.isEmpty {
+            if let swatchesData = Self.userDefaults.object(forKey: Constants.swatchesKey) as? Data, !swatchesData.isEmpty {
                 self.swatches = try Self.decoder.decode([Swatch].self, from: swatchesData)
             } else {
                 self.swatches = []
             }
             
             logger.debug("Decoding materials...", category: .persistence)
-            if let materialsData = Self.userDefaults.object(forKey: Self.materialsKey) as? Data, !materialsData.isEmpty {
+            if let materialsData = Self.userDefaults.object(forKey: Constants.materialsKey) as? Data, !materialsData.isEmpty {
                 // TODO: Remove migration after deployed
                 if let legacyMaterials = try? Self.decoder.decode([String].self, from: materialsData) {
                     self.materials = legacyMaterials.map { FilamentMaterial(name: $0) }
@@ -55,14 +54,14 @@ class UserData: ObservableObject {
             }
             
             logger.debug("Decoding swatch history...", category: .persistence)
-            if let swatchHistoryData = Self.userDefaults.object(forKey: Self.swatchHistoryKey) as? Data, !swatchHistoryData.isEmpty {
+            if let swatchHistoryData = Self.userDefaults.object(forKey: Constants.swatchHistoryKey) as? Data, !swatchHistoryData.isEmpty {
                 self.swatchHistory = try Self.decoder.decode([Swatch].self, from: swatchHistoryData)
             } else {
                 self.swatchHistory = []
             }
             
             // TODO: Move defaultBaseURL somewhere else or make baseURL optional
-            self.baseURL = Self.userDefaults.string(forKey: Self.baseURLKey) ?? "https://filamentswatch.info"
+            self.baseURL = Self.userDefaults.string(forKey: Constants.baseURLKey) ?? "https://filamentswatch.info"
         } catch {
             fatalError("\(error)")
         }
@@ -74,10 +73,10 @@ class UserData: ObservableObject {
             let materialsData = try Self.encoder.encode(self.materials)
             let swatchHistoryData = try Self.encoder.encode(self.swatchHistory)
             
-            Self.userDefaults.set(swatchesData, forKey: Self.swatchesKey)
-            Self.userDefaults.set(materialsData, forKey: Self.materialsKey)
-            Self.userDefaults.set(swatchHistoryData, forKey: Self.swatchHistoryKey)
-            Self.userDefaults.set(baseURL, forKey: Self.baseURLKey)
+            Self.userDefaults.set(swatchesData, forKey: Constants.swatchesKey)
+            Self.userDefaults.set(materialsData, forKey: Constants.materialsKey)
+            Self.userDefaults.set(swatchHistoryData, forKey: Constants.swatchHistoryKey)
+            Self.userDefaults.set(baseURL, forKey: Constants.baseURLKey)
         } catch {
             logger.error("Error saving user data: \(error)", category: .persistence)
         }

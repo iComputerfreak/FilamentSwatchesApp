@@ -45,7 +45,6 @@
 		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
 		ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */; };
 		ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */; };
-		ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */; };
 		ABA8E7D82A0427D10059E4BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DA2A0427D10059E4BF /* Localizable.strings */; };
 		ABA8E7DE2A0429650059E4BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DC2A0429650059E4BF /* InfoPlist.strings */; };
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
@@ -113,7 +112,6 @@
 		ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilamentSwatchesScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesScreenshots.swift; sourceTree = "<group>"; };
 		ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA8E7D92A0427D10059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABA8E7DD2A0429650059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				AB02140C2C42F9ED0035EE68 /* Resources */,
-				ABA8E7D22A03F9C70059E4BF /* AppDelegate.swift */,
 				AB9ABD8C2919217600327425 /* FilamentSwatchesApp.swift */,
 				AB9ABDAA29192B1400327425 /* Model */,
 				AB9ABD922919217700327425 /* Preview Content */,
@@ -541,7 +538,6 @@
 				ABDBB81B2C56994900D62515 /* ReadNFCButton+Model.swift in Sources */,
 				AB801A492C4C34DC0027A6CE /* HomeView+Model.swift in Sources */,
 				AB801A582C4D2DB10027A6CE /* SettingsView+Model.swift in Sources */,
-				ABA8E7D32A03F9C70059E4BF /* AppDelegate.swift in Sources */,
 				AB9ABDAE29192B9100327425 /* FilamentColor.swift in Sources */,
 				AB9ABDB829199AD100327425 /* FilamentMaterialRow.swift in Sources */,
 				AB9ABD9C291922CB00327425 /* HomeView.swift in Sources */,
