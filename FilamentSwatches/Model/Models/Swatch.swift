@@ -102,4 +102,17 @@ extension Swatch: Equatable {
         lhs.extruderTemp == rhs.extruderTemp &&
         lhs.bedTemp == rhs.bedTemp
     }
+    
+    /// Compares all user-visible properties of this swatch with the given other swatch and
+    /// returns whether all properties are equal.
+    func arePropertiesEqual(to other: Swatch) -> Bool {
+        // Don't compare the ID
+        return material == other.material &&
+        brand == other.brand &&
+        productLine == other.productLine &&
+        colorName == other.colorName &&
+        color == other.color &&
+        extruderTemp == other.extruderTemp &&
+        bedTemp == other.bedTemp
+    }
 }
