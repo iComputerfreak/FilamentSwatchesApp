@@ -452,10 +452,10 @@
 			mainGroup = AB9ABD802919217600327425;
 			packageReferences = (
 				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
-				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
-				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */,
-				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
-				AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */,
+				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "AppFoundation" */,
+				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Logging" */,
+				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "DependencyInjection" */,
+				AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "AppUI" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -718,7 +718,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/Resources/FilamentSwatches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
@@ -735,7 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatches;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -752,7 +752,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FilamentSwatches/Resources/FilamentSwatches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"FilamentSwatches/Preview Content\"";
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				ENABLE_PREVIEWS = YES;
@@ -769,7 +769,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatches;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -783,11 +783,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -802,11 +802,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 46C9Y785NA;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.JonasFrey.FilamentSwatchesScreenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -850,19 +850,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */ = {
+		AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "AppFoundation" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppFoundation;
 		};
-		AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */ = {
+		AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "AppUI" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppUI;
 		};
-		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
+		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Logging" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logging;
 		};
-		ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
+		ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "DependencyInjection" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/DependencyInjection;
 		};
