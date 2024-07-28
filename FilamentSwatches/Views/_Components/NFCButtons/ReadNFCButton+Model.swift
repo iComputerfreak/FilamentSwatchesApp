@@ -16,7 +16,7 @@ extension ReadNFCButton {
         
         let reader: NFCReader = .init()
         var showingNFCNotAvailableAlert: Bool = false
-        var scanError: Error?
+        var generalError: Error?
         var isShowingGeneralError: Bool = false
         var presentedSwatch: Swatch?
         
@@ -48,7 +48,8 @@ extension ReadNFCButton {
                 self.showingNFCNotAvailableAlert = true
             } catch {
                 logger.error("Error reading swatch data: \(error)", category: .nfc)
-                self.scanError = error
+                self.generalError = error
+                self.isShowingGeneralError = true
             }
         }
     }

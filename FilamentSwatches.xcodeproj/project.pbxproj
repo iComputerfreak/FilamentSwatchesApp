@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02141F2C43005B0035EE68 /* AppTarget.swift */; };
+		AB0C7EE12C569FC8001584AC /* WriteNFCButton+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C7EE02C569FC8001584AC /* WriteNFCButton+Model.swift */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
 		AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		AB02141F2C43005B0035EE68 /* AppTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTarget.swift; sourceTree = "<group>"; };
+		AB0C7EE02C569FC8001584AC /* WriteNFCButton+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WriteNFCButton+Model.swift"; sourceTree = "<group>"; };
 		AB158ABF2C42DF720074025F /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
 		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
@@ -326,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				ABDBB8192C56993C00D62515 /* NFCButtons */,
-				ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */,
 				AB9ABDB729199AD100327425 /* FilamentMaterialRow.swift */,
 				AB9ABDB929199E1E00327425 /* TemperatureTextField.swift */,
 				AB801A622C4D3ADC0027A6CE /* DismissButton.swift */,
@@ -358,6 +359,8 @@
 			children = (
 				AB9ABDA42919253600327425 /* ReadNFCButton.swift */,
 				ABDBB81A2C56994900D62515 /* ReadNFCButton+Model.swift */,
+				ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */,
+				AB0C7EE02C569FC8001584AC /* WriteNFCButton+Model.swift */,
 			);
 			path = NFCButtons;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */,
 				AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */,
 				AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */,
+				AB0C7EE12C569FC8001584AC /* WriteNFCButton+Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

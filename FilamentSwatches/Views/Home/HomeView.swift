@@ -15,7 +15,7 @@ struct HomeView: StatefulView {
     var body: some View {
         NavigationStack {
             VStack {
-                ReadNFCButton(presentedSwatch: $viewModel.presentedSwatch)
+                ReadNFCButton(viewModel: .init())
                 SubtitleView("Recent Scans")
                 List(selection: $viewModel.presentedSwatch) {
                     ForEach(viewModel.swatchHistory) { swatch in

@@ -25,7 +25,7 @@ struct SwatchView: View {
                         .padding()
                     
                     // MARK: Write Button
-                    WriteNFCButton(swatch: viewModel.swatch)
+                    WriteNFCButton(viewModel: .init(swatch: viewModel.swatch))
                     
                     // MARK: Add to Library Button
                     addToLibraryButton
