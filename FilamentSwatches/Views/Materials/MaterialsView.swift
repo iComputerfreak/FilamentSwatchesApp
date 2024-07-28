@@ -34,7 +34,7 @@ struct MaterialsView: View {
         }
         .sheet(
             item: $viewModel.editingMaterial,
-            onDismiss: viewModel.onCreateMaterialSheetDismiss
+            onDismiss: viewModel.onEditMaterialSheetDismiss
         ) { material in
             EditMaterialView(viewModel: .init(material: material, title: "Create Material"))
         }

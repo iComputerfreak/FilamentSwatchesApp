@@ -14,6 +14,10 @@ extension MaterialsView {
         
         var materials: [FilamentMaterial] {
             userData.materials
+                // Only include valid materials, so we don't show the empty material entry while creating a new one
+                .filter { material in
+                    !material.name.isEmpty
+                }
         }
 
         init() {}
@@ -24,7 +28,7 @@ extension MaterialsView {
             self.editingMaterial = newMaterial
         }
         
-        func onCreateMaterialSheetDismiss() {
+        func onEditMaterialSheetDismiss() {
             // Delete the material(s) with an empty name that we created in `addMaterial()` again
             userData.materials.removeAll(where: \.name.isEmpty)
         }
