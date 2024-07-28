@@ -5,10 +5,11 @@
 //  Created by Jonas Frey on 07.11.22.
 //
 
+import AppFoundation
 import Foundation
 
 @Observable
-class Swatch: Identifiable, Codable {
+final class Swatch: Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         // swiftlint:disable identifier_name
         case _id = "id"
@@ -114,5 +115,19 @@ extension Swatch: Equatable {
         color == other.color &&
         extruderTemp == other.extruderTemp &&
         bedTemp == other.bedTemp
+    }
+}
+
+extension Swatch: Copying {
+    func copy() -> Swatch {
+        Swatch(
+            material: material,
+            brand: brand,
+            productLine: productLine,
+            colorName: colorName,
+            color: color,
+            extruderTemp: extruderTemp,
+            bedTemp: bedTemp
+        )
     }
 }
