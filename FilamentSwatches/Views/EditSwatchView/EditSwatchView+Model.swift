@@ -33,6 +33,7 @@ extension EditSwatchView {
             
         var materials: [FilamentMaterial] {
             userData.materials
+                .sorted { $0.name.lexicographicallyPrecedes($1.name) }
         }
         
         var isFormValid: Bool {

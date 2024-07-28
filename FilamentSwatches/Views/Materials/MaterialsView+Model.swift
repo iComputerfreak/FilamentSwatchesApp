@@ -18,6 +18,7 @@ extension MaterialsView {
                 .filter { material in
                     !material.name.isEmpty
                 }
+                .sorted { $0.name.lexicographicallyPrecedes($1.name) }
         }
 
         init() {}
