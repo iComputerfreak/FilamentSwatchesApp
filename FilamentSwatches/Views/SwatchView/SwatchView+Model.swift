@@ -3,6 +3,7 @@
 import AppFoundation
 import DependencyInjection
 import Foundation
+import Logging
 
 extension SwatchView {
     @Observable
@@ -10,10 +11,13 @@ extension SwatchView {
         @ObservationIgnored
         @Injected private var userData: UserData
         
+        @ObservationIgnored
+        @Injected private var logger: Logger
+        
         let swatch: Swatch
         
         var isInLibrary: Bool {
-            userData.swatches.contains(swatch)
+            userData.swatches.contains { $0.arePropertiesEqual(to: swatch) }
         }
         
         init(swatch: Swatch) {
@@ -21,7 +25,8 @@ extension SwatchView {
         }
         
         func addToLibrary() {
-            userData.swatches.append(swatch)
+            logger.debug("Adding swatch to library: \(swatch.descriptiveName)", category: .userData)
+            userData.importSwatch(swatch)
         }
     }
 }

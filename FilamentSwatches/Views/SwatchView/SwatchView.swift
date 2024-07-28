@@ -67,13 +67,12 @@ struct SwatchView: View {
     
     @ViewBuilder
     private var addToLibraryButton: some View {
-        if !viewModel.isInLibrary {
-            Button("Add to Library") {
-                viewModel.addToLibrary()
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(.indigo)
+        Button("Add to Library") {
+            viewModel.addToLibrary()
         }
+        .buttonStyle(.borderedProminent)
+        .tint(.indigo)
+        .opacity(viewModel.isInLibrary ? 0 : 1)
     }
 }
 
@@ -81,7 +80,7 @@ struct SwatchView_Previews: PreviewProvider {
     static var previews: some View {
         Text("")
             .sheet(isPresented: .constant(true)) {
-                SwatchView(viewModel: .init(swatch: SampleData.swatch))
+                SwatchView(viewModel: .init(swatch: SampleData.newSwatch))
             }
     }
 }

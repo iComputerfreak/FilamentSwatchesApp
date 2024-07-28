@@ -83,4 +83,26 @@ final class UserData {
             logger.error("Error saving user data: \(error)", category: .userData)
         }
     }
+    
+    func importSwatch(_ swatch: Swatch) {
+        guard !swatches.contains(where: { $0.arePropertiesEqual(to: swatch) }) else {
+            logger.warning(
+                "Trying to add a swatch that is already in the library: \(swatch.descriptiveName)",
+                category: .userData
+            )
+            return
+        }
+        
+        // Create a modifyable copy of the swatch
+        let swatchCopy = swatch.copy()
+        
+        // Map the material to an existing one or add the material to the list of available materials
+        if let material = materials.first(where: { $0.name == swatch.material.name }) {
+            swatchCopy.material = material
+        } else {
+            materials.append(swatch.material)
+        }
+        
+        swatches.append(swatchCopy)
+    }
 }

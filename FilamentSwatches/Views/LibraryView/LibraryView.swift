@@ -25,6 +25,7 @@ struct LibraryView: StatefulView {
                                         editingSwatch: $viewModel.editingSwatch
                                     )
                                 )
+                                .tag(swatch)
                             }
                         }
                     }

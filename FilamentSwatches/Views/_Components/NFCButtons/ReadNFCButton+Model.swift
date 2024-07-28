@@ -11,6 +11,7 @@ extension ReadNFCButton {
         private enum Constants {
             static let maxHistoryItems: Int = 10
         }
+        
         @ObservationIgnored
         @Injected private var userData: UserData
         
@@ -40,7 +41,7 @@ extension ReadNFCButton {
                     }
                     // Keep only the last 10 scan results
                     if userData.swatchHistory.count > Constants.maxHistoryItems {
-                        userData.swatchHistory = Array(userData.swatchHistory.prefix(UserData.maxHistoryItems))
+                        userData.swatchHistory = Array(userData.swatchHistory.prefix(Constants.maxHistoryItems))
                     }
                     userData.save()
                     

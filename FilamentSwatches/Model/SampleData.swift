@@ -19,6 +19,16 @@ enum SampleData {
         bedTemp: 60
     )
     
+    static let newSwatch = Swatch(
+        material: .init(name: "PLA"),
+        brand: "Polymaker",
+        productLine: "PolyLite",
+        colorName: "Red",
+        color: .init(hexCode: "CD4F4A"),
+        extruderTemp: 215,
+        bedTemp: 70
+    )
+    
     static let previewUserData: UserData = {
         let data = UserData()
         data.swatches = [Self.swatch]
