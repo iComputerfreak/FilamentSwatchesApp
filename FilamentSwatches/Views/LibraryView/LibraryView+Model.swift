@@ -16,17 +16,16 @@ extension LibraryView {
         private(set) var editSwatchTitle: LocalizedStringKey = "Edit Swatch"
         
         var materials: [FilamentMaterial] {
-            userData.materials
-        }
-        
-        var swatches: [Swatch] {
             userData.swatches
+                .map(\.material)
+                .removingDuplicates()
+                .sorted { $0.name.lexicographicallyPrecedes($1.name) }
         }
         
         init() {}
         
         func swatches(for material: FilamentMaterial) -> [Swatch] {
-            swatches
+            userData.swatches
                 .filter { swatch in
                     swatch.material == material
                 }
