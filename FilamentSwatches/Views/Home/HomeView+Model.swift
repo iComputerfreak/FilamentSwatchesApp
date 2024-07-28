@@ -3,6 +3,7 @@
 import AppFoundation
 import DependencyInjection
 import Foundation
+import Logging
 
 extension HomeView {
     @Observable
@@ -10,7 +11,14 @@ extension HomeView {
         @ObservationIgnored
         @Injected private var userData: UserData
         
-        var presentedSwatch: Swatch?
+        @ObservationIgnored
+        @Injected private var logger: Logger
+        
+        var presentedSwatch: Swatch? {
+            didSet {
+                logger.debug("Presenting swatch: \(presentedSwatch?.descriptiveName ?? "nil")", category: .viewLifecycle)
+            }
+        }
         
         var swatchHistory: [Swatch] {
             userData.swatchHistory

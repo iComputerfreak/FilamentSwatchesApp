@@ -7,17 +7,12 @@ struct SwatchRow: StatefulView {
     @State var viewModel: ViewModel
     
     var body: some View {
-        Button {
-            // TODO: Use List(selection:) instead
-            viewModel.selectSwatch()
-        } label: {
-            HStack {
-                Text(viewModel.swatch.descriptiveName)
-                    .font(.title3)
-                    .bold()
-                Spacer()
-                colorSample
-            }
+        HStack {
+            Text(viewModel.swatch.descriptiveName)
+                .font(.title3)
+                .bold()
+            Spacer()
+            colorSample
         }
         .tint(.primary)
         .swipeActions(allowsFullSwipe: true) {
@@ -54,8 +49,7 @@ struct SwatchRow: StatefulView {
     SwatchRow(
         viewModel: .init(
             swatch: SampleData.swatch,
-            editingSwatch: .constant(nil),
-            selectedSwatch: .constant(nil)
+            editingSwatch: .constant(nil)
         )
     )
 }

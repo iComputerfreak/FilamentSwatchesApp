@@ -19,21 +19,12 @@ extension SwatchRow {
         @ObservationIgnored
         @Binding var editingSwatch: Swatch?
         
-        @ObservationIgnored
-        @Binding var selectedSwatch: Swatch?
-        
         init(
             swatch: Swatch,
-            editingSwatch: Binding<Swatch?>,
-            selectedSwatch: Binding<Swatch?>
+            editingSwatch: Binding<Swatch?>
         ) {
             self.swatch = swatch
             self._editingSwatch = editingSwatch
-            self._selectedSwatch = selectedSwatch
-        }
-        
-        func selectSwatch() {
-            selectedSwatch = swatch
         }
         
         func editSwatch() {

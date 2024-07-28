@@ -13,7 +13,7 @@ struct LibraryView: StatefulView {
     
     var body: some View {
         NavigationStack {
-            List {
+            List(selection: $viewModel.selectedSwatch) {
                 ForEach(viewModel.materials) { (material: FilamentMaterial) in
                     let swatches = viewModel.swatches(for: material)
                     if !swatches.isEmpty {
@@ -22,8 +22,7 @@ struct LibraryView: StatefulView {
                                 SwatchRow(
                                     viewModel: .init(
                                         swatch: swatch,
-                                        editingSwatch: $viewModel.editingSwatch,
-                                        selectedSwatch: $viewModel.selectedSwatch
+                                        editingSwatch: $viewModel.editingSwatch
                                     )
                                 )
                             }

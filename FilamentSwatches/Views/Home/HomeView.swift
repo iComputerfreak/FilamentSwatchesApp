@@ -22,12 +22,11 @@ struct HomeView: StatefulView {
                         SwatchRow(
                             viewModel: .init(
                                 swatch: swatch,
-                                // TODO: Make editable
-                                editingSwatch: .constant(nil),
-                                selectedSwatch: .constant(nil)
+                                // TODO: Make editable (move sheets into SwatchRow)
+                                editingSwatch: .constant(nil)
                             )
                         )
-                            .tag(swatch)
+                        .tag(swatch)
                     }
                     .onDelete(perform: viewModel.deleteHistoryItems)
                 }
