@@ -17,6 +17,8 @@ final class UserData {
         static let materialsKey: String = "materials"
         static let swatchHistoryKey: String = "swatchHistory"
         static let baseURLKey: String = "baseURL"
+        
+        static let defaultBaseURL: String = "https://filamentswatch.info"
     }
     
     private static let userDefaults: UserDefaults = .standard
@@ -63,9 +65,22 @@ final class UserData {
             }
             
             // TODO: Move defaultBaseURL somewhere else or make baseURL optional
-            self.baseURL = Self.userDefaults.string(forKey: Constants.baseURLKey) ?? "https://filamentswatch.info"
+            self.baseURL = Self.userDefaults.string(forKey: Constants.baseURLKey) ?? Constants.defaultBaseURL
         } catch {
             fatalError("\(error)")
+        }
+        
+        // Clean up after migrating to version 1.4.0
+        for swatch in swatches {
+            if !materials.contains(swatch.material) {
+                if let material = materials.first(where: \.name, equals: swatch.material.name) {
+                    // Try to find a material matching by name first
+                    swatch.material = material
+                } else {
+                    // Otherwise add the material to the list of materials
+                    materials.append(swatch.material)
+                }
+            }
         }
     }
     
