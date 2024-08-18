@@ -15,6 +15,7 @@ extension SettingsView {
         @Injected private var userData: UserData
         
         let defaultBaseURL: String = Constants.defaultBaseURL
+        var isShowingBaseURLInfoSheet: Bool = false
         
         @ObservationIgnored
         var baseURL: String {
