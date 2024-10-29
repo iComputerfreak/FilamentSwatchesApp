@@ -22,7 +22,9 @@ struct EditMaterialView: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $viewModel.name)
+                Section("Name") {
+                    TextField("Name", text: $viewModel.name)
+                }
             }
             .navigationTitle(viewModel.title)
             .toolbar { toolbarContent }

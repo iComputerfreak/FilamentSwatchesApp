@@ -10,6 +10,8 @@
 		AB0214202C43005B0035EE68 /* AppTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02141F2C43005B0035EE68 /* AppTarget.swift */; };
 		AB0C7EE12C569FC8001584AC /* WriteNFCButton+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C7EE02C569FC8001584AC /* WriteNFCButton+Model.swift */; };
 		AB158AC02C42DF720074025F /* DependencyInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB158ABF2C42DF720074025F /* DependencyInitializer.swift */; };
+		AB3751A32C726F8F00454784 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB3751A22C726F8F00454784 /* Localizable.xcstrings */; };
+		AB3751A52C726F8F00454784 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB3751A42C726F8F00454784 /* InfoPlist.xcstrings */; };
 		AB56ADE2291A59A4005B1CE7 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */; };
 		AB801A422C43D8F90027A6CE /* EditMaterialView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */; };
 		AB801A442C43D9920027A6CE /* FilamentMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB801A432C43D9920027A6CE /* FilamentMaterial.swift */; };
@@ -45,8 +47,6 @@
 		ABA8E7A32A0164570059E4BF /* NFCSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7A22A0164570059E4BF /* NFCSessionDelegate.swift */; };
 		ABA8E7C82A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */; };
 		ABA8E7D12A03F8F10059E4BF /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */; };
-		ABA8E7D82A0427D10059E4BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DA2A0427D10059E4BF /* Localizable.strings */; };
-		ABA8E7DE2A0429650059E4BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABA8E7DC2A0429650059E4BF /* InfoPlist.strings */; };
 		ABABF9D9291D05D400364F64 /* WriteNFCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */; };
 		ABABF9DD291DAA1900364F64 /* NFCWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABF9DC291DAA1900364F64 /* NFCWriter.swift */; };
 		ABC368D72922BC9C00E79D58 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC368D62922BC9C00E79D58 /* SettingsView.swift */; };
@@ -73,6 +73,8 @@
 		AB02141F2C43005B0035EE68 /* AppTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTarget.swift; sourceTree = "<group>"; };
 		AB0C7EE02C569FC8001584AC /* WriteNFCButton+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WriteNFCButton+Model.swift"; sourceTree = "<group>"; };
 		AB158ABF2C42DF720074025F /* DependencyInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInitializer.swift; sourceTree = "<group>"; };
+		AB3751A22C726F8F00454784 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB3751A42C726F8F00454784 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilamentSwatches.entitlements; sourceTree = "<group>"; };
 		AB56ADE1291A59A4005B1CE7 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		AB801A412C43D8F90027A6CE /* EditMaterialView+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditMaterialView+Model.swift"; sourceTree = "<group>"; };
@@ -112,8 +114,6 @@
 		ABA8E7C52A03F8C60059E4BF /* FilamentSwatchesScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilamentSwatchesScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA8E7C72A03F8C60059E4BF /* FilamentSwatchesScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilamentSwatchesScreenshots.swift; sourceTree = "<group>"; };
 		ABA8E7D02A03F8F10059E4BF /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		ABA8E7D92A0427D10059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		ABA8E7DD2A0429650059E4BF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABABF9D8291D05D300364F64 /* WriteNFCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCButton.swift; sourceTree = "<group>"; };
 		ABABF9DC291DAA1900364F64 /* NFCWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCWriter.swift; sourceTree = "<group>"; };
 		ABC368D62922BC9C00E79D58 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 				AB9ABD902919217700327425 /* Assets.xcassets */,
 				AB56ADE0291A5867005B1CE7 /* FilamentSwatches.entitlements */,
 				ABA8E7A42A016F2D0059E4BF /* Info.plist */,
-				ABA8E7DC2A0429650059E4BF /* InfoPlist.strings */,
-				ABA8E7DA2A0427D10059E4BF /* Localizable.strings */,
+				AB3751A42C726F8F00454784 /* InfoPlist.xcstrings */,
+				AB3751A22C726F8F00454784 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -452,10 +452,10 @@
 			mainGroup = AB9ABD802919217600327425;
 			packageReferences = (
 				ABC368D82922C09500E79D58 /* XCRemoteSwiftPackageReference "JFUtils" */,
-				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "AppFoundation" */,
-				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Logging" */,
-				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "DependencyInjection" */,
-				AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "AppUI" */,
+				AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */,
+				ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */,
+				ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */,
+				AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */,
 			);
 			productRefGroup = AB9ABD8A2919217600327425 /* Products */;
 			projectDirPath = "";
@@ -472,9 +472,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3751A52C726F8F00454784 /* InfoPlist.xcstrings in Resources */,
 				AB9ABD942919217700327425 /* Preview Assets.xcassets in Resources */,
-				ABA8E7DE2A0429650059E4BF /* InfoPlist.strings in Resources */,
-				ABA8E7D82A0427D10059E4BF /* Localizable.strings in Resources */,
+				AB3751A32C726F8F00454784 /* Localizable.xcstrings in Resources */,
 				AB9ABD912919217700327425 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,25 +573,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		ABA8E7DA2A0427D10059E4BF /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABA8E7D92A0427D10059E4BF /* de */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		ABA8E7DC2A0429650059E4BF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABA8E7DD2A0429650059E4BF /* de */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		AB9ABD952919217700327425 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -646,11 +627,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -702,10 +685,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -850,19 +835,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "AppFoundation" */ = {
+		AB0214082C42F7470035EE68 /* XCLocalSwiftPackageReference "Packages/AppFoundation" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppFoundation;
 		};
-		AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "AppUI" */ = {
+		AB801A592C4D2F140027A6CE /* XCLocalSwiftPackageReference "Packages/AppUI" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/AppUI;
 		};
-		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Logging" */ = {
+		ABDE1B202C43D166005AEAF7 /* XCLocalSwiftPackageReference "Packages/Logging" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Logging;
 		};
-		ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "DependencyInjection" */ = {
+		ABDE1B232C43D174005AEAF7 /* XCLocalSwiftPackageReference "Packages/DependencyInjection" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/DependencyInjection;
 		};
