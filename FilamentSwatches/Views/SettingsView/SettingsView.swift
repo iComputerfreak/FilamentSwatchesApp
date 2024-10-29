@@ -13,11 +13,11 @@ struct SettingsView: StatefulView {
     
     var body: some View {
         NavigationStack {
-			Form {
-				Section {
+            Form {
+                Section {
                     TextField(viewModel.baseURL, text: $viewModel.baseURL, prompt: Text(viewModel.defaultBaseURL))
-						.keyboardType(.URL)
-						.autocorrectionDisabled()
+                        .keyboardType(.URL)
+                        .autocorrectionDisabled()
                 } header: {
                     HStack {
                         Text("Base URL")
@@ -25,8 +25,8 @@ struct SettingsView: StatefulView {
                         infoButton
                     }
                 }
-			}
-			.navigationTitle("Settings")
+            }
+            .navigationTitle("Settings")
             .alert(
                 "Base URL Customization",
                 isPresented: $viewModel.isShowingBaseURLInfoSheet,

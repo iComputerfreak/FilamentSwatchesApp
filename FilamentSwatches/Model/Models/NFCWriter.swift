@@ -160,8 +160,10 @@ class NFCWriter: NFCSessionDelegate<Bool>, NFCNDEFReaderSessionDelegate {
                 switch ndefStatus {
                 case .notSupported:
                     session.alertMessage = "Tag is not NDEF compliant."
+
                 case .readOnly:
                     session.alertMessage = "Tag is read only."
+
                 case .readWrite:
                     try await tag.writeNDEF(message)
                     self.finish(session, with: .success(true), message: "Write successful!")

@@ -71,15 +71,13 @@ final class UserData {
         }
         
         // Clean up after migrating to version 1.4.0
-        for swatch in swatches {
-            if !materials.contains(swatch.material) {
-                if let material = materials.first(where: \.name, equals: swatch.material.name) {
-                    // Try to find a material matching by name first
-                    swatch.material = material
-                } else {
-                    // Otherwise add the material to the list of materials
-                    materials.append(swatch.material)
-                }
+        for swatch in swatches where !materials.contains(swatch.material) {
+            if let material = materials.first(where: \.name, equals: swatch.material.name) {
+                // Try to find a material matching by name first
+                swatch.material = material
+            } else {
+                // Otherwise add the material to the list of materials
+                materials.append(swatch.material)
             }
         }
     }

@@ -12,14 +12,19 @@ public enum LogLevel: String {
         switch self {
         case .trace:
             return "🔍"
+
         case .debug:
             return "🐛"
+
         case .info:
             return "ℹ️"
+
         case .warning:
             return "⚠️"
+
         case .error:
             return "🛑"
+
         case .fatal:
             return "💥"
         }

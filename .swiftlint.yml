@@ -117,6 +117,9 @@ force_cast: warning
 
 force_try: warning
 
+opening_brace:
+  ignore_multiline_statement_conditions: true
+
 line_length:
   warning: 160
   error: 240
